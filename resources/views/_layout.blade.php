@@ -71,7 +71,7 @@
           <div>
             <ul class="cart-icon">
               <li><a href="" class="fas fa-shopping-cart""><i>Giỏ hàng</i></a></li>
-              <li><a href="" class="fas fa-cart-arrow-down"><i>Sản phẩm mới</i></a></li>
+              <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
               <li class="icon3"><a href="" class="fas fa-sign-in-alt"><i>Đăng nhập</i></a></li>
             </ul>
           </div>
