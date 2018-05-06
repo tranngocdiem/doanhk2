@@ -27,10 +27,10 @@
             </a>
 
             <ul>
-              <li><a href="">Trang chủ</a></li>
+              <li><a href="{!! url('/') !!}">Trang chủ</a></li>
               <li><a href="">Dịch vụ</a></li>
-              <li><a href="">Sản phẩm</a></li>
-              <li><a href="">Liên hệ</a></li>
+              <li><a href="{!! url('/sp') !!}">Sản phẩm</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
               <li><a href="">Tin tức</a></li>
               <li><a href="">Trợ giúp</a></li>
             </ul>
