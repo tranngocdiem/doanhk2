@@ -26,7 +26,6 @@ header {
 	left: -300px;
 	width: 300px;
 	height: 100vh;
-	padding: 10px;
 	transition: .5s;
 	
 	text-align: center;
@@ -35,11 +34,7 @@ header {
 	float:left;
 }
 
-.menu ul{
-	
-	padding:40px 0px;
-	margin: 0;
-}
+
 .menu li {
 	list-style: none;
 	font-family: sans-serif; 

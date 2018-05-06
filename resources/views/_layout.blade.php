@@ -23,7 +23,7 @@
           
           <div class="menu">
             <a href="#">
-              <img class="logo" src="{{ url('/') }}./image/logo.png" style="width: 50px;height: 50px;" alt="" id="logo"/>
+              <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 250px;height: 150px;" alt="" id="logo"/>
             </a>
 
             <ul>
