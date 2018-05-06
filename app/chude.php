@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class chude extends Model
 {
-	public $timestamps = false;
+	public $timestamps = true;
     protected $table = 'chude';
     protected $filltable = ['macd', 'tencd'];
     public function sanpham(){

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class banggia extends Model
 {
     protected $table = 'banggia';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['magia','gia','masp','makm'];
     public function chuongtrinhkhuyenmai()
     {

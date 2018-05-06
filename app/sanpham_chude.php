@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class sanpham_chude extends Model
 {
     protected $table = 'sanpham_chude';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = ['macd','masp'];
 }

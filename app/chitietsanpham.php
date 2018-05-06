@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class chitietsanpham extends Model
 {
     protected $table = 'chitietsanpham';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['maloai','magt'];
 }
