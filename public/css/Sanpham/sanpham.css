@@ -3,10 +3,11 @@
 	text-align: left;
 	border-radius: 0px;
 }
-
 #menu-phu{
-	float: none;
 	top: 200px;
+}
+#menu-phu{
+	
 	width: 100%;
 	box-sizing: border-box;
 	

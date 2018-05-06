@@ -1,5 +1,5 @@
 @extends('_layoutsanpham')
-@section('content')
+@section('sub_content')
 <div class="container">
 
       <div class="row">

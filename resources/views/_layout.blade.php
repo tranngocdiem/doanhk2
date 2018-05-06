@@ -44,7 +44,7 @@
           </div>
         </nav>
       </div>
-      <div class="row1">
+      <div class="row1" style="background-color: rgba(0,11,12,0.8);">
         <div class="">
 
           <div class="menu-icon">
@@ -82,11 +82,12 @@
    
   </header>
   <!-- end header!-->
-  <div class = "content">
+  <!--<div class = "content">
 
-  	@yield('content')
+  	
 
-  </div>
+  </div>-->
+  @yield('content')
     <footer id="contact">
       <div class="container">
         <div class="row">
@@ -113,7 +114,7 @@
         </div>
       </div>
     </footer>
-  // file js của từng trang
+  <!--file js của từng trang-->
   @section('js')
   <script type="text/javascript">
 
