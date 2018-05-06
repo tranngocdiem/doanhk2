@@ -6,7 +6,7 @@
 
         <div class="col-lg-3">
 
-        	<h1 class="my-4">DTQ Furniture</h1>
+        	<h1 class="my-4">DTQ furniture</h1>
         	<nav class="main-nav">
         		<ul id="main-nav" class="main-nav-ul">
         			<li><a id="nhan" href="#">MẪU PHÒNG KHÁCH</a></li>
