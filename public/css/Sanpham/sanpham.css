@@ -3,20 +3,18 @@
 	text-align: left;
 	border-radius: 0px;
 }
+
 #menu-phu{
-	top: 200px;
-}
-#menu-phu{
-	
+	top: 100px;
 	width: 100%;
 	box-sizing: border-box;
-	
 	margin-left: 0px;
 	background-color: rgba(0,11,12,0.5);
-
+	
 }
 #menu-phu .menuphu{
-	float:left;
+	
+	
 	margin:auto;
 	font-size: 14px;
 }

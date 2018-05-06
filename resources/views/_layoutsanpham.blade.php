@@ -7,6 +7,9 @@ Sản phẩm
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/sanpham.css">
 @stop
 @section('content')
+	<br>
+	<br>
+	<br>
 	<div id="menu-phu">
 		<nav class="nav">
 			<li class="menuphu"><a class="nav-link pkhach" href="#">PHÒNG KHÁCH</a>
