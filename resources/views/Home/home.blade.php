@@ -18,7 +18,7 @@ Trang chủ
     <div class="contain">
       <nav class="row2">
         <div class="">
-          <h1 class="m-b-20"><strong>DTQ FURNITURE</strong></h1>
+          <h1 class="m-b-20"><strong> WELCOME TO DTQ FURNITURE</strong></h1>
           <p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#album-list">BỘ SƯU TẬP</a>
           </p>
