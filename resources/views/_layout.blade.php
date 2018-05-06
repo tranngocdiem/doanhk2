@@ -22,7 +22,7 @@
         <nav class="sidebar">
           
           <div class="menu">
-            <a href="#">
+            <a href="{!! url('/') !!}">
               <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 100%;height: 140px;" alt="" id="logo"/>
             </a>
 
