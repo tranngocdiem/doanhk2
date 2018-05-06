@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('Home.home');
 });
+Route::get('/sp', function () {
+    return view('Sanpham.sanpham');
+});
+
