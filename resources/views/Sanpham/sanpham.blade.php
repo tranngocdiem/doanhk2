@@ -1,4 +1,4 @@
-@extends('_layoutsanpham')
+@extends('Sanpham._layoutsanpham')
 @section('sub_content')
 <div class="container">
 

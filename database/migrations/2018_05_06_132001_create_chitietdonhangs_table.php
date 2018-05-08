@@ -32,6 +32,6 @@ class CreateChitietdonhangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chitietdonhangs');
+        Schema::dropIfExists('chitietdonhang');
     }
 }

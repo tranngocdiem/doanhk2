@@ -27,6 +27,6 @@ class CreateLohangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lohangs');
+        Schema::dropIfExists('lohang');
     }
 }

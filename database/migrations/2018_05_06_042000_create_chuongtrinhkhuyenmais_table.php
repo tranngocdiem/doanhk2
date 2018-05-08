@@ -30,6 +30,6 @@ class CreateChuongtrinhkhuyenmaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chuongtrinhkhuyenmais');
+        Schema::dropIfExists('chuongtrinhkhuyenmai');
     }
 }

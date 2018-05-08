@@ -32,6 +32,6 @@ class CreateDondathangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dondathangs');
+        Schema::dropIfExists('dondathang');
     }
 }

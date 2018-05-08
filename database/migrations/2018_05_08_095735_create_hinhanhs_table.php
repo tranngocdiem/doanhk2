@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGiatrithuoctinhsTable extends Migration
+class CreateHinhanhsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateGiatrithuoctinhsTable extends Migration
      */
     public function up()
     {
-        Schema::create('giatrithuoctinh', function (Blueprint $table) {
-            $table->increments('magt');
-            $table->string('giatri');
-            $table->integer('matt')->unsigned();
-            $table->foreign('matt')->references('matt')->on('thuoctinh')->onDelete('cascade');
+        Schema::create('hinhanh', function (Blueprint $table) {
+            $table->increments('mahinh');
+            $table->string('url');
+            $table->integer('maloai')->unsigned();
+            $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateGiatrithuoctinhsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('giatrithuoctinh');
+        Schema::dropIfExists('hinhanh');
     }
 }

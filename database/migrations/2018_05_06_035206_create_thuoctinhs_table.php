@@ -27,6 +27,6 @@ class CreateThuoctinhsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thuoctinhs');
+        Schema::dropIfExists('thuoctinh');
     }
 }

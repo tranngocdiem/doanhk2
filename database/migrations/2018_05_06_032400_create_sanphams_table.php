@@ -29,6 +29,6 @@ class CreateSanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sanphams');
+        Schema::dropIfExists('sanpham');
     }
 }

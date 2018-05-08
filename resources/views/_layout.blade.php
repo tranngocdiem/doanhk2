@@ -84,10 +84,11 @@
   <!-- end header!-->
   <!--<div class = "content">
 
-  	
+  
 
   </div>-->
-  @yield('content')
+  @section('content')
+  @show
     <footer id="contact">
       <div class="container">
         <div class="row">

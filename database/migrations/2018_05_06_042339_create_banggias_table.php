@@ -31,6 +31,6 @@ class CreateBanggiasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banggias');
+        Schema::dropIfExists('banggia');
     }
 }

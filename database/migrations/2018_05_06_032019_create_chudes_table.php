@@ -27,6 +27,6 @@ class CreateChudesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chudes');
+        Schema::dropIfExists('chude');
     }
 }

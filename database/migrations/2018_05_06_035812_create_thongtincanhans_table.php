@@ -29,6 +29,6 @@ class CreateThongtincanhansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thongtincanhans');
+        Schema::dropIfExists('thongtincanhan');
     }
 }

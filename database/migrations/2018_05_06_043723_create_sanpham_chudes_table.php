@@ -30,6 +30,6 @@ class CreateSanphamChudesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sanpham_chudes');
+        Schema::dropIfExists('sanpham_chude');
     }
 }

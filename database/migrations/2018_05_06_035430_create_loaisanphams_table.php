@@ -30,6 +30,6 @@ class CreateLoaisanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loaisanphams');
+        Schema::dropIfExists('loaisanpham');
     }
 }
