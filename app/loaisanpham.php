@@ -21,4 +21,8 @@ class loaisanpham extends Model
     public function thuoctinh(){
     	return $this->belongsToMany('App\thuoctinh','chitietsanpham','maloai','matt');
     }
+    public function hinhanh(){
+
+        return $this->hasMany('App\hinhanh');
+    }
 }
