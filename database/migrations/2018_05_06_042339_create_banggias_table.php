@@ -16,6 +16,7 @@ class CreateBanggiasTable extends Migration
         Schema::create('banggia', function (Blueprint $table) {
             $table->increments('magia');
             $table->float('gia');
+            $table->integer('trangthai');
             $table->integer('masp')->unsigned();
             $table->integer('makm')->unsigned();
             $table->foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');

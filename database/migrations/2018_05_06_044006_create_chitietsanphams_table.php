@@ -18,6 +18,8 @@ class CreateChitietsanphamsTable extends Migration
             $table->integer('magt')->unsigned();
             $table->primary(['maloai','magt']);
             $table->timestamps();
+            $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
+            $table -> foreign('magt')->references('magt')->on('giatrithuoctinh')->onDelete('cascade');
         });
     }
 

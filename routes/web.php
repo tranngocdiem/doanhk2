@@ -17,4 +17,11 @@ Route::get('/', function () {
 Route::get('/sp', function () {
     return view('Sanpham.sanpham');
 });
+Route::get('/login', function () {
+    return view('Taikhoan.login');
+});
+
+Route::get('/re', function () {
+    return view('Taikhoan.register');
+});
 
