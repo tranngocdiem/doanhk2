@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class chitietdonhang extends Model
+class chitietdonhang extends Pivot;
 {
     protected $table = 'chitietdonhang';
     public $timestamp = true;

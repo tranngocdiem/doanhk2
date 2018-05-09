@@ -17,6 +17,7 @@ class CreateLoaisanphamsTable extends Migration
             $table->increments('maloai');
             $table->string('tenloai');
             $table->unsignedInteger('soluongton');
+            $table->text('mota');
             $table->integer('masp')->unsigned();
             $table->foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');
             $table->timestamps();

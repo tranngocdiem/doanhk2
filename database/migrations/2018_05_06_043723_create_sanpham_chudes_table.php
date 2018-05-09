@@ -15,10 +15,10 @@ class CreateSanphamChudesTable extends Migration
     {
         Schema::create('sanpham_chude', function (Blueprint $table) {
             $table-> integer ('macd')->unsigned();
-            $table-> integer ('masp')->unsigned();
+            $table-> integer ('maloai')->unsigned();
             $table-> foreign('macd')->references('macd')-> on('chude')->onDelete('cascade');
-            $table -> foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');
-            $table-> primary(['macd', 'masp']);
+            $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
+            $table-> primary(['macd', 'maloai']);
             $table->timestamps();
         });
     }

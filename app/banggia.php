@@ -13,8 +13,8 @@ class banggia extends Model
     {
     	return $this->belongsTo('App\chuongtrinhkhuyenmai');
     }
-    public function sanpham()
+    public function loaisanpham()
     {
-    	return $this->belongsTo('App\sanpham');
+    	return $this->belongsTo('App\loaisanpham');
     }
 }

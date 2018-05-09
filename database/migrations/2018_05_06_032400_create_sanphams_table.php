@@ -17,7 +17,6 @@ class CreateSanphamsTable extends Migration
             $table->increments('masp');
             $table->string('tensp');
             $table->integer('trangthai');
-            $table->text('mota');
             $table->timestamps();
         });
     }

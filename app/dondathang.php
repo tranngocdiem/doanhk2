@@ -10,7 +10,7 @@ class dondathang extends Model
     public $timestamps = true;
     protected $fillable = ['maddh','ngaydat','ngaygiao','diachigiao','trangthai','matk'];
     public function loaisanpham(){
-    	return $this->belongsToMany('App\loaisanpham','chitietdonhang','maddh','maloai');
+    	return $this->belongsToMany('App\loaisanpham','chitietdonhang','maddh','maloai')->using('App\chitietdonhang');
     }
     public function taikhoan(){
     	return $this->belongsTo('App\taikhoan');

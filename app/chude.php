@@ -9,7 +9,7 @@ class chude extends Model
 	public $timestamps = true;
     protected $table = 'chude';
     protected $filltable = ['macd', 'tencd'];
-    public function sanpham(){
-    	return $this->belongsToMany('App\sanpham','sanpham_chude','macd','masp');
+    public function loaisanpham(){
+    	return $this->belongsToMany('App\loaisanpham','sanpham_chude','macd','maloai')->using('App\sanpham_chude');
     }
 }
