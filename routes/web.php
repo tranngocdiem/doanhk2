@@ -25,3 +25,8 @@ Route::get('/re', function () {
     return view('Taikhoan.register');
 });
 
+Route::get('/ad', function () {
+    return view('Admin._layoutadmin');
+});
+
+
