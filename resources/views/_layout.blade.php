@@ -247,6 +247,13 @@
           $(".row1").toggleClass("active");
 
         });
+        $(".nav-phong").mouseover(function() {
+          $(this).closest('li').find('a').addClass("active1");
+        });
+
+        $(".nav-phong").mouseout(function() {
+          $("a").removeClass("active1");
+        });
         
         
       });
