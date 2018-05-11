@@ -2,6 +2,7 @@
 @section('title') 
 Trang chủ
 @stop
+
 @section('content')
     <!--<section class="jumbotron text-center" id="album">
       <div class="container">

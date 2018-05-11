@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@section('title') Nội thất @show</title>
+  
   @section('link')
   <link rel="stylesheet" href="css/Home/home.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -13,6 +14,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+ 
 </head>
 <body>
    <!-- header!-->
@@ -72,18 +74,128 @@
             <ul class="cart-icon">
               <li><a href="" class="fas fa-shopping-cart""><i>Giỏ hàng</i></a></li>
               <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
-              <li class="icon3"><a href="" class="fas fa-sign-in-alt"><i>Đăng nhập</i></a></li>
+              <div class="dropdown">
+              <li><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
+                <div class="dropdown-content">
+                      <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
+                      <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
+               </div>
+              </div>
+
+              </li>
             </ul>
+        </div>
           </div>
 
         </div>
-      </div>
     </div>
+
    
   </header>
+  <!--Hiển thị modal đăng nhập-->
+   <div class="container">
+  <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Đăng nhập</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Tên đăng nhập</label>
+            <input class="form-control" id="txtusername" type="email" aria-describedby="emailHelp" placeholder="Enter email" style="min-width: 100%">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Mật khẩu</label>
+            <input class="form-control" id="txtpassword" type="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Nhớ mật khẩu</label>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-block" href="index.html">Đăng nhập</a>
+          <div class="text-center">
+          <a class="d-block small mt-3" href="#">Đăng kí</a>
+          <a class="d-block small" href="forgot-password.html">Quên mật khẩu</a>
+          </div>
+        </form>
+     </div>
+    </div>      
+    </div>
+  </div>
+  
+</div>
+
+<!--Hiển thị modal đăng kí-->
+ <div class="container">
+  <div class="modal fade" id="modalregister" role="dialog">
+  <div class="modal-dialog">
+    <!--Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Đăng kí</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form>
+          
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleInputName">Họ và tên</label>
+                <input class="form-control" id="txtten" type="email" aria-describedby="nameHelp" placeholder="Nhập tên">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleInputLastName">Địa chỉ</label>
+                <input class="form-control" id="txtdiachi" type="email" aria-describedby="nameHelp" placeholder="Nhập địa chỉ">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleInputLastName">Số điện thoại</label>
+                <input class="form-control" id="txtdienthoai" type="email" aria-describedby="nameHelp" placeholder="Nhập số điện thoại">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleInputEmail1">Tên đăng nhập</label>
+                <input class="form-control" id="txtusername_re" type="email" aria-describedby="emailHelp" placeholder="Nhập tên đăng nhập">
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleInputPassword1">Mật khẩu</label>
+                <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <label for="exampleConfirmPassword">Nhập lại mật khẩu</label>
+                <input class="form-control" id="txtconfirm_pwd" type="password" placeholder="Xác nhận mật khẩu">
+              </div>
+            </div>
+              <br>
+              <a class="btn btn-primary btn-block" href="login.html">Đăng kí</a>
+        </form>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
   <!-- end header!-->
   <!--<div class = "content">
-
+   
   
 
   </div>-->
