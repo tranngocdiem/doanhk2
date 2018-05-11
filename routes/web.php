@@ -29,4 +29,7 @@ Route::get('/ad', function () {
     return view('Admin._layoutadmin');
 });
 
+Route::get('/ctsp', function () {
+    return view('Sanpham.chitietsp');
+});
 
