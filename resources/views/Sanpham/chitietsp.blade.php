@@ -44,20 +44,20 @@
         </div>
       </div>
       <div>
-                <ul class="nav nav-tabs" id="chitiet">
-              <li class="nav-item">
-                <a href="#" class="nav-link">Active</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Active</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Active</a>
-              </li>
-              <li class="nav-item ">
-                <a href="#" class="nav-link">Active</a>
-              </li>
-            </ul>
+        <ul class="nav nav-tabs" id="chitiet">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Active</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Active</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Active</a>
+          </li>
+          <li class="nav-item ">
+            <a href="#" class="nav-link">Active</a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="col-6" id="thongtinsp">
@@ -68,6 +68,8 @@
         <h3 style="color: coral;">Giá: </h3>
       </div>
       <div class="row">
+        
+          <div class="QuantityPicker display-inline-block l-margin-right"><select id="quantity" name="quantity" class="QuantityPicker-select font-semibold"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select><span aria-hidden="false" tabindex="" class="fas fa-chevron-down" alt="Icon for down-arrow"></span></div>
         <button id="btn-themvaogio">Thêm vào giỏ hàng</button>
       </div>
 
