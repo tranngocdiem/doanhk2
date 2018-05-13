@@ -1,0 +1,72 @@
+.breadcrumb{
+	background: none;
+}
+#hinhanh{
+	border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+#thongtinsp{
+	border-top: 1px solid #ddd;
+	text-indent: 1.5em;
+	padding-top: 1.5em;
+}
+#chitiet{
+	border: 1px solid #ddd!important;
+
+}
+#btn-themvaogio{
+	background-color: #0065ff;  
+	color: #fff;
+	padding: 0 40px;
+	-webkit-font-smoothing: antialiased;
+    height: 40px;
+	border-radius: 20px;
+	line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+    margin-left: 1.5em;
+    border: 0;
+        transition-property: background-color,opacity,border-color,color;
+    transition-duration: .12s;
+    transition-timing-function: ease-out;
+}
+#btn-themvaogio:hover
+{
+	background-color: #7fb2ff;
+}
+.QuantityPicker-select {
+    min-width: 71px;
+    height: 46px;
+    
+    border-bottom: 2px solid #9d9fa2;
+    border-radius: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align-last: center;
+    background: none;
+    outline: none;
+    -webkit-appearance: none;
+    float:left; 
+    font-weight: 700!important;
+	
+}
+
+.QuantityPicker {
+    position: relative;
+}
+.QuantityPicker .fa-chevron-down {
+    margin-left: -80px!important;
+    padding: 10px 20px;
+    pointer-events: none;
+    font-size: 14px;
+    font-size: 1rem;
+	color: #A4A4A4;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
