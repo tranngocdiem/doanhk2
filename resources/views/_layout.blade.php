@@ -72,7 +72,7 @@
           </div>
           <div>
             <ul class="cart-icon">
-              <li><a href="" class="fas fa-shopping-cart""><i>Giỏ hàng</i></a></li>
+              <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
               <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
               <div class="dropdown">
               <li><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
@@ -93,81 +93,8 @@
    
   </header>
   <!--Hiển thị modal đăng nhập-->
-   <div class="container">
-  <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Đăng nhập</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-      <div class="card-body">
-        <form>
-          {{csrf_field()}}
-          <div class="form-group">
-            <label for="exampleInputEmail1">Tên đăng nhập</label>
-            <input class="form-control" id="txtusername" type="email" aria-describedby="emailHelp" placeholder="Enter email" style="min-width: 100%">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Mật khẩu</label>
-            <input class="form-control" id="txtpassword" type="password" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Nhớ mật khẩu</label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block btn-large">Đăng nhập</button>
-          <a class="d-block small" href="forgot-password.html">Quên mật khẩu</a>
-          </div>
-        </form>
-     </div>
-    </div>      
-    </div>
-  </div>
-  
-</div>
+   
 
-<!--Hiển thị modal đăng kí-->
- <div class="container">
-  <div class="modal fade" id="modalregister" role="dialog">
-  <div class="modal-dialog">
-    <!--Modal content-->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Đăng kí</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <form method="post" action="{!! url('/register') !!}">
-                {{csrf_field()}}
-                <div class="form-group">
-                <label for="exampleInputName">Họ và tên</label>
-                <input class="form-control" id="txtten" type="name" aria-describedby="nameHelp" placeholder="Nhập tên" name="name" required >
-                <label for="exampleInputLastName">Địa chỉ</label>
-                <input class="form-control" id="txtdiachi" type="name" aria-describedby="nameHelp" placeholder="Nhập địa chỉ" name="="address" required>
-                <label for="exampleInputLastName">Số điện thoại</label>
-                <input class="form-control" id="txtdienthoai" type="number" aria-describedby="nameHelp" placeholder="Nhập số điện thoại" name="telephonenumber" required>
-              </div>
-                <label for="exampleInputEmail1" >Tên đăng nhập</label>
-                <input class="form-control" id="txtusername_re" type="name" aria-describedby="emailHelp" placeholder="Nhập tên đăng nhập"name ="username" required>
-                <label for="exampleInputPassword1">Mật khẩu</label>
-                <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu" name="password" required>
-                <label for="exampleConfirmPassword">Nhập lại mật khẩu</label>
-                <input class="form-control" id="txtconfirm_pwd" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd" required>
-              <br>
-                <button type="submit" class="btn btn-primary btn-block btn-large">Đăng kí</button>
-        </form>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
   <!-- end header!-->
   <!--<div class = "content">
    
@@ -284,6 +211,7 @@
 
 </script>
 @show
+
 
 </body>
 </html>

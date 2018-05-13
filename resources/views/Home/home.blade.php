@@ -4,16 +4,8 @@ Trang chủ
 @stop
 
 @section('content')
-    <!--<section class="jumbotron text-center" id="album">
-      <div class="container">
-        <h1 class="jumbotron-heading" style="font-family: Old Standard TT;font-style:italic;"><strong>TỔ ẤM CỦA NGƯỜI TINH TẾ</strong></h1>
-        <p class="lead text-muted" >TỔ ẤM CỦA NGƯỜI TINH TẾ</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
-    </section>-->
+    @include('Taikhoan.loginform')
+    @include ('Taikhoan.registerform')
     <div style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/background.jpg);
   background-size:cover;height: 100vh;">
     <div class="contain">
@@ -173,3 +165,8 @@ Trang chủ
       </div>
     </div>
 @stop
+@section('js')
+@parent
+<script type="text/javascript" src="{!! url('/js/Taikhoan/registerform.js') !!}"></script>
+@stop
+
