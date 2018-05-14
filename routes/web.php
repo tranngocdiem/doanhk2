@@ -33,3 +33,6 @@ Route::get('/ctsp', function () {
     return view('Sanpham.chitietsp');
 });
 
+Route::get('/giohang', function () {
+    return view('Sanpham.giohang');
+});
