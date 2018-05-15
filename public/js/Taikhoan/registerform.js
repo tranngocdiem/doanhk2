@@ -4,13 +4,12 @@ function validate (){
     		var name = $("#txtname").val();
     		var address = $("#txtaddress").val();
     		var telephonenumber = $("#txtnumber").val();
-    		var tentaikhoan = $("#txttaikhoan").val();
-    		var matkhau = $("#txtmatkhau").val();
+    		var username = $("#txtusername").val();
+    		var password = $("#txtpassword").val();
     		var confirmpwd = $("#txtconfirmpwd").val();
     		if(username=="" || password=="" || address == ""|| telephonenumber=="" || name==""|| confirmpwd=="")
 		{
 				alert("Bạn phải nhập đầy đủ các trường!");
-			 	//document.getElementById("error").innerHTML="Bạn phải nhập đầy đủ các trường!"
 			 	return false;
 	
 		}

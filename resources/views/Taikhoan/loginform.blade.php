@@ -15,11 +15,11 @@
           {{csrf_field()}}
           <div class="form-group">
             <label for="exampleInputEmail1">Tên đăng nhập</label>
-            <input class="form-control" id="txtusername" type="name" aria-describedby="emailHelp" placeholder="Enter email" style="min-width: 100%" name="username" required="false">
+            <input class="form-control" type="name" aria-describedby="emailHelp" placeholder="Enter email" style="min-width: 100%" name="username" required="false">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Mật khẩu</label>
-            <input class="form-control" id="txtpassword" type="password" placeholder="Password" name="password">
+            <input class="form-control" type="password" placeholder="Password" name="password">
           </div>
           <label id="error" style="color: red"></label>
           <div class="form-group">
