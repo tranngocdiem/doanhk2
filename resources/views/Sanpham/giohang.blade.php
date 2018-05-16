@@ -31,7 +31,7 @@
                         <span class="badge badge-success">Còn hàng</span>
                       </div>
                       <div class="btn-group btn-group-sm">
-                        <button class="btn btn-light py-0 d-none d-md-block">Thêm vào yêu thích</button>
+                        <button class="btn btn-light py-0 d-none d-md-block">Cập nhật số lượng</button>
                         <button class="btn btn-light py-0" id="del">Xóa</button>
                       </div>
                     </div>
@@ -39,9 +39,9 @@
                 </td>
                 <td style="vertical-align: middle;" class="text-center">
                   <div style="width: 120px" class="input-group input-group-sm input-group-qty d-inline-flex mb-2">
-                    <div class="input-group-prepend"><button class="btn btn-light btn-down" type="button"><i class="fas fa-chevron-down"></i></button></div>
-                    <input  type="text" class="form-control text-center border-light" aria-label="Quantity" value="1" data-min="1" data-max="10">
-                    <div class="input-group-append"><button class="btn btn-light btn-up" type="button"><i class="fas fa-chevron-up"></i></button></div>
+                    <div class="input-group-prepend"><button class="btn btn-light btn-down" type="button"><i id="down" class="fas fa-chevron-down"></i></button></div>
+                    <input id="quantity" type="text" class="form-control text-center border-light" aria-label="Quantity" value="1" min="1">
+                    <div class="input-group-append"><button class="btn btn-light btn-up" type="button"><i id="up" class="fas fa-chevron-up"></i></button></div>
                   </div>
                   <div class="d-block d-sm-none">
                     <small>Subtotal </small><div class="text-theme">$13.50</div>
@@ -68,7 +68,7 @@
                         <span class="badge badge-success">Còn hàng</span>
                       </div>
                       <div class="btn-group btn-group-sm">
-                        <button class="btn btn-light py-0 d-none d-md-block">Thêm vào yêu thích</button>
+                        <button class="btn btn-light py-0 d-none d-md-block">Cập nhật số lượng</button>
                         <button class="btn btn-light py-0" id="del">Xóa</button>
                       </div>
                     </div>
@@ -77,7 +77,7 @@
                 <td style="vertical-align: middle;" class="text-center">
                   <div style="width: 120px" class="input-group input-group-sm input-group-qty d-inline-flex mb-2">
                     <div class="input-group-prepend"><button class="btn btn-light btn-down" type="button"><i class="fas fa-chevron-down"></i></button></div>
-                    <input  type="text" class="form-control text-center border-light" aria-label="Quantity" value="1" data-min="1" data-max="10">
+                    <input type="text" class="form-control text-center border-light" aria-label="Quantity" value="1" min="1">
                     <div class="input-group-append"><button class="btn btn-light btn-up" type="button"><i class="fas fa-chevron-up"></i></button></div>
                   </div>
                   <div class="d-block d-sm-none">
@@ -92,8 +92,9 @@
                   </ul>
                 </td>
                 <td style="vertical-align: middle;" class="d-none d-sm-table-cell"><span class="text-theme">$13.50</span></td>
-              </tr> 
-
+              </tr>
+              
+              
             </tbody>
           </table>
         </div>
@@ -101,13 +102,28 @@
     </div>
   </div>
 </div>
+<!---->
 <script type="text/javascript">
   $(document).ready(function(){
     $(".table").on('click','#del',function(){
       $(this).closest('tr').remove();
     });
+    $('.btn-up').click(function () {
+
+      if ($(this).parent('div').prev("input").first().val() < 100) {
+        $(this).parent('div').prev("input").first().val(+$(this).parent('div').prev("input").first().val() + 1);
+      }
+    });
+    $('.btn-down').click(function () {
+      if ($(this).parent('div').next("input").first().val() > 1) {
+
+        $(this).parent('div').next("input").first().val(+$(this).parent('div').next("input").first().val() - 1);
+      }
+    });
   });
 </script>
+
+
 
 @stop
 
