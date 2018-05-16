@@ -14,18 +14,18 @@
                 {{csrf_field()}}
                 
                 <label >Họ và tên</label>
-                <input class="form-control" id="txtname" type="name" placeholder="Nhập tên" name="name" 
+                <input class="form-control" id="txtname_re" type="name" placeholder="Nhập tên" name="name" 
                  > 
                 <label >Địa chỉ</label>
-                <input class="form-control" id="txtaddress" type="name"  placeholder="Nhập địa chỉ" name="address">
+                <input class="form-control" id="txtaddress_re" type="name"  placeholder="Nhập địa chỉ" name="address">
                 <label ">Số điện thoại</label>
-                <input class="form-control" id="txtnumber" type="number" placeholder="Nhập số điện thoại" name="telephonenumber">
+                <input class="form-control" id="txtnumber_re" type="number" placeholder="Nhập số điện thoại" name="telephonenumber">
                 <label >Tên đăng nhập</label>
-                <input class="form-control" id="txtusername" type="name"  placeholder="Nhập tên đăng nhập"name ="username" >
+                <input class="form-control" id="txtusername_re" type="name"  placeholder="Nhập tên đăng nhập"name ="username" >
                 <label for="exampleInputPassword1">Mật khẩu</label>
-                <input class="form-control" id="txtpassword" type="password" placeholder="Nhập mật khẩu" name="password" >
+                <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu" name="password" >
                 <label for="exampleConfirmPassword">Nhập lại mật khẩu</label>
-                <input class="form-control" id="txtconfirmpwd" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
+                <input class="form-control" id="txtconfirmpwd_re" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
                 <label id="error" style="color: red"></label>
               <br>
                 <button type="submit" class="btn btn-primary btn-block btn-large" id="register" onclick="return validate()">Đăng kí</button>

@@ -30,3 +30,19 @@ function validate (){
     	
 		return true;
     }
+
+  $('#txtconfirmpwd_re').focusout(function(){
+  			$('#txtconfirmpwd_re ~ .errconfirm').remove();
+			var password = $("#txtpassword_re").val();
+    		var confirmpwd = $("#txtconfirmpwd_re").val();
+  		if(password!=confirmpwd)
+			{
+				//alert("test");
+				$('#txtconfirmpwd_re').after('<label class = "errconfirm" style="color: red">Mật khẩu phải trùng nhau</label>');
+				document.getElementById('txtpassword_re').value = '';
+				document.getElementById('txtpassword_re').focus();
+				document.getElementById('txtconfirmpwd_re').value = '';
+
+				return false;
+			}
+  });
