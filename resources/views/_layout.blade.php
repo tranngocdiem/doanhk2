@@ -14,88 +14,86 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
- 
+
 </head>
 <body>
-   <!-- header!-->
-  <header>
-    <div>
-      <div class="hide-content-1" aria-hidden="true">
-        <nav class="sidebar">
-          
-          <div class="menu">
-            <a href="{!! url('/') !!}">
-              <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 100%;height: 140px;" alt="" id="logo"/>
-            </a>
+ <!-- header!-->
+ <header>
+  <div>
+    <div class="hide-content-1" aria-hidden="true">
+      <nav class="sidebar">
 
-            <ul>
-              <li><a href="{!! url('/') !!}">Trang chủ</a></li>
-              <li><a href="">Dịch vụ</a></li>
-              <li><a href="{!! url('/sp') !!}">Sản phẩm</a></li>
-              <li><a href="#contact">Liên hệ</a></li>
-              <li><a href="">Tin tức</a></li>
-              <li><a href="">Trợ giúp</a></li>
-            </ul>
-            <ul class="social-icon" >
-              <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href=""><i class="fab fa-twitter"></i></a></li>
-              <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-              <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-              <li><a href=""><i class="fab fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="row1" style="background-color: rgba(0,11,12,0.8);">
-        <div class="">
+        <div class="menu">
+          <a href="{!! url('/') !!}">
+            <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 100%;height: 140px;" alt="" id="logo"/>
+          </a>
 
-          <div class="menu-icon">
-            <span class="fa fa-bars fa-2x"></span>
-          </div>
-
-
-          <div class="backgrSearch">
-            <form class="mainForm">
-
-              <button class="btn-select">
-                <select>
-                  <option>All</option>
-                </select>
-              </button>
-
-              <input type ="text" name = "search" placeholder = "Search">
-              <button class="btn-search"><i class="fas fa-search"></i></button>
-
-            </form>
-
-
-          </div>
-          <div>
-            <ul class="cart-icon">
-              <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
-              <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
-              <div class="dropdown">
-              <li><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
-                <div class="dropdown-content">
-                      <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
-                      <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
-               </div>
-              </div>
-
-              </li>
-            </ul>
+          <ul>
+            <li><a href="{!! url('/') !!}">Trang chủ</a></li>
+            <li><a href="">Dịch vụ</a></li>
+            <li><a href="{!! url('/sp') !!}">Sản phẩm</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li><a href="">Tin tức</a></li>
+            <li><a href="">Trợ giúp</a></li>
+          </ul>
+          <ul class="social-icon" >
+            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+          </ul>
         </div>
-          </div>
-
-        </div>
+      </nav>
     </div>
+    <div class="row1" style="background-color: rgba(0,11,12,0.8);">
+      <div class="">
 
-   
-  </header>
-  <!--Hiển thị modal đăng nhập-->
-   
+        <div class="menu-icon">
+          <span class="fa fa-bars fa-2x"></span>
+        </div>
 
-  <!-- end header!-->
+
+        <div class="backgrSearch">
+          <form class="mainForm">
+
+            <button class="btn-select">
+              <select>
+                <option>All</option>
+              </select>
+            </button>
+
+            <input type ="text" name = "search" placeholder = "Search">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+
+          </form>
+
+
+        </div>
+        <div>
+          <ul class="cart-icon">
+            <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
+            <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
+
+            <li class="dropdown"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
+              <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
+                <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
+                <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</header>
+<!--Hiển thị modal đăng nhập-->
+
+
+<!-- end header!-->
   <!--<div class = "content">
    
   
@@ -103,35 +101,35 @@
   </div>-->
   @section('content')
   @show
-    <footer id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Liên hệ</h2>
-            <hr class="my-4">
-            <p class="mb-5">Địa chỉ: DTQfurniture, khu phố 6, phường Linh Trung, quận Thủ Đức, TPHCM</p>
-             <p class="mb-5">Giờ mở cửa: 8:00 AM - 20:00 PM</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fas fa-phone"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-           <!-- <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "></i>-->
-            <p>
-              <i class="fas fa-envelope"></i>
-              <br>
-              <a href="mailto:your-email@your-domain.com">dtqfurniture@gmail.com</a>
-            </p>
-          </div>
+  <footer id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Liên hệ</h2>
+          <hr class="my-4">
+          <p class="mb-5">Địa chỉ: DTQfurniture, khu phố 6, phường Linh Trung, quận Thủ Đức, TPHCM</p>
+          <p class="mb-5">Giờ mở cửa: 8:00 AM - 20:00 PM</p>
         </div>
       </div>
-    </footer>
-  <!--file js của từng trang-->
-  @section('js')
-  <script type="text/javascript">
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone"></i>
+          <p>123-456-6789</p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+         <!-- <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "></i>-->
+         <p>
+          <i class="fas fa-envelope"></i>
+          <br>
+          <a href="mailto:your-email@your-domain.com">dtqfurniture@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--file js của từng trang-->
+@section('js')
+<script type="text/javascript">
 
       // Menu-toggle button
 

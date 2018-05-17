@@ -102,7 +102,7 @@
     </div>
   </div>
 </div>
-<!---->
+<!--parent ở đây dùng để lấy giá trị thẻ prev or next của thẻ chứa của button là div-->
 <script type="text/javascript">
   $(document).ready(function(){
     $(".table").on('click','#del',function(){
