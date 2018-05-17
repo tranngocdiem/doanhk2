@@ -23,7 +23,7 @@ class chude extends Seeder
     {
         //dữ liệu test để thêm vào database
     	// thêm vào database
-    	DB::table("chude")->insert([
+    	/*DB::table("chude")->insert([
     		array("tencd" =>"PHÒNG KHÁCH" ),
             array("tencd" =>"PHÒNG NGỦ"),
             array("tencd" =>"PHÒNG ĂN" ),
@@ -58,9 +58,12 @@ class chude extends Seeder
             array("macd" =>"3" , "maloai"=>"2" ),
             array("macd" =>"5" , "maloai"=>"6"),
 
-      ]);
-
-
+      ]);*/
+         DB::table("thongtincanhan")->insert([
+            array("hoten" =>"Trần Thị Ngọc Diễm" , "sdt"=>"1234567" ,"diachi"=>"TPHCM")]);
+        DB::table("taikhoan")->insert([
+            array("tentk" =>"ngdiem" , "matkhau"=>"123" ,"mattcn"=>"1")]);
     }
+
 }
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class sanpham extends Model
 {
-    public $timestamps = true;
+    public $timestamps = false;
     protected $table = 'sanpham';
     protected $fillable = ['masp','tensp','trangthai'];
     

@@ -16,8 +16,8 @@ class CreateTaikhoansTable extends Migration
         Schema::create('taikhoan', function (Blueprint $table) {
             $table->increments('matk');
             $table->string('tentk')->unique();
-            $table->string('password');
-            $table->integer('loaitk');
+            $table->string('matkhau');
+            $table->integer('loaitk')->default('1');
             $table->integer('mattcn')->unsigned();
             $table->foreign('mattcn')->references('mattcn')->on('thongtincanhan')->onDelete('cascade');
             $table->timestamps();
