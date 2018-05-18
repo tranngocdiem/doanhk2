@@ -93,8 +93,23 @@
                 </td>
                 <td style="vertical-align: middle;" class="d-none d-sm-table-cell"><span class="text-theme">$13.50</span></td>
               </tr>
+              <tr>
+              <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></td>
+              <td class="d-none d-sm-table-cell"></td>
+              <td style="text-align: center;" class="hidden-xs"><strong>Thành tiền :</strong>
+              <div class="d-block d-sm-none">
+                    <div class="text-theme">$1.99</div>
+                  </div>
+                </td>
+              <td class="d-none d-sm-table-cell"><strong> $1.99</strong></td>
               
-              
+            </tr>
+            <tr>
+              <td class="d-none d-sm-table-cell"></td>
+              <td class="d-none d-sm-table-cell"></td>
+              <td><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
+              <td class="d-none d-sm-table-cell"></td>
+            </tr>
             </tbody>
           </table>
         </div>
