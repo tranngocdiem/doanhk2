@@ -36,3 +36,11 @@ Route::get('/ctsp', function () {
 Route::get('/giohang', function () {
     return view('Sanpham.giohang');
 });
+
+Route::group(['prefix'=>'account'],function(){
+	// tạo tài khoản
+	Route::any('regis','LoginController@Rigis');
+	Route::any('checkusername','RegisterController@Checkusername');
+	
+
+});

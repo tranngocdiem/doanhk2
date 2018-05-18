@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\taikhoan as Taikhoan;
-use App\thongtincanhan as Thongtincanhan;
+use App\taikhoan as taikhoan;
+use App\thongtincanhan as thongtincanhan;
 
 
 class RegisterController extends Controller
@@ -16,7 +16,7 @@ class RegisterController extends Controller
                 $username = $_POST['username'];
             }
             else return '0';
-            $user = taikhoan::where([['tentk','=','diem']])->get();
+            $user = taikhoan::where([['tentk','=',$username]])->get();
             if(count($user > 0))
             {
                 return '0';
@@ -56,7 +56,7 @@ class RegisterController extends Controller
                 return '0';
             }
             //Tạo thông tin cá nhân
-            $thongtincanhan = new Thongtincanhan;
+            $thongtincanhan = new thongtincanhan;
             $thongtincanhan->hoten = $name;
             $thongtincanhan->diachi = $address;
             $thongtincanhan->sdt = $telephonenumber;
@@ -64,10 +64,10 @@ class RegisterController extends Controller
                 return '0';
             }
             //Tạo thông tin tài khoản
-            $taikhoan = new Taikhoan;
+            $taikhoan = new taikhoan;
             $taikhoan->tentk = $username;
             $taikhoan->matkhau = $password;
-            $taikhoan->mattcn = $Newthongtincanhan->mattcn;
+            $taikhoan->mattcn = $thongtincanhan->mattcn;
             if (!$taikhoan->save()) {
                 return '0';
             }

@@ -30,6 +30,27 @@ function validate (){
     	
 		return true;
     }
+   function CheckInvalidUsername($username)
+   {
+   		var _token = $('meta[name="_token"]').attr('content');
+		$.ajax({
+			type: 'post',
+			url: url + '/account/checkusername',
+			cache: false,
+			data: {'_token': _token,'username':$username},
+		})
+		.done(function($re) {
+			if($re!=='1'){
+				return true;
+			}else{
+				return false;
+			}
+		})
+		.fail(function(){
+			return false;
+		});
+
+   }
 
   $('#txtconfirmpwd_re').focusout(function(){
   			$('#txtconfirmpwd_re ~ .errconfirm').remove();
@@ -45,4 +66,22 @@ function validate (){
 
 				return false;
 			}
+  });
+
+  $('#txtusername_re').focusout(function(){
+  	       $('txtusername_re ~ .errusername').remove();
+  	       //kiểm tra có để trống hay không?
+  	       if($(this).val()=='')
+  	       {
+  	       		$('#txtusername_re').after('<label class = "errusername" style="color: red">Chưa nhập tên đăng nhập</label>');
+  	       		return;
+  	       }
+  	       //kiểm tra tên đăng nhập đã tồn tại chưa
+  	       if(CheckInvalidUsername($(this).val()) == false)
+  	       {
+  	       		$('#txtusername_re').after('<label class = "errusername" style="color: red">Tên đăng nhập đã tồn tại</label>');
+  	       }
+  	       
+
+
   });
