@@ -22,11 +22,10 @@
                 <input class="form-control" id="txtnumber_re" type="number" placeholder="Nhập số điện thoại" name="telephonenumber">
                 <label >Tên đăng nhập</label>
                 <input class="form-control" id="txtusername_re" type="name"  placeholder="Nhập tên đăng nhập"name ="username" >
-                <label for="exampleInputPassword1">Mật khẩu</label>
+                <label >Mật khẩu</label>
                 <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu" name="password" >
-                <label for="exampleConfirmPassword">Nhập lại mật khẩu</label>
+                <label >Nhập lại mật khẩu</label>
                 <input class="form-control" id="txtconfirmpwd_re" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
-                <label id="error" style="color: red"></label>
               <br>
                 <button type="submit" class="btn btn-primary btn-block btn-large" id="register" onclick="return validate()">Đăng kí</button>
         </form>

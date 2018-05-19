@@ -12,16 +12,18 @@ class RegisterController extends Controller
     //Kiểm tra username đã tồn tại hay chưa
     public function Checkusername()
     {
-            if (isset($_POST['username'])) {
-                $username = $_POST['username'];
+        $Param = array_merge($_POST,$_GET);
+        
+            if (isset($Param['username'])) {
+                $username = $Param['username'];
+                $user = taikhoan::where([['tentk','=',$username]])->get();
+                if(count($user) > 0)
+                {
+                    return '0';
+                }
             }
-            else return '0';
-            $user = taikhoan::where([['tentk','=',$username]])->get();
-            if(count($user > 0))
-            {
-                return '0';
-            }
-            else return '1';
+            return '1';
+        
     }
     public function Register (){
             //lấy tên tài khoản
