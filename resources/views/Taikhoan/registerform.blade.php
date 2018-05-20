@@ -10,9 +10,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
-        <form method="post" action="#" id="registerform">
-                {{csrf_field()}}
-                
+        <form method="post" id="registerform">   
                 <label >Họ và tên</label>
                 <input class="form-control" id="txtname_re" type="name" placeholder="Nhập tên" name="name" 
                  > 
@@ -22,12 +20,16 @@
                 <input class="form-control" id="txtnumber_re" type="number" placeholder="Nhập số điện thoại" name="telephonenumber">
                 <label >Tên đăng nhập</label>
                 <input class="form-control" id="txtusername_re" type="name"  placeholder="Nhập tên đăng nhập"name ="username" >
+                <div class="form-group">
                 <label >Mật khẩu</label>
                 <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu" name="password" >
+                </div> 
+                
                 <label >Nhập lại mật khẩu</label>
                 <input class="form-control" id="txtconfirmpwd_re" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
+                 
               <br>
-                <button type="submit" class="btn btn-primary btn-block btn-large" id="register" onclick="return validate()">Đăng kí</button>
+                <input type="submit" class="btn btn-primary btn-block btn-large" id="btnregister" value="Đăng kí">
         </form>
     </div>
   </div>
