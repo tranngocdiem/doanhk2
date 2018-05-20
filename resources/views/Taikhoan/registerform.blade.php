@@ -10,27 +10,35 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
-        
+       <form id="frmregistration">
+             <div class="form-group">
                 <label >Họ và tên</label>
                 <input class="form-control" id="txtname_re" type="name" placeholder="Nhập tên" name="name" 
                  > 
+              </div>
+              <div class="form-group">
                 <label >Địa chỉ</label>
                 <input class="form-control" id="txtaddress_re" type="name"  placeholder="Nhập địa chỉ" name="address">
+              </div>
+              <div class="form-group">
                 <label ">Số điện thoại</label>
                 <input class="form-control" id="txtnumber_re" type="number" placeholder="Nhập số điện thoại" name="telephonenumber">
+              </div>
+              <div class="form-group">
                 <label >Tên đăng nhập</label>
                 <input class="form-control" id="txtusername_re" type="name"  placeholder="Nhập tên đăng nhập"name ="username" >
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label >Mật khẩu</label>
                 <input class="form-control" id="txtpassword_re" type="password" placeholder="Nhập mật khẩu" name="password" >
-                </div> 
-                
+              </div> 
+              <div class="form-group">
                 <label >Nhập lại mật khẩu</label>
                 <input class="form-control" id="txtconfirmpwd_re" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
-                 
-              <br>
-                <input type="submit" class="btn btn-primary btn-block btn-large" id="btnregister" value="Đăng kí">
-        
+              </div>
+                <button id="btnregister" type="button" class="btn btn-info">Đăng kí</button>
+        </form>
+     
     </div>
   </div>
   </div>

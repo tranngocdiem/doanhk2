@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use App\taikhoan as taikhoan;
 use App\thongtincanhan as thongtincanhan;
 
-
-class RegisterController extends Controller
+class AccountController extends Controller
 {
-    //Kiểm tra username đã tồn tại hay chưa
     public function Checkusername()
     {
 
@@ -50,7 +48,7 @@ class RegisterController extends Controller
                 $taikhoan = new taikhoan;
                 $taikhoan->tentk = $user['username'];
                 $taikhoan->matkhau = md5($user['password']);
-                $taikhoan->mattcn = '2';
+                $taikhoan->mattcn = thongtincanhan::orderBy('mattcn', 'desc')->first()->mattcn;
                 if (!$taikhoan->save()) 
                 {
                     return '0';
@@ -59,32 +57,6 @@ class RegisterController extends Controller
 
             }
             else return '0';
-            /*if(isset($Param['info']))
-            {
-                $user = $Param['info'];
-                $countuser =  taikhoan::where([['tentk','=',$user['username']]])->get();
-                if(count($countuser) > 0)
-                 {
-                    return '0';
-                 }
-            //Tạo thông tin cá nhân
-                $thongtincanhan = new thongtincanhan;
-                $thongtincanhan->hoten = $user['name'];
-                $thongtincanhan->diachi =$user['address'];
-                $thongtincanhan->sdt = $user['telephonenumber'];
-                if (!$thongtincanhan->save()) {
-                    return '0';
-                }
-            //Tạo thông tin tài khoản
-                $taikhoan = new taikhoan;
-                $taikhoan->tentk = $user['username'];
-                $taikhoan->matkhau = md5($user['password']);
-                $taikhoan->mattcn = $thongtincanhan->mattcn;
-                if (!$taikhoan->save()) 
-                {
-                    return '0';
-                }
-            }*/
             
     }
 }

@@ -1,23 +1,5 @@
 //Kiểm tra các trường của form không trống
-function validate (){
-    	
-    		var name = $("#txtname").val();
-    		var address = $("#txtaddress").val();
-    		var telephonenumber = $("#txtnumber").val();
-    		var username = $("#txtusername").val();
-    		var password = $("#txtpassword").val();
-    		var confirmpwd = $("#txtconfirmpwd").val();
-    		if(username=="" || password=="" || address == ""|| telephonenumber=="" || name==""|| confirmpwd=="")
-			{
-				
-			 	return false;
-	
-			}
-			return true;
-		
-		
-    }
-    //
+
  function CheckInvalidUsername($username,$result)
    {
    		
@@ -45,13 +27,7 @@ function validate (){
 
    function Registration($name,$address,$telephonenumber,$username,$password,$confirmpwd,$result)
    {
-   			if($username=="" || $password=="" || $address == ""|| $telephonenumber=="" || $name==""|| $confirmpwd=="")
-			{
-				
-			 	$('#btnregister').after('<label class = "errregister" style="color: red">Vui lòng nhập đủ thông tin</label>');	
-			 	return;
-	
-			}
+   			
 			$listparam = {  'name': $name,
 							'address': $address,
 							'telephonenumber': $telephonenumber,
@@ -68,7 +44,12 @@ function validate (){
 					data: {'_token': _token,'info':$listparam},
 					})
 			.done(function($re) {
-				alert($re);
+				if($re!=='0'){
+					return $result(true);
+				}
+				else{
+					return $result(false);
+				}
 			})
 			.fail(function() {
 				return false;
@@ -110,13 +91,21 @@ function validate (){
   	       
   });
   $('#btnregister').on('click',function(){
-  			$('#txtusername_re ~ .errregister').remove();
+  			$('#btnregister ~ .errregister').remove();
+  			
   			$name = $('#txtname_re').val();
   			$address = $('#txtaddress_re').val();
   			$telephonenumber = $('#txtnumber_re').val();
   			$username = $('#txtusername_re').val();
   			$password = $('#txtpassword_re').val();
   			$confirmpwd = $('#txtconfirmpwd_re').val();
+  			if($username=="" || $password=="" || $address == ""|| $telephonenumber=="" || $name==""|| $confirmpwd=="")
+			{
+				
+			 	$('#btnregister').after('<label class = "errregister" style="color: red">Vui lòng nhập đầy đủ thông tin</label>');	
+			 	return;
+	
+			}
   			Registration($name,$address,$telephonenumber,$username,$password,$confirmpwd,function($re){
   				if($re==true)
   					alert("Đăng kí thành công");

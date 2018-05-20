@@ -38,6 +38,9 @@ Route::get('/giohang', function () {
 });
 
 Route::group(['prefix'=>'account'],function(){
-	Route::any('/checkusername','RegisterController@Checkusername');
-	Route::any('/register','RegisterController@Register');
+	Route::any('/checkusername','AccountController@Checkusername');
+	Route::any('/register','AccountController@Register');
+	Route::any('/loginsuccess', function(){
+		return view('Taikhoan.LoginSuccess');
+	});
 });

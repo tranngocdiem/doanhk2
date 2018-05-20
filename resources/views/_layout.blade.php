@@ -82,10 +82,12 @@
             <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
 
             <li class="dropdown"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
+              @section('taikhoan')
               <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
                 <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
                 <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
               </div>
+              @show
             </li>
           </ul>
         </div>
