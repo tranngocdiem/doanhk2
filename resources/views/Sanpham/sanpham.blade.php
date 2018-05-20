@@ -1,4 +1,8 @@
 @extends('Sanpham._layoutsanpham')
+@section('link')
+@parent
+<link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/sanpham1.css">
+@stop
 @section('sub_content')
 <div class="container">
 
@@ -98,88 +102,23 @@
       foreach($results as $row)
       {
         echo'<div class="col-lg-4 col-md-6 mb-4">';
-        echo'<div class="card h-100">';
+        echo'<div id="anhsp" class="card h-100">';
         echo'<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>';
+        echo'<div id="addcart"><a id="themvaogio"><i style="padding: 0px 10px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a></div>';
         echo'<div class="card-body">';
         echo'<h4 class="card-title">';
         echo'<a href="#">'.$row->tenloai.'</a>';
         echo'</h4>';
         echo'<h5>$24.99</h5>';
-        echo'<p class="card-text">'.$row->maloai.'</p>';
+        echo'<p class="card-text">'.$row->mota.'</p>';
         echo'</div>';
+        
         echo'</div>';
         echo'</div>';
       }
     }
     ?>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item Two</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item Three</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item Four</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item Five</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item Six</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-        </div>
-
-      </div>
-    </div>
+    
 
   </div>
   <!-- /.row -->

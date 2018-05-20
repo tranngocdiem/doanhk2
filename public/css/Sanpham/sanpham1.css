@@ -1,0 +1,29 @@
+#themvaogio {
+	bottom: 20px;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	font-size: 0.8em;
+	color: #fff;
+	line-height: 46px;
+	letter-spacing: 1.5px;
+	background-color: #088A68;
+	font-weight: 700;
+	text-decoration: none; 
+	text-transform: uppercase;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	opacity: 0;
+	transition: 0.5s;
+
+}
+
+#anhsp:hover #themvaogio{
+	
+	transform: translateY(0);
+	opacity: 1;
+}
+#anhsp #addcart :hover{
+	background-color: #086A87;
+    color: #ffffff;
+}
