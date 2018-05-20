@@ -5,6 +5,13 @@
 @stop
 @section('sub_content')
 <div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Giỏ hàng <span>(<span id="countProduct"><?php echo isset($listCartProduct) ?  count($listCartProduct) : 0?></span> sản phẩm)</span></h3>
+    </div>
+  </div>
+
   <div class="row">
     <div class="table-responsive">
       <div class="table-responsive">

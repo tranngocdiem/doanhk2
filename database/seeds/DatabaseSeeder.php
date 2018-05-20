@@ -23,8 +23,8 @@ class chude extends Seeder
     {
         //dữ liệu test để thêm vào database
     	// thêm vào database
-    	/*DB::table("chude")->insert([
-    		array("tencd" =>"PHÒNG KHÁCH" ),
+    	DB::table("chude")->insert([
+    		    array("tencd" =>"PHÒNG KHÁCH" ),
             array("tencd" =>"PHÒNG NGỦ"),
             array("tencd" =>"PHÒNG ĂN" ),
             array("tencd" =>"NHÀ BẾP"),
@@ -50,6 +50,7 @@ class chude extends Seeder
             array("tenloai" =>"Sofa Lima vải xanh" , "soluongton"=>"0","mota" =>"Hàng công ty sản xuất","masp"=>"2" ),
             array("tenloai" =>"Ghế bar Monaco" , "soluongton"=>"0","mota"=> "Hàng công ty sản xuất","masp"=>"2" ),
             array("tenloai" =>"Ghế ăn Sake" , "soluongton"=>"0", "mota"=>"Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Giỏ hoa" , "soluongton"=>"10", "mota"=>"Hàng công ty sản xuất","masp"=>"4" ),
      
       ]);
 
@@ -57,12 +58,13 @@ class chude extends Seeder
             array("macd" =>"3" , "maloai"=>"1" ),
             array("macd" =>"3" , "maloai"=>"2" ),
             array("macd" =>"5" , "maloai"=>"6"),
+            array("macd" =>"5" , "maloai"=>"8"),
 
-      ]);*/
-         DB::table("thongtincanhan")->insert([
+      ]);
+        /* DB::table("thongtincanhan")->insert([
             array("hoten" =>"Trần Thị Ngọc Diễm" , "sdt"=>"1234567" ,"diachi"=>"TPHCM")]);
         DB::table("taikhoan")->insert([
-            array("tentk" =>"ngdiem" , "matkhau"=>"123" ,"mattcn"=>"1")]);
+            array("tentk" =>"ngdiem" , "matkhau"=>"123" ,"mattcn"=>"1")]);*/
     }
 
 }

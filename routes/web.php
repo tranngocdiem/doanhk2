@@ -36,5 +36,8 @@ Route::get('/ctsp', function () {
 Route::get('/giohang', function () {
     return view('Sanpham.giohang');
 });
+Route::get('/thanhtoan', function () {
+    return view('Sanpham.thanhtoan');
+});
 
 Route::any('account/checkusername', 'RegisterController@Checkusername');
