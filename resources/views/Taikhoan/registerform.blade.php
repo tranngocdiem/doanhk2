@@ -10,7 +10,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
-        <form method="post" id="registerform">   
+        
                 <label >Họ và tên</label>
                 <input class="form-control" id="txtname_re" type="name" placeholder="Nhập tên" name="name" 
                  > 
@@ -30,7 +30,7 @@
                  
               <br>
                 <input type="submit" class="btn btn-primary btn-block btn-large" id="btnregister" value="Đăng kí">
-        </form>
+        
     </div>
   </div>
   </div>

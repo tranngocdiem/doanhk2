@@ -1,4 +1,4 @@
-//Kiểm tra tính hợp lệ của form
+//Kiểm tra các trường của form không trống
 function validate (){
     	
     		var name = $("#txtname").val();
@@ -8,45 +8,71 @@ function validate (){
     		var password = $("#txtpassword").val();
     		var confirmpwd = $("#txtconfirmpwd").val();
     		if(username=="" || password=="" || address == ""|| telephonenumber=="" || name==""|| confirmpwd=="")
-		{
-				alert("Bạn phải nhập đầy đủ các trường!");
+			{
+				
 			 	return false;
 	
-		}
-		//Kiểm tra password có trùng nhau hay không
-		else
-		{
-			if(password!=confirmpwd)
-			{
-				//alert("test");
-				$('#txtconfirmpwd').after(' <label  style="color: red">Mật khẩu phải trùng nhau</label>');
-				document.getElementById('txtpassword').value = '';
-				document.getElementById('txtpassword').focus();
-				document.getElementById('txtconfirmpwd').value = '';
-
-				return false;
 			}
-		}
-    	
-		return true;
+			return true;
+		
+		
     }
-   function CheckInvalidUsername($username)
+    //
+ function CheckInvalidUsername($username,$result)
    {
    		
-		
-		$.ajax({
-			type: 'GET',
+			var _token = $('meta[name="csrf-token"]').attr('content');
+		    $.ajax({
+			type: 'POST',
 			url: url + '/account/checkusername',
 			cache: false,
-			data: {'username':$username},
-			success: function(data){
-				if(data == '0')
-					return false;
-				else
-					return true;
-			} 
-		});
+			data: {'_token': _token,'username':$username}
+			})
+			.done(function($re) {
+				if($re=='0'){
+					return $result(true);
+				}
+				else{
+					return $result(false);
+				}
+			})
+			.fail(function(){
+				return $result(false);
+			});
 		
+
+   }
+
+   function Registration($name,$address,$telephonenumber,$username,$password,$confirmpwd,$result)
+   {
+   			if($username=="" || $password=="" || $address == ""|| $telephonenumber=="" || $name==""|| $confirmpwd=="")
+			{
+				
+			 	$('#btnregister').after('<label class = "errregister" style="color: red">Vui lòng nhập đủ thông tin</label>');	
+			 	return;
+	
+			}
+			$listparam = {  'name': $name,
+							'address': $address,
+							'telephonenumber': $telephonenumber,
+							'username': $username,
+							'password': $password,
+
+			};
+
+			var _token = $('meta[name="csrf-token"]').attr('content');
+			$.ajax({
+					type: 'post',
+					url: url + '/account/register',
+					cache: false,
+					data: {'_token': _token,'info':$listparam},
+					})
+			.done(function($re) {
+				alert($re);
+			})
+			.fail(function() {
+				return false;
+			});
 
    }
 
@@ -75,10 +101,26 @@ function validate (){
   	       		return;
   	       }
   	       //kiểm tra tên đăng nhập đã tồn tại chưa
-  	       if(CheckInvalidUsername($(this).val()) == false)
-  	       {
-  	       		$('#txtusername_re').after('<label class = "errusername" style="color: red">Tên đăng nhập đã tồn tại</label>');
-
-  	       }
+  	       CheckInvalidUsername($(this).val(),function($re){
+			if($re){
+				$('#txtusername_re').after('<label class = "errusername" style="color: red">Tên đăng nhập đã tồn tại</label>');
+			}
+			});
   	       
+  	       
+  });
+  $('#btnregister').on('click',function(){
+  			$('#txtusername_re ~ .errregister').remove();
+  			$name = $('#txtname_re').val();
+  			$address = $('#txtaddress_re').val();
+  			$telephonenumber = $('#txtnumber_re').val();
+  			$username = $('#txtusername_re').val();
+  			$password = $('#txtpassword_re').val();
+  			$confirmpwd = $('#txtconfirmpwd_re').val();
+  			Registration($name,$address,$telephonenumber,$username,$password,$confirmpwd,function($re){
+  				if($re==true)
+  					alert("Đăng kí thành công");
+  				else 
+  					alert("Vui lòng nhập đầy đủ thông tin");
+  			});
   });

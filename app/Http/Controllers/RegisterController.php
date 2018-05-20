@@ -50,7 +50,7 @@ class RegisterController extends Controller
                 $taikhoan = new taikhoan;
                 $taikhoan->tentk = $user['username'];
                 $taikhoan->matkhau = md5($user['password']);
-                $taikhoan->mattcn = $thongtincanhan->mattcn;
+                $taikhoan->mattcn = '2';
                 if (!$taikhoan->save()) 
                 {
                     return '0';
