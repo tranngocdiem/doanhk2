@@ -37,4 +37,7 @@ Route::get('/giohang', function () {
     return view('Sanpham.giohang');
 });
 
-Route::any('account/checkusername', 'RegisterController@Checkusername');
+Route::group(['prefix'=>'account'],function(){
+	Route::any('/checkusername','RegisterController@Checkusername');
+	Route::any('/register','RegisterController@Register');
+});

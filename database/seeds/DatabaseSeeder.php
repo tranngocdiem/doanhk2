@@ -23,7 +23,7 @@ class chude extends Seeder
     {
         //dữ liệu test để thêm vào database
     	// thêm vào database
-    	/*DB::table("chude")->insert([
+    	DB::table("chude")->insert([
     		array("tencd" =>"PHÒNG KHÁCH" ),
             array("tencd" =>"PHÒNG NGỦ"),
             array("tencd" =>"PHÒNG ĂN" ),
@@ -42,14 +42,14 @@ class chude extends Seeder
         ]);
 
        DB::table("loaisanpham")->insert([
-            array("tenloai" =>"Bàn console trắng gỗ" , "soluongton"=>"0", "mota"=>"Bàn console với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Bàn console Jazz" , "soluongton"=>"0", "mota"=>"Bàn console Jazz gỗ với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Bàn console Pop" , "soluongton"=>"0", "mota"=>"Bàn console
+            array("tenloai" =>"Bàn console trắng gỗ" , "soluongton"=>"10", "mota"=>"Bàn console với thiết kế tinh tế","masp"=>"5" ),
+            array("tenloai" =>"Bàn console Jazz" , "soluongton"=>"15", "mota"=>"Bàn console Jazz gỗ với thiết kế tinh tế","masp"=>"5" ),
+            array("tenloai" =>"Bàn console Pop" , "soluongton"=>"20", "mota"=>"Bàn console
              Pop với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Sofa blue 3 chỗ màu xanh" , "soluongton"=>"0","mota" =>"Hàng nhập khẩu","masp"=>"2" ),
-            array("tenloai" =>"Sofa Lima vải xanh" , "soluongton"=>"0","mota" =>"Hàng công ty sản xuất","masp"=>"2" ),
-            array("tenloai" =>"Ghế bar Monaco" , "soluongton"=>"0","mota"=> "Hàng công ty sản xuất","masp"=>"2" ),
-            array("tenloai" =>"Ghế ăn Sake" , "soluongton"=>"0", "mota"=>"Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Sofa blue 3 chỗ màu xanh" , "soluongton"=>"30","mota" =>"Hàng nhập khẩu","masp"=>"2" ),
+            array("tenloai" =>"Sofa Lima vải xanh" , "soluongton"=>"10","mota" =>"Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Ghế bar Monaco" , "soluongton"=>"20","mota"=> "Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Ghế ăn Sake" , "soluongton"=>"15", "mota"=>"Hàng công ty sản xuất","masp"=>"2" ),
      
       ]);
 
@@ -58,7 +58,7 @@ class chude extends Seeder
             array("macd" =>"3" , "maloai"=>"2" ),
             array("macd" =>"5" , "maloai"=>"6"),
 
-      ]);*/
+      ]);
          DB::table("thongtincanhan")->insert([
             array("hoten" =>"Trần Thị Ngọc Diễm" , "sdt"=>"1234567" ,"diachi"=>"TPHCM")]);
         DB::table("taikhoan")->insert([
