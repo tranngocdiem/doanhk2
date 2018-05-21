@@ -12,15 +12,15 @@ function Login($username,$password)
 		data: {'_token': _token,'info':$listparam},
 	})
 	.done(function($data) {
-	/*if($data!=='0' && $data !== '1' ){
+	if($data!=='0' && $data !== '1' ){
 		$('.close').click();
 		$('#modallayout').html($data);
 	}
 	if($data == '1')
 		{
 			alert("Tài khoản hoặc mật khẩu sai");
-		}*/
-		alert($data);
+		}
+		
 	})
 	.fail(function() {
 		alert("Tài khoản hoặc mật khẩu sai");

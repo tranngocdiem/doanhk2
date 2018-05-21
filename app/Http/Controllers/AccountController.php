@@ -64,23 +64,23 @@ class AccountController extends Controller
 
     public function Login()
     {
-        return '1';
-         /*$Param = array_merge($_POST,$_GET);
+       
+         $Param = array_merge($_POST,$_GET);
          if(isset($Param['info']))
          {
                 $user = $Param['info'];
                 $countuser =  taikhoan::where([['tentk','=',$user['username']],['matkhau','=',md5($user['password'])]])->get();
                 if(count($countuser) > 0)
                  {
-                    if($countuser->loaitk == '1')
+                    /*if($countuser->loaitk->get() == '1')*/
                         return view('Taikhoan.LoginSuccess');
-                    else
-                        redirect("{!! url('/') !!}");
+                    /*else
+                        redirect("{!! url('/') !!}");*/
                  }
                  else
                     return '1';
 
          }
-         return '0';*/
+         return '0';
     }
 }
