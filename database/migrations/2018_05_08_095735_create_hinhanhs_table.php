@@ -18,6 +18,7 @@ class CreateHinhanhsTable extends Migration
             $table->string('url');
             $table->integer('maloai')->unsigned();
             $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

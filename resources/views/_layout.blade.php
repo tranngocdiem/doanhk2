@@ -81,13 +81,11 @@
             <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
             <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
 
-            <li class="dropdown"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
-              @section('taikhoan')
+            <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
               <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
                 <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
                 <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
               </div>
-              @show
             </li>
           </ul>
         </div>
@@ -99,7 +97,8 @@
 
 </header>
 <!--Hiển thị modal đăng nhập-->
-
+@include('Taikhoan.loginform')
+@include ('Taikhoan.registerform')
 
 <!-- end header!-->
   <!--<div class = "content">
@@ -216,6 +215,9 @@
   });
 
 </script>
+<script type="text/javascript" src="{!! url('/js/Taikhoan/registerform.js') !!}"></script>
+<script type="text/javascript" src="{!! url('/js/Taikhoan/loginform.js') !!}"></script>
+
 @show
 
 

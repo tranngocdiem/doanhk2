@@ -21,6 +21,7 @@ class CreateChitietlohangsTable extends Migration
             $table-> foreign('malo')->references('malo')-> on('lohang')->onDelete('cascade');
             $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
             $table-> primary(['malo', 'maloai']);
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

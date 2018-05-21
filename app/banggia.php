@@ -8,7 +8,7 @@ class banggia extends Model
 {
     protected $table = 'banggia';
     public $timestamp = false;
-    protected $fillable = ['magia','gia','masp','makm'];
+    protected $fillable = ['magia','gia','maloai','makm','isDeleted'];
     public function chuongtrinhkhuyenmai()
     {
     	return $this->belongsTo('App\chuongtrinhkhuyenmai');

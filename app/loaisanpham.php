@@ -8,7 +8,7 @@ class loaisanpham extends Model
 {
     protected $table = 'loaisanpham';
     public $timestamp = false;
-    protected $fillable = ['maloai','tenloai','soluongton','mota','masp'];
+    protected $fillable = ['maloai','tenloai','soluongton','mota','masp','isDeleted'];
     public function lohang(){
     	return $this->belongsToMany('App\lohang','chitietlohang','maloai','malo');
     }
@@ -21,8 +21,8 @@ class loaisanpham extends Model
     public function dondathang(){
     	return $this->belongsToMany('App\dondathang','chitietdonhang','maloai','maddh')->using('App\chitietdonhang');
     }
-    public function thuoctinh(){
-    	return $this->belongsToMany('App\giatrithuoctinh','chitietsanpham','maloai','matt')-> using ('App\chitietsanpham');
+    public function banggia(){
+        return $this->hasMany('App\banggia');
     }
     public function hinhanh(){
 

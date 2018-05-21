@@ -17,6 +17,7 @@
 				else{
 					return $result(false);
 				}
+
 			})
 			.fail(function(){
 				return $result(false);
@@ -46,11 +47,13 @@
 			.done(function($re) {
 				if($re!=='0'){
 					return $result(true);
+					
 				}
 				else{
 					return $result(false);
 				}
 			})
+	
 			.fail(function() {
 				return false;
 			});
@@ -108,7 +111,10 @@
 			}
   			Registration($name,$address,$telephonenumber,$username,$password,$confirmpwd,function($re){
   				if($re==true)
-  					alert("Đăng kí thành công");
+  				{
+  					alert("Đăng kí thành công. Hãy đăng nhập để trải nghiệm tốt hơn.");
+  					$('.close').click();
+  				}
   				else 
   					alert("Vui lòng nhập đầy đủ thông tin");
   			});

@@ -8,7 +8,7 @@ class lohang extends Model
 {
     protected $table = 'lohang';
     public $timestamp = false;
-    protected $fillable = ['malo','ngaynhap'];
+    protected $fillable = ['malo','ngaynhap','isDeleted'];
     public function loaisanpham(){
     	return $this->belongsToMany('App\loaisanpham','chitietlohang','malo','maloai');
     }

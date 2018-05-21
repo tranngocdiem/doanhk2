@@ -21,6 +21,7 @@ class CreateDondathangsTable extends Migration
             $table->integer('trangthai');
             $table->integer('matk')->unsigned();
             $table->foreign('matk')->references('matk')->on('taikhoan')->onDelete('cascade');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

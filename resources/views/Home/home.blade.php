@@ -4,8 +4,6 @@ Trang chủ
 @stop
 
 @section('content')
-    @include('Taikhoan.loginform')
-    @include ('Taikhoan.registerform')
     <div style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/background.jpg);
   background-size:cover;height: 100vh;">
     <div class="contain">
@@ -164,9 +162,5 @@ Trang chủ
         </div>
       </div>
     </div>
-@stop
-@section('js')
-@parent
-<script type="text/javascript" src="{!! url('/js/Taikhoan/registerform.js') !!}"></script>
 @stop
 

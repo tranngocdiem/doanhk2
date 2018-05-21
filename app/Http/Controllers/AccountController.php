@@ -10,6 +10,7 @@ class AccountController extends Controller
 {
     public function Checkusername()
     {
+        
 
         $Param = array_merge($_POST,$_GET); 
         
@@ -25,6 +26,7 @@ class AccountController extends Controller
         
     }
     public function Register (){
+        
            
             $Param = array_merge($_POST,$_GET); 
             if(isset($Param['info']))
@@ -58,5 +60,27 @@ class AccountController extends Controller
             }
             else return '0';
             
+    }
+
+    public function Login()
+    {
+        return '1';
+         /*$Param = array_merge($_POST,$_GET);
+         if(isset($Param['info']))
+         {
+                $user = $Param['info'];
+                $countuser =  taikhoan::where([['tentk','=',$user['username']],['matkhau','=',md5($user['password'])]])->get();
+                if(count($countuser) > 0)
+                 {
+                    if($countuser->loaitk == '1')
+                        return view('Taikhoan.LoginSuccess');
+                    else
+                        redirect("{!! url('/') !!}");
+                 }
+                 else
+                    return '1';
+
+         }
+         return '0';*/
     }
 }

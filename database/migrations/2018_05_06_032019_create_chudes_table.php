@@ -16,6 +16,7 @@ class CreateChudesTable extends Migration
         Schema::create('chude', function (Blueprint $table) {
             $table->increments('macd');
             $table->string('tencd');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

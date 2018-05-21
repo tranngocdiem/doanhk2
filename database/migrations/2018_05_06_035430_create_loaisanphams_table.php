@@ -20,6 +20,7 @@ class CreateLoaisanphamsTable extends Migration
             $table->text('mota');
             $table->integer('masp')->unsigned();
             $table->foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

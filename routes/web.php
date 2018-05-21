@@ -40,7 +40,6 @@ Route::get('/giohang', function () {
 Route::group(['prefix'=>'account'],function(){
 	Route::any('/checkusername','AccountController@Checkusername');
 	Route::any('/register','AccountController@Register');
-	Route::any('/loginsuccess', function(){
-		return view('Taikhoan.LoginSuccess');
-	});
+    Route::any('/login','AccountController@Login');
+	
 });

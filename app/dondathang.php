@@ -8,7 +8,7 @@ class dondathang extends Model
 {
     protected $table = 'dondathang';
     public $timestamps = false;
-    protected $fillable = ['maddh','ngaydat','ngaygiao','diachigiao','trangthai','matk'];
+    protected $fillable = ['maddh','ngaydat','ngaygiao','diachigiao','trangthai','matk','isDeleted'];
     public function loaisanpham(){
     	return $this->belongsToMany('App\loaisanpham','chitietdonhang','maddh','maloai')->using('App\chitietdonhang');
     }

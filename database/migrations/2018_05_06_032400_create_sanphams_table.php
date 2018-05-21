@@ -16,7 +16,7 @@ class CreateSanphamsTable extends Migration
         Schema::create('sanpham', function (Blueprint $table) {
             $table->increments('masp');
             $table->string('tensp');
-            $table->integer('trangthai');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

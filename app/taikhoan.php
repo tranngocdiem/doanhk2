@@ -8,7 +8,7 @@ class taikhoan extends Model
 {
     protected $table = 'taikhoan';
     public $timestamp = false;
-    protected $fillable = ['matk','tentk','matkhau','loaitk','mattcn'];
+    protected $fillable = ['matk','tentk','matkhau','loaitk','mattcn','isDeleted'];
     public function dondathang(){
     	return $this->hasMany('App\dondathang');
     }

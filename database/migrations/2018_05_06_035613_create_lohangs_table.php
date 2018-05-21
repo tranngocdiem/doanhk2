@@ -16,6 +16,7 @@ class CreateLohangsTable extends Migration
         Schema::create('lohang', function (Blueprint $table) {
             $table->increments('malo');
             $table->dateTime('ngaynhap');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

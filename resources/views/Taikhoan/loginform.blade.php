@@ -12,23 +12,21 @@
         
       <div class="card-body">
         <form method="post" id="loginform">
-          {{csrf_field()}}
           <div class="form-group">
             <label for="exampleInputEmail1">Tên đăng nhập</label>
-            <input class="form-control" type="name" aria-describedby="emailHelp" placeholder="Enter email" style="min-width: 100%" name="username" required="false">
+            <input class="form-control" type="name" aria-describedby="emailHelp" placeholder="Enter email" name="username" id="username_login">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Mật khẩu</label>
-            <input class="form-control" type="password" placeholder="Password" name="password">
+            <input class="form-control" type="password" placeholder="Password" name="password" id="password_login">
           </div>
-          <label id="error" style="color: red"></label>
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox"> Nhớ mật khẩu</label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block btn-large" id="login" onclick="return checkrequriedform()">Đăng nhập</button>
+          <button type="button" class="btn btn-primary btn-block btn-large" id="btnlogin">Đăng nhập</button>
           <a class="d-block small" href="forgot-password.html">Quên mật khẩu</a>
           </div>
         </form>

@@ -8,5 +8,5 @@ class chitietlohang extends Pivot;
 {
     protected $table = 'chitietlohang';
     public $timestamp = false;
-    protected $fillable = ['malo','maloai','soluongnhap'];
+    protected $fillable = ['malo','maloai','soluongnhap','isDeleted'];
 }

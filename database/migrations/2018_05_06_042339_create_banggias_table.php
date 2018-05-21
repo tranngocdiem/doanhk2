@@ -17,10 +17,11 @@ class CreateBanggiasTable extends Migration
             $table->increments('magia');
             $table->float('gia');
             $table->integer('trangthai');
-            $table->integer('masp')->unsigned();
+            $table->integer('maloai')->unsigned();
             $table->integer('makm')->unsigned();
-            $table->foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');
+            $table->foreign('maloai')->references('masp')->on('loaisanpham')->onDelete('cascade');
             $table->foreign('makm')->references('makm')->on('chuongtrinhkhuyenmai')->onDelete('cascade');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

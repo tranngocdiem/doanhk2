@@ -21,6 +21,7 @@ class CreateChitietdonhangsTable extends Migration
             $table-> foreign('maddh')->references('maddh')-> on('dondathang')->onDelete('cascade');
             $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
             $table-> primary(['maddh', 'maloai']);
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

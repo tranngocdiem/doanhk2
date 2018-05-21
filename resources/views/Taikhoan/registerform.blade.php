@@ -1,5 +1,6 @@
 
 <!--Hiển thị modal đăng kí-->
+
  <div class="container">
   <div class="modal fade" id="modalregister" role="dialog">
   <div class="modal-dialog">
@@ -36,7 +37,7 @@
                 <label >Nhập lại mật khẩu</label>
                 <input class="form-control" id="txtconfirmpwd_re" type="password" placeholder="Xác nhận mật khẩu" name="confirmpwd">
               </div>
-                <button id="btnregister" type="button" class="btn btn-info">Đăng kí</button>
+                <button id="btnregister" type="button" class="btn btn-primary">Đăng kí</button>
         </form>
      
     </div>

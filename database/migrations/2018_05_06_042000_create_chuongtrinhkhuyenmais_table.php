@@ -19,6 +19,7 @@ class CreateChuongtrinhkhuyenmaisTable extends Migration
             $table->datetime('ngaybatdau');
             $table->datetime('ngayketthuc')->nullable();
             $table->integer('discount');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

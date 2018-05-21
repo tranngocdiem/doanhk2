@@ -20,6 +20,7 @@ class CreateTaikhoansTable extends Migration
             $table->integer('loaitk')->default('1');
             $table->integer('mattcn')->unsigned();
             $table->foreign('mattcn')->references('mattcn')->on('thongtincanhan')->onDelete('cascade');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }

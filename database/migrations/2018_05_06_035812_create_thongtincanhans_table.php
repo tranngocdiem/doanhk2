@@ -18,6 +18,7 @@ class CreateThongtincanhansTable extends Migration
             $table->string('hoten');
             $table->integer('sdt')->unsigned();
             $table->string('diachi');
+            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }
