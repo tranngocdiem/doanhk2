@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\taikhoan as taikhoan;
 use App\thongtincanhan as thongtincanhan;
-
+use Cookie;
+use Session;
 class AccountController extends Controller
 {
     public function Checkusername()
@@ -61,6 +62,7 @@ class AccountController extends Controller
             else return '0';
             
     }
+  
 
     public function Login()
     {
@@ -71,16 +73,28 @@ class AccountController extends Controller
                 $user = $Param['info'];
                 $countuser =  taikhoan::where([['tentk','=',$user['username']],['matkhau','=',md5($user['password'])]])->get();
                 if(count($countuser) > 0)
-                 {
+                 {      
+
+                    session(['username'=>$countuser[0]->tentk]);
+                    session(['id'=>$countuser[0]->matk]);
+                       /*$cookieValue= array('username'=>$countuser[0]->tentk,'id'=>$countuser[0]->matk);
+                       Cookie::queue('Accountlogin',json_encode($cookieValue));*/
                     /*if($countuser->loaitk->get() == '1')*/
+                    if($countuser[0]->loaitk == '1')
                         return view('Taikhoan.LoginSuccess');
-                    /*else
-                        redirect("{!! url('/') !!}");*/
+                    else
+                        return '2';
+
                  }
                  else
                     return '1';
 
          }
          return '0';
+    }
+    public function Logout()
+    {
+        session()->forget(['username','id']);
+        return redirect('/');
     }
 }

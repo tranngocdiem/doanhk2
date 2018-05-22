@@ -62,7 +62,7 @@ class chude extends Seeder
          DB::table("thongtincanhan")->insert([
             array("hoten" =>"Trần Thị Ngọc Diễm" , "sdt"=>"1234567" ,"diachi"=>"TPHCM")]);
         DB::table("taikhoan")->insert([
-            array("tentk" =>"ngdiem" , "matkhau"=>md5("123") ,"mattcn"=>"1")]);
+            array("tentk" =>"admin" , "matkhau"=>md5("admin") ,"loaitk"=>'0',"mattcn"=>"1")]);
     }
 
 }

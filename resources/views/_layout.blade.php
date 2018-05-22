@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,13 +81,22 @@
           <ul class="cart-icon">
             <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
             <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
-
-            <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
+            @if (Session::get('username') !== null)
+            <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
+            <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
+                <a href="#" data-toggle="modal"  style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
+                <a href="#" data-toggle="modal"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
+                <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
+            </div>
+            </li>
+            @else
+             <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
               <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
                 <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
                 <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
               </div>
             </li>
+            @endif
           </ul>
         </div>
       </div>

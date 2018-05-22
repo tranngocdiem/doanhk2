@@ -41,5 +41,6 @@ Route::group(['prefix'=>'account'],function(){
 	Route::any('/checkusername','AccountController@Checkusername');
 	Route::any('/register','AccountController@Register');
     Route::any('/login','AccountController@Login');
+    Route::any('/logout','AccountController@Logout');
 	
 });

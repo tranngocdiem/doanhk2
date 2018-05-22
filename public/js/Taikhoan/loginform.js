@@ -12,10 +12,18 @@ function Login($username,$password)
 		data: {'_token': _token,'info':$listparam},
 	})
 	.done(function($data) {
-	if($data!=='0' && $data !== '1' ){
+	if($data!=='0' && $data !== '1' && $data !== '2'){
 		$('.close').click();
 		$('#modallayout').html($data);
+		
 	}
+	if($data == '2')
+		{
+			/*redirect("{!! url('/ad') !!}");*/
+			window.location = url + "/ad"
+		}
+		
+
 	if($data == '1')
 		{
 			alert("Tài khoản hoặc mật khẩu sai");
