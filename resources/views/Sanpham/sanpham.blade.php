@@ -94,7 +94,7 @@
   <div class="row">
     <?php
     $current_url = base64_encode("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-    $sqlQuery="SELECT * FROM loaisanpham";
+    $sqlQuery="SELECT * FROM loaisanpham ";
     $results = DB::SELECT(DB::raw($sqlQuery));
     if ($results) {
 

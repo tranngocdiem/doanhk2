@@ -23,7 +23,7 @@ class chude extends Seeder
     {
         //dữ liệu test để thêm vào database
     	// thêm vào database
-    	/*DB::table("chude")->insert([
+    	DB::table("chude")->insert([
     		array("tencd" =>"PHÒNG KHÁCH" ),
             array("tencd" =>"PHÒNG NGỦ"),
             array("tencd" =>"PHÒNG ĂN" ),
@@ -31,38 +31,28 @@ class chude extends Seeder
             array("tencd" =>"HÀNG TRANG TRÍ"),]);
 
        DB::table("sanpham")->insert([
-            array("tensp" =>"Bàn ăn" , "trangthai" =>"1"  ),
-            array("tensp" =>"Ghế" , "trangthai" =>"1" ),
-            array("tensp" =>"Tủ" , "trangthai" =>"1" ),
-            array("tensp" =>"Hàng trang trí" , "trangthai" =>"1",),
-            array("tensp" =>"Bàn console" , "trangthai" =>"1" ),
-            array("tensp" =>"Bếp" , "trangthai" =>"1" ),
-            array("tensp" =>"Đèn" , "trangthai" =>"1" ),
-
+            array("tensp" =>"Sofa góc"),
         ]);
 
        DB::table("loaisanpham")->insert([
-            array("tenloai" =>"Bàn console trắng gỗ" , "soluongton"=>"0", "mota"=>"Bàn console với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Bàn console Jazz" , "soluongton"=>"0", "mota"=>"Bàn console Jazz gỗ với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Bàn console Pop" , "soluongton"=>"0", "mota"=>"Bàn console
-             Pop với thiết kế tinh tế","masp"=>"5" ),
-            array("tenloai" =>"Sofa blue 3 chỗ màu xanh" , "soluongton"=>"0","mota" =>"Hàng nhập khẩu","masp"=>"2" ),
-            array("tenloai" =>"Sofa Lima vải xanh" , "soluongton"=>"0","mota" =>"Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Sofa tonic" , "soluongton"=>"20", "mota"=>"Sofa tonic với thiết kế tinh tế, chất gỗ.","masp"=>"1" ),
+            array("tenloai" =>"Sofa blue góc trái" , "soluongton"=>"20", "mota"=>"Sofa với thiết kế tinh tế, chất liệu da","masp"=>"1" ),
+            array("tenloai" =>"Sofa chino góc phải" , "soluongton"=>"20", "mota"=>"Bàn console
+             Pop với thiết kế tinh tế","masp"=>"1" ),
+            array("tenloai" =>"Sofa góc phải" , "soluongton"=>"20","mota" =>"Hàng nhập khẩu","masp"=>"1" ),
+            /*array("tenloai" =>"Sofa Lima vải xanh" , "soluongton"=>"0","mota" =>"Hàng công ty sản xuất","masp"=>"2" ),
             array("tenloai" =>"Ghế bar Monaco" , "soluongton"=>"0","mota"=> "Hàng công ty sản xuất","masp"=>"2" ),
-            array("tenloai" =>"Ghế ăn Sake" , "soluongton"=>"0", "mota"=>"Hàng công ty sản xuất","masp"=>"2" ),
+            array("tenloai" =>"Ghế ăn Sake" , "soluongton"=>"0", "mota"=>"Hàng công ty sản xuất","masp"=>"2" ),*/
      
       ]);
 
-       DB::table("sanpham_chude")->insert([
-            array("macd" =>"3" , "maloai"=>"1" ),
-            array("macd" =>"3" , "maloai"=>"2" ),
-            array("macd" =>"5" , "maloai"=>"6"),
-
-      ]);*/
-         DB::table("thongtincanhan")->insert([
-            array("hoten" =>"Trần Thị Ngọc Diễm" , "sdt"=>"1234567" ,"diachi"=>"TPHCM")]);
-        DB::table("taikhoan")->insert([
-            array("tentk" =>"admin" , "matkhau"=>md5("admin") ,"loaitk"=>'0',"mattcn"=>"1")]);
+      DB::table("hinhanh")->insert([
+          array("url" =>"sofatonic1.jpg" , "maloai"=>"1" ), 
+          array("url" =>"sofabluegoctrai1.jpg" , "maloai"=>"2" ), 
+          array("url" =>"sofachinogocphai1.jpg" , "maloai"=>"3" ), 
+          array("url" =>"sofagocphai1.jpg" , "maloai"=>"4" ), 
+      ]);
+        
     }
 
 }
