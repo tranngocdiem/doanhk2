@@ -1,3 +1,5 @@
+@extends('Admin._layoutadmin')
+@section('content')
 <div class="row">
         <br>
         <div class="col-lg-12">
@@ -31,10 +33,12 @@
                             </div>
                             <div class="form-group col-lg-4">
                                 <select class="form-control" name="category">
-                                    <option value="">Loại cây</option>
-                                    <option value="3">Cây handmade</option>
-                                    <option value="2">Cây không khí</option>
-                                    <option value="1">Cây mini</option>
+                                    <option value="">Chủ đề</option>
+                                    <option value="1">Phòng khách</option>
+                                    <option value="2">Phòng ăn</option>
+                                    <option value="3">Phòng ngủ</option>
+                                    <option value="4">Phòng làm việc</option>
+                                    <optionv value = "5">Phòng bếp</option>
 
                                 </select>
                             </div>
@@ -93,29 +97,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                            $sql="select * from product";
-                            $query=$db->executeQuery($sql);
-                            while($row=mysqli_fetch_assoc($query))
-                            {
-
-                                ?>
-                                <tr class="odd gradeX">
-                                    <td><?php echo $row['id'] ?></td>
-                                    <td><?php echo $row['name'] ?> </td>
-
-                                    <td ><?php echo 0 ?>.000</td>
-                                    <td > <img style="width: 30px; height:30px" src="../../<?php echo $row['imagiUrl'] ?>"></td>
-                                    <td ><?php if( $row['category']==1 )
-                                    echo "cây mini";
-                                    else if($row['category']==2)
-                                        echo "cây không khí";
-                                    else echo "cây handmande"?></td>
-                                    <td ><?php echo $row['saleoff'] ?></td>
-                                </tr>
-                                <?php
-                            }    
-                            ?>
+                           
 
                         </tbody>
                     </table>
@@ -128,3 +110,4 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
+@stop

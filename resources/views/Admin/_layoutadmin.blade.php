@@ -127,7 +127,7 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-comments"></i>
               </div>
-              <div class="mr-5">Quản lý sản phẩm</div>
+              <div class="mr-5">Thống kê doanh thu</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Xem chi tiết</span>
@@ -144,7 +144,7 @@
                 <i class="fa fa-fw fa-shopping-cart"></i>
                
               </div>
-              <div class="mr-5">Quản lý đơn đặt hàng</div>
+              <div class="mr-5">Thống kê sản phẩm</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Xem chi tiết</span>
@@ -160,7 +160,7 @@
               <div class="card-body-icon">
                  <i class="fa fa-fw fa-list"></i>
               </div>
-              <div class="mr-5">Quản lý tài khoản</div>
+              <div class="mr-5">Thống kê đơn đặt hàng</div>
             </div>
             <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Xem chi tiết</span>

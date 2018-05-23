@@ -28,6 +28,9 @@ Route::get('/re', function () {
 Route::get('/ad', function () {
     return view('Admin._layoutadmin');
 });
+Route::get('/qlsp', function () {
+    return view('Admin.quanlysanpham');
+});
 
 Route::get('/ctsp', function () {
     return view('Sanpham.chitietsp');
