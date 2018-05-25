@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSanphamsTable extends Migration
+class CreateMausanphamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSanphamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sanpham', function (Blueprint $table) {
-            $table->increments('masp');
-            $table->string('tensp');
-            $table-> integer('mamau')->unsigned();
-            $table-> foreign('mamau')->references('mamau')->on('mausanpham')->onDelete('cascade');
+        Schema::create('mausanpham', function (Blueprint $table) {
+            $table->increments('mamau');
+            $table->string('tenmau');
             $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
@@ -30,6 +28,6 @@ class CreateSanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sanpham');
+        Schema::dropIfExists('mausanpham');
     }
 }

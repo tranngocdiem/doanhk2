@@ -22,68 +22,74 @@ Trang chủ
       <div class="container">
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/phongkhach.jpg" alt="Card image cap" style="width: 100%;height: 300px;">
               <div class="card-body">
-                <p class="card-text">Phòng khách</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Phòng khách</p>
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
                 </div>
               </div>
             </div>
           </div>
-         <div class="col-md-4">
+         <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/phongan.jpg" alt="Card image cap"  style="height: 300px;">
               <div class="card-body">
-                <p class="card-text">Phòng ăn</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Phòng ăn</p>
                     <button type="button" class="btn btn-info"">Xem chi tiết</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/phongngu.jpg" alt="Card image cap" style="height: 300px;" >
               <div class="card-body">
-                <p class="card-text">Phòng ngủ</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Phòng ngủ</p>
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/phongkhach.jpg" alt="Card image cap" style="height: 300px;">
               <div class="card-body">
-                <p class="card-text">Phòng làm việc</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Phòng làm việc</p>
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
                 </div>
               </div>
             </div>
           </div>
-         <div class="col-md-4">
+         <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/bep.jpg" alt="Card image cap" style="height: 300px;">
               <div class="card-body">
-                <p class="card-text">Bếp</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Bếp</p>
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="image/hangtrangtri.jpg" alt="Card image cap" style="height: 300px;">
               <div class="card-body">
-                <p class="card-text">Hàng trang trí</p>
+                
                 <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text">Hàng trang trí</p>
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
                 </div>
               </div>
