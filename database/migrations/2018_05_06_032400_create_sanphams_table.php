@@ -16,6 +16,8 @@ class CreateSanphamsTable extends Migration
         Schema::create('sanpham', function (Blueprint $table) {
             $table->increments('masp');
             $table->string('tensp');
+            $table-> integer('mamau')->unsigned();
+            $table-> foreign('mamau')->references('mamau')->on('mausanpham')->onDelete('cascade');
             $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });

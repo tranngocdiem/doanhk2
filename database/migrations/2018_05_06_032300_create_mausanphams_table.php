@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLohangsTable extends Migration
+class CreateMausanphamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateLohangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lohang', function (Blueprint $table) {
-            $table->increments('malo');
-            $table->dateTime('ngaynhap');
+        Schema::create('mausanpham', function (Blueprint $table) {
+            $table->increments('mamau');
+            $table->string('tenmau');
             $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateLohangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lohang');
+        Schema::dropIfExists('mausanpham');
     }
 }

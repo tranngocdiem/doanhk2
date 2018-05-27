@@ -5,18 +5,24 @@
 }
 
 #menu-phu{
-	top: 100px;
+	
 	width: 100%;
-	box-sizing: border-box;
-	margin-left: 0px;
+	
+	text-align: center;
 	background-color: rgba(0,11,12,0.5);
 	
 }
+#nav-chude{
+	margin-bottom: 0px;
+
+}
 #menu-phu .menuphu{
-	
-	
-	margin:auto;
+	width: 150px;
 	font-size: 14px;
+	display: inline-table;
+	margin:auto;
+
+	
 }
 #menu-phu li .nav-link{
 	color: white;
@@ -61,18 +67,7 @@
 	background-color: #fff;
 	z-index: 10;
 }
-#menu-phu-cap1-1{
-	position: absolute;
-	right: 198px;
-	display: none;
-	width: auto;
-	box-sizing: border-box;
-	border: 1px solid #000;
-	border-top: none;
-	border-right: none;
-	background-color: #fff;
-	z-index: 10;
-}
+
 #menu-phu-cap1 .menuc1
 {
 
@@ -85,18 +80,7 @@
 #menu-phu-cap1 .menuc1 a{
 	color: #000!important;
 }
-#menu-phu-cap1-1 .menuc1
-{
-	left: 50px;
-	margin-left: 0px;
-	padding: 0px 20px;
-	list-style-type:none;
-	float: left ;
-	font-size: 14px;
-}
-#menu-phu-cap1-1 .menuc1 a{
-	color: #000!important;
-}
+
 #menu-phu-cap2{
 	position: relative;
 	
@@ -115,8 +99,7 @@
 	margin-left: 0px!important;
 	font-size: 14px;
 }
-.main-nav {width: 240px; background: white;
-}
+
 
 .main-nav a {
 	
@@ -156,16 +139,5 @@
 	content: '\2039';
 
 }
-#show-menu-phu{
-	display: none;
-}
-@media (max-width: 1024px){
-	#menu-phu{
-		display: none;
-	}
-	#show-menu-phu{
-		display: block;
-		margin-left: 100px;
-	}
 
-}
+

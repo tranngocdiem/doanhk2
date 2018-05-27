@@ -10,8 +10,10 @@ Sản phẩm
 	<br>
 	<br>
 	<br>
-	<div id="menu-phu">
-		<nav class="nav">
+
+	<div id="menu-phu" class="navbar-collapse collapse show">
+		<nav id="nav" class="navbar-nav nav-dropdown">
+			<ul id="nav-chude">
 			<li class="menuphu"><a class="nav-link pkhach" href="#">PHÒNG KHÁCH</a>
 				<nav id="menu-phu-cap1" class="nav-phong">
 					<li class="menuc1"><a class="nav-link" href="#">GHẾ NGỒI</a>
@@ -188,7 +190,7 @@ Sản phẩm
 				</nav>
 			</li>
 			<li class="menuphu"><a class="nav-link" href="#">HÀNG TRANG TRÍ</a>
-			<nav id="menu-phu-cap1-1" class="nav-phong">
+			<nav id="menu-phu-cap1" class="nav-phong">
 					<li class="menuc1"><a class="nav-link" href="#">GHẾ NGỒI</a>
 						<nav id="menu-phu-cap2" class="nav">
 							<li><a class="nav-link" href="#">Sofa</a></li>
@@ -222,88 +224,10 @@ Sản phẩm
 						</li>
 				</nav>
 			</li>
-			<li class="menuphu"><a class="nav-link" href="#">NGOẠI THẤT</a>
-			<nav id="menu-phu-cap1-1" class="nav-phong">
-					<li class="menuc1"><a class="nav-link" href="#">GHẾ NGỒI</a>
-						<nav id="menu-phu-cap2" class="nav">
-							<li><a class="nav-link" href="#">Sofa</a></li>
-							<li><a class="nav-link" href="#">Ghế thư giãn</a></li>
-							<li><a class="nav-link" href="#">Ghế dài</a></li>
-							<li><a class="nav-link" href="#">Sofa góc</a></li>
-						</nav>
-					</li>
-					<li class="menuc1"><a class="nav-link" href="#">BÀN</a>
-						<nav id="menu-phu-cap2" class="nav">
-							<li><a class="nav-link active" href="#">Active</a></li>
-							<li><a class="nav-link" href="#">Active</a></li>
-							<li><a class="nav-link" href="#">Active</a></li>
-							<li><a class="nav-link disabled" href="#">Disabled</a></li>
-						</nav></li>
-						<li class="menuc1"><a class="nav-link" href="#">TỦ</a>
-							<nav id="menu-phu-cap2" class="nav">
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Disabled</a></li>
-							</nav>
-						</li>
-						<li class="menuc1"><a class="nav-link" href="#">HÀNG TRANG TRÍ</a>
-							<nav id="menu-phu-cap2" class="nav">
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Disabled</a></li>
-							</nav>
-						</li>
-				</nav>
-			</li>
-			<li class="menuphu"><a class="nav-link" href="#">BỘ SƯU TẬP</a>
-				<nav id="menu-phu-cap1-1" class="nav-phong">
-					<li class="menuc1"><a class="nav-link" href="#">GHẾ NGỒI</a>
-						<nav id="menu-phu-cap2" class="nav">
-							<li><a class="nav-link" href="#">Sofa</a></li>
-							<li><a class="nav-link" href="#">Ghế thư giãn</a></li>
-							<li><a class="nav-link" href="#">Ghế dài</a></li>
-							<li><a class="nav-link" href="#">Sofa góc</a></li>
-						</nav>
-					</li>
-					<li class="menuc1"><a class="nav-link" href="#">BÀN</a>
-						<nav id="menu-phu-cap2" class="nav">
-							<li><a class="nav-link active" href="#">Active</a></li>
-							<li><a class="nav-link" href="#">Active</a></li>
-							<li><a class="nav-link" href="#">Active</a></li>
-							<li><a class="nav-link disabled" href="#">Disabled</a></li>
-						</nav></li>
-						<li class="menuc1"><a class="nav-link" href="#">TỦ</a>
-							<nav id="menu-phu-cap2" class="nav">
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Active</a></li>
-								<li><a class="nav-link" href="#">Disabled</a></li>
-							</nav>
-						</li>
-				</nav>
-			</li>
-			<li class="menuphu"><a class="nav-link" href="#">THIẾT KẾ NỘI THẤT</a></li>
+			</ul>
 		</nav>
 	</div>
-	<nav id="show-menu-phu" class="main-nav">
-		<ul id="main-nav" class="main-nav-ul">
-			<li><a href="#">Tùy chọn dịch vụ<span class="sub-arrow"></span></a>
-				<ul>
-					<li><a href="#">Phòng khách</a></li>
-					<li><a href="#">Phòng ăn</a></li>
-					<li><a href="#">Phòng ngủ</a></li>
-					<li><a href="#">Phòng làm việc</a></li>
-					<li><a href="#">Bếp</a></li>
-					<li><a href="#">Hàng trang trí</a></li>
-					<li><a href="#">Ngoại thất</a></li>
-					<li><a href="#">Bộ sưu tập</a></li>
-					<li><a href="#">Thiết kế nội thất</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+	
 @section('sub_content')
 @show
 @stop

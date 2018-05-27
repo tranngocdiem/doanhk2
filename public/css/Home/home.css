@@ -292,9 +292,7 @@ select{
 
 	}
 
-	form{
-		height: 250px;
-	}
+	
 	.row1 {height:auto;} 
 }
 @media (max-width: 576px)
@@ -352,9 +350,7 @@ select{
 	.row1{
 		height: 75px;
 	}
-	form{
-		height: 250px;
-	}
+	
 	
 	.contain{
 		margin-top: 200px;
@@ -465,4 +461,11 @@ footer p {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.card-text{
+	font-size: 20px!important;
+
+	float: left!important;
+	
 }
