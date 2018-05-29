@@ -38,7 +38,7 @@
           <ul>
             <li><a href="{!! url('/') !!}">Trang chủ</a></li>
             <li><a href="">Dịch vụ</a></li>
-            <li><a href="{!! url('/sp') !!}">Sản phẩm</a></li>
+            <li><a href="{!! url('/sanpham') !!}">Sản phẩm</a></li>
             <li><a href="#contact">Liên hệ</a></li>
             <li><a href="">Tin tức</a></li>
             <li><a href="">Trợ giúp</a></li>

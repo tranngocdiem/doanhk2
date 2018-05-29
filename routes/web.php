@@ -47,3 +47,13 @@ Route::group(['prefix'=>'account'],function(){
     Route::any('/logout','AccountController@Logout');
 	
 });
+
+Route::group(['prefix' => 'sanpham'], function(){
+    Route::any('/',function(){
+        return view('Sanpham.sanpham');
+    });
+    Route::any('/getloaisp/{macd}/{masp}', 'Sanphamcontroller@Getsanphamtheoloai');
+
+}
+
+);

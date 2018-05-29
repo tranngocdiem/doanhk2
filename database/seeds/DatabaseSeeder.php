@@ -27,18 +27,19 @@ class chude extends Seeder
     		array("tencd" =>"PHÒNG KHÁCH" ),
             array("tencd" =>"PHÒNG NGỦ"),
             array("tencd" =>"PHÒNG ĂN" ),
+            array("tencd" =>"PHÒNG LÀM VIỆC" ),
             array("tencd" =>"NHÀ BẾP"),
             array("tencd" =>"HÀNG TRANG TRÍ"),
           ]);
 
       DB::table("mausanpham")->insert([
-        array("tenmau" =>"Ghế" ),
-            array("tenmau" =>"Bàn"),
-            array("tenmau" =>"Tủ" ),
-            array("tenmau" =>"Thiết bị bếp"),
-            array("tenmau" =>"Đồ nội thất"),
-            array("tenmau" =>"Hàng trang trí"),
-            array("tenmau" =>"Đồ ngoại thất"),
+        array("tenmau" =>"GHẾ" ),
+            array("tenmau" =>"BÀN"),
+            array("tenmau" =>"TỦ" ),
+            array("tenmau" =>"THIẾT BỊ BẾP"),
+            array("tenmau" =>"ĐỒ NỘI THẤT"),
+            array("tenmau" =>"HÀNG TRANG TRÍ"),
+            array("tenmau" =>"ĐỒ NGOẠI THẤT"),
           ]);
       DB::table("sanpham")->insert([
             array("tensp" =>"Sofa góc","mamau"=>"1"),
@@ -136,6 +137,28 @@ class chude extends Seeder
 
       ]);
 
+      DB::table("chude_loaisanpham")->insert([
+           array("macd"=>"1","maloai"=>"1"),
+           array("macd"=>"1","maloai"=>"2"),
+           array("macd"=>"1","maloai"=>"3"),
+           array("macd"=>"1","maloai"=>"4"),
+           array("macd"=>"1","maloai"=>"5"),
+           array("macd"=>"1","maloai"=>"6"),
+           array("macd"=>"1","maloai"=>"7"),
+           array("macd"=>"1","maloai"=>"8"),
+           array("macd"=>"1","maloai"=>"9"),
+           array("macd"=>"3","maloai"=>"10"),
+           array("macd"=>"3","maloai"=>"11"),
+           array("macd"=>"3","maloai"=>"12"),
+           array("macd"=>"3","maloai"=>"13"),
+           array("macd"=>"2","maloai"=>"14"),
+           array("macd"=>"2","maloai"=>"15"),
+           array("macd"=>"2","maloai"=>"16"),
+           array("macd"=>"2","maloai"=>"17"),
+           array("macd"=>"2","maloai"=>"18"),
+           
+
+      ]);
 
         
     }

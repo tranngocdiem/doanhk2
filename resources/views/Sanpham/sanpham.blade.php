@@ -36,12 +36,11 @@
         </a>
       </div>
 
-      <div class="row">
+      <div id = "hienthisanpham" class="row">
         <?php
-        $current_url = base64_encode("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
         $sqlQuery="SELECT * FROM loaisanpham JOIN hinhanh on loaisanpham.maloai = hinhanh.maloai
         where hinhanh.isDeleted=0 ";
-        $results = DB::SELECT(DB::raw($sqlQuery));
+        $results = DB::SELECT($sqlQuery);
         if ($results) {
 
         //output results from database
@@ -64,7 +63,6 @@
           }
         }
         ?>
-
 
       </div>
       <!-- /.row -->
