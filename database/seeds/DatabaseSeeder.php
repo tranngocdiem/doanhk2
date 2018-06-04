@@ -98,7 +98,46 @@ class chude extends Seeder
             array("tenloai" =>"Ghế TG Lazboy Rialto 3C Mocca" , "soluongton"=>"20", "mota"=>"Khung gỗ cao su bọc da bò 100%.","masp"=>"2" ),
             array("tenloai" =>"Ghế thư giãn Lula" , "soluongton"=>"20", "mota"=>"Khung gỗ xà cừ (Mahogany)- Vải cao cấp.","masp"=>"2" ),
             array("tenloai" =>"Ghế Rocking Ali" , "soluongton"=>"20", "mota"=>"chân gỗ, khung sắt, bọc vải.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn da ngựa vằn" , "soluongton"=>"20", "mota"=>"Chân sắt, da ngựa vằn.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn da ngựa vằn" , "soluongton"=>"20", "mota"=>"Chân sắt, da ngựa vằn.","masp"=>"2" 
+            ),
+            array("tenloai" =>"Armchair vải Forty" , "soluongton"=>"20", "mota"=>"Khung gỗ bạch dương- Vải cao cấp- Tay gỗ tần bì- Chân hợp kim sơn tĩnh điện.","masp"=>"3" 
+            ),
+            array("tenloai" =>"Ghế armchair Juke" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải cao cấp.","masp"=>"3" 
+            ),
+            array("tenloai" =>"Armchair Aero Diego" , "soluongton"=>"20", "mota"=>"Khung gỗ - Bọc vải.","masp"=>"3" 
+            ),
+            array("tenloai" =>"Armchair Club berg" , "soluongton"=>"20", "mota"=>"Gỗ sồi- Vải cao cấp" ,"masp"=>"3" 
+            ),
+            array("tenloai" =>"Armchair Axel" , "soluongton"=>"20", "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
+            ),
+             array("tenloai" =>"Ghế da Lazy mix" , "soluongton"=>"20", "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
+            ),
+             array("tenloai" =>"Armchair 132 vải" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+            ),
+             array("tenloai" =>"Ghế Armchair Oak" , "soluongton"=>"20", "mota"=>"Gỗ bọc vải","masp"=>"3"  
+            ),
+             array("tenloai" =>"Armchair bolero" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải","masp"=>"3"  
+            ),
+             array("tenloai" =>"Armchair Xbang Grey" , "soluongton"=>"20", "mota"=>"Khung kim loại bọc vải","masp"=>"3"  
+            ),
+              array("tenloai" =>"Sofa Urban 1C" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da+chân kim loại","masp"=>"3"  
+            ),
+              array("tenloai" =>"Ghế Adwin màu đen" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+            ),
+              array("tenloai" =>"Ghế Adwin màu trắng đen" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+            ),
+              array("tenloai" =>"Armchair Sally màu xanh" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da","masp"=>"3"  
+            ),
+              array("tenloai" =>"Ghế Rocking Ali" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da","masp"=>"3"  
+            ),
+              array("tenloai" =>"Armchair Barbier màu cognac" , "soluongton"=>"20", "mota"=>"Khung sắt bọc da công nghiệp","masp"=>"3"  
+            ),
+
+
+
+
+
+
 
      
       ]);
@@ -134,6 +173,34 @@ class chude extends Seeder
           array("url" =>"lula2.jpg" , "maloai"=>"16","isDeleted"=>"1" ),
           array("url" =>"rockingall.jpg" , "maloai"=>"17","isDeleted"=>"0" ),
           array("url" =>"danguavan.jpg" , "maloai"=>"18","isDeleted"=>"0" ),
+          array("url" =>"Armchair vải Forty1.jpg" , "maloai"=>"19","isDeleted"=>"0" ),
+          array("url" =>"Armchair vải Forty2.jpg" , "maloai"=>"19","isDeleted"=>"1" ),
+          array("url" =>"Ghế armchair Juke.jpg" , "maloai"=>"20","isDeleted"=>"0" ),
+          array("url" =>"Armchair Aero Diego1.jpg" , "maloai"=>"21","isDeleted"=>"0" ),
+          array("url" =>"Armchair Aero Diego1.jpg" , "maloai"=>"21","isDeleted"=>"1" ),
+          array("url" =>"Armchair Club berg1.jpg" , "maloai"=>"22","isDeleted"=>"0" ),
+          array("url" =>"Armchair Club berg2.jpg" , "maloai"=>"22","isDeleted"=>"1" ),
+          array("url" =>"Armchair Axel1.jpg" , "maloai"=>"23","isDeleted"=>"0" ),
+          array("url" =>"Armchair Axel2.jpg" , "maloai"=>"23","isDeleted"=>"1" ),
+          array("url" =>"Ghế da Lazy mix1.jpg" , "maloai"=>"24","isDeleted"=>"0" ),
+          array("url" =>"Ghế da Lazy mix2.jpg" , "maloai"=>"24","isDeleted"=>"1" ),
+          array("url" =>"Armchair 132 vải1.jpg" , "maloai"=>"25","isDeleted"=>"0" ),
+          array("url" =>"Armchair 132 vải2.jpg" , "maloai"=>"25","isDeleted"=>"1" ),
+          array("url" =>"Ghế Armchair Oak.jpg" , "maloai"=>"26","isDeleted"=>"0" ),
+          array("url" =>"Armchair bolero.jpg" , "maloai"=>"27","isDeleted"=>"0" ),
+          array("url" =>"Armchair Xbang Grey.jpg" , "maloai"=>"28","isDeleted"=>"0" ),
+          array("url" =>"Sofa Urban 1C.jpg" , "maloai"=>"29","isDeleted"=>"0" ),
+          array("url" =>"Ghế Adwin màu đen.jpg" , "maloai"=>"30","isDeleted"=>"0" ),
+          array("url" =>"Ghế Adwin màu trắng đen.jpg" , "maloai"=>"31","isDeleted"=>"0" ),
+          array("url" =>"Armchair Sally màu xanh.jpg" , "maloai"=>"32","isDeleted"=>"0" ),
+          array("url" =>"Ghế Rocking Ali1.jpg" , "maloai"=>"33","isDeleted"=>"0" ),
+          array("url" =>"Ghế Rocking Ali2.jpg" , "maloai"=>"33","isDeleted"=>"1" ),
+          array("url" =>"Armchair Barbier màu cognac1.jpg" , "maloai"=>"34","isDeleted"=>"0" ),
+          array("url" =>"Armchair Barbier màu cognac2.jpg" , "maloai"=>"34","isDeleted"=>"1" ),
+
+
+
+
 
       ]);
 
@@ -147,16 +214,31 @@ class chude extends Seeder
            array("macd"=>"1","maloai"=>"7"),
            array("macd"=>"1","maloai"=>"8"),
            array("macd"=>"1","maloai"=>"9"),
-           array("macd"=>"3","maloai"=>"10"),
-           array("macd"=>"3","maloai"=>"11"),
-           array("macd"=>"3","maloai"=>"12"),
-           array("macd"=>"3","maloai"=>"13"),
+           array("macd"=>"1","maloai"=>"10"),
+           array("macd"=>"1","maloai"=>"11"),
+           array("macd"=>"1","maloai"=>"12"),
+           array("macd"=>"1","maloai"=>"13"),
            array("macd"=>"2","maloai"=>"14"),
            array("macd"=>"2","maloai"=>"15"),
            array("macd"=>"2","maloai"=>"16"),
            array("macd"=>"2","maloai"=>"17"),
            array("macd"=>"2","maloai"=>"18"),
-           
+           array("macd"=>"1","maloai"=>"19"),
+           array("macd"=>"1","maloai"=>"20"),
+           array("macd"=>"1","maloai"=>"21"),
+           array("macd"=>"1","maloai"=>"22"),
+           array("macd"=>"1","maloai"=>"23"),
+           array("macd"=>"1","maloai"=>"24"),
+           array("macd"=>"1","maloai"=>"25"),
+           array("macd"=>"1","maloai"=>"26"),
+           array("macd"=>"1","maloai"=>"27"),
+           array("macd"=>"1","maloai"=>"28"),
+           array("macd"=>"1","maloai"=>"29"),
+           array("macd"=>"1","maloai"=>"30"),
+           array("macd"=>"1","maloai"=>"31"),
+           array("macd"=>"1","maloai"=>"32"),
+           array("macd"=>"1","maloai"=>"33"),
+           array("macd"=>"1","maloai"=>"34"),
 
       ]);
 

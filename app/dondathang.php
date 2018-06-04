@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class dondathang extends Model
 {
     protected $table = 'dondathang';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = ['maddh','ngaydat','ngaygiao','diachigiao','trangthai','matk','isDeleted'];
     public function loaisanpham(){
     	return $this->belongsToMany('App\loaisanpham','chitietdonhang','maddh','maloai')->using('App\chitietdonhang');

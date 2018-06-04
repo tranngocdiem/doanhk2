@@ -5,7 +5,6 @@
 @stop
 @section('sub_content')
 <div class="container">
-
   <div class="row">
     <div>
       <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -38,34 +37,41 @@
 
       <div id = "hienthisanpham" class="row">
         <?php
-        $sqlQuery="SELECT * FROM loaisanpham JOIN hinhanh on loaisanpham.maloai = hinhanh.maloai
+        /*$sqlQuery="SELECT * FROM loaisanpham JOIN hinhanh on loaisanpham.maloai = hinhanh.maloai
         where hinhanh.isDeleted=0 ";
-        $results = DB::SELECT($sqlQuery);
-        if ($results) {
+        $results = DB::SELECT($sqlQuery);*/
+        if (isset($results))
+         {
 
         //output results from database
           foreach($results as $row)
           {
-            echo'<div class="col-lg-4 col-md-6 mb-4">';
-            echo'<div id="anhsp" class="card h-100">';
-            echo'<a href="#"><img class="card-img-top" src="image/sofagoc/'.$row->url.'"alt=""></a>';
-            echo'<div id="addcart"><a id="themvaogio"><i style="padding: 0px 10px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a></div>';
-            echo'<div class="card-body">';
-            echo'<h4 class="card-title">';
-            echo'<a href="#">'.$row->tenloai.'</a>';
-            echo'</h4>';
-            echo'<h5>$24.99</h5>';
-            echo'<p class="card-text">'.$row->mota.'</p>';
-            echo'</div>';
+            ?>
+            <div class="col-lg-4 col-md-6 mb-4">
+            <div id="anhsp" class="card h-100">
+            <a href="#"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
+            <div id="addcart"><a id="themvaogio"><i style="padding: 0px 10px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a></div>
+            <div class="card-body">
+            <h4 class="card-title">
+            <a href="#"><?php echo $row->tenloai ?></a>
+            </h4>
+            <h5>$24.99</h5>
+            <p class="card-text"><?php echo $row->mota ?>.</p>
+            </div>
 
-            echo'</div>';
-            echo'</div>';
+            </div>
+            </div>
+            <?php
           }
         }
+        else echo'<div>Không tìm thấy sản phẩm nào</div>'
         ?>
 
       </div>
       <!-- /.row -->
 
-    </div></div></div>
+    </div>
+  </div>
+ 
+</div>
     @stop

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class loaisanpham extends Model
 {
     protected $table = 'loaisanpham';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['maloai','tenloai','soluongton','mota','masp','isDeleted'];
     
     public function chude(){

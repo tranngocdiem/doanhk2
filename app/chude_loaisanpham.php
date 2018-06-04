@@ -8,5 +8,5 @@ class chude_loaisanpham extends Model
 {
     protected $table = 'chude_loaisanpham';
     protected $fillable = ['macd','maloai','isDeleted'];
-     public $timestamps = false;
+     public $timestamps = true;
 }

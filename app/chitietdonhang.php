@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class chitietdonhang extends Pivot;
 {
     protected $table = 'chitietdonhang';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['maddh','maloai','soluong','isDeleted'];
 
 }

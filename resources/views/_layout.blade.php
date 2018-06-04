@@ -10,13 +10,13 @@
   <title>@section('title') Nội thất @show</title>
   
   @section('link')
-  <link rel="stylesheet" href="css/Home/home.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="{{ url('/') }}/css/Home/home.css">
+  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url('/') }}/web-fonts-with-css/css/fontawesome-all.min.css">
   @show
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{{ url('/') }}/js/jquery-3.3.1.min.js"></script>
+  <script src="{{ url('/') }}/js/popper.min.js"></script>
+  <script src="{{ url('/') }}/js/bootstrap.min.js"></script>
 
 </head>
 <body>

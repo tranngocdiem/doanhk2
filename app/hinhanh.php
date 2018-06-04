@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class hinhanh extends Model
 {
     protected $table = 'hinhanh';
-    public $timestamp = false;
+    public $timestamp = true;
     protected $fillable = ['mahinh','url','maloai','isDeleted'];
     public function maloai()
     {
