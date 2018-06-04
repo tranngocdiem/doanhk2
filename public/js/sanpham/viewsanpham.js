@@ -1,6 +1,6 @@
 
 //Lấy sản phẩm theo từng loại của từng chủ đề
-function Getsanphamtheoloai($macd, $masp){
+/*function Getsanphamtheoloai($macd, $masp){
 
     var _token = $('meta[name="csrf-token"]').attr('content');
 	$.ajax({
@@ -20,12 +20,24 @@ function Getsanphamtheoloai($macd, $masp){
 		return false;
 	});
 		
-}
+}*/
 
+//lấy loại sp theo mã loại
+function Getloaisanpham($maloai){
+	$("#themvaogio").on('click',function () {
+                var maloaisp = $(this).val();
+                $.get("Cartcontroller.php?maloai="+maloaisp, function (data, status) {
+                    $("#dssp-giohang").html(data);
+                });
+            });
+}
+/*
 $('a#getsanpham').on('click',function(){
 
 	$macd = $(this).attr("data-macd");
 	$masp = $(this).attr("data-masp");
 	Getsanphamtheoloai($macd,$masp);
 
-});
+});*/
+
+

@@ -5,7 +5,7 @@
 @stop
 @section('sub_content')
 <div class="container-fluid">
-  <div class="row">
+  <div id = "dssp-giohang" class="row">
     <div class="table-responsive">
       <div class="table-responsive">
         <div class="table-responsive">

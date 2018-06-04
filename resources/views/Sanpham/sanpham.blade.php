@@ -2,6 +2,7 @@
 @section('link')
 @parent
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/sanpham1.css">
+<link rel="stylesheet" href="viewsanpham.js">
 @stop
 @section('sub_content')
 <div class="container">
@@ -50,7 +51,8 @@
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
             <a href="#"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
-            <div id="addcart"><a id="themvaogio"><i style="padding: 0px 10px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a></div>
+
+            <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
             <div class="card-body">
             <h4 class="card-title">
             <a href="#"><?php echo $row->tenloai ?></a>
