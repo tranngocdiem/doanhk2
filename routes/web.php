@@ -49,9 +49,7 @@ Route::group(['prefix'=>'account'],function(){
 });
 
 Route::group(['prefix' => 'sanpham'], function(){
-    Route::any('/',function(){
-        return view('Sanpham.sanpham');
-    });
+    Route::any('/','Sanphamcontroller@Index');
     Route::any('/getloaisp/{macd}/{masp}', 'Sanphamcontroller@Getsanphamtheoloai');
 
 }

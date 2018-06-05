@@ -35,16 +35,51 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- hiển thị top sản phẩm mới nhất -->
+      <?php
+        if (isset($newProduct))
+        {
+          ?>
+          <div>
+            <h5 style="color: red;font-size: 30px">Sản phẩm mới</h5>
+            <br>
+          </div>
+          
+          <div id = "hienthisanpham" class="row">
+            <?php
+          foreach($newProduct as $row)
+          {
+            ?>
+            <div class="col-lg-4 col-md-6 mb-4">
+            <div id="anhsp" class="card h-100">
+            <a href="#"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
 
-      <div id = "hienthisanpham" class="row">
+            <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
+            <div class="card-body">
+            <h4 class="card-title">
+            <?php echo $row->tenloai ?>
+            </h4>
+            <h5>$24.99</h5>
+            <p class="card-text"><?php echo $row->mota ?>.</p>
+            </div>
+
+            </div>
+            </div>
+            <?php
+          }
+          ?>
+          </div>
         <?php
-        /*$sqlQuery="SELECT * FROM loaisanpham JOIN hinhanh on loaisanpham.maloai = hinhanh.maloai
-        where hinhanh.isDeleted=0 ";
-        $results = DB::SELECT($sqlQuery);*/
+        }
+      ?>
+
+      <!-- hiển thị sản phẩm -->
+        <?php
         if (isset($results))
          {
-
-        //output results from database
+          ?>
+          <div id = "hienthisanpham" class="row">
+            <?php
           foreach($results as $row)
           {
             ?>
@@ -55,7 +90,7 @@
             <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
             <div class="card-body">
             <h4 class="card-title">
-            <a href="#"><?php echo $row->tenloai ?></a>
+            <?php echo $row->tenloai ?>
             </h4>
             <h5>$24.99</h5>
             <p class="card-text"><?php echo $row->mota ?>.</p>
@@ -65,11 +100,55 @@
             </div>
             <?php
           }
+          ?>
+          </div>
+          <!-- Phân trang -->
+
+         <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <?php
+            if($results->currentPage()!=1)
+            {
+              ?>
+             <li class="page-item">
+                <a class="page-link" href="{!!$results->url($results->currentPage()-1)!!}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+              for($i=1; $i<=$results->lastPage(); $i = $i + 1) 
+              {
+                ?>
+                <li class="{!!($results->currentPage()==$i)? 'page-item active':'page-item'!!}">
+                  <a class="page-link" href="{!!$results->url($i)!!}">{!!$i!!}</a>
+                </li>
+                <?php
+              }
+              if($results->currentPage()!=$results->lastPage())
+              {
+            ?>
+             <li class="page-item">
+             <a class="page-link" href="{!!$results->url($results->currentPage()+1)!!}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+             </a>
+            </li>
+            <?php
+            }
+          ?>
+        </ul>
+      </nav>
+          
+          <?php
         }
-        else echo'<div>Không tìm thấy sản phẩm nào</div>'
+        else 
+          if (!isset($newProduct)) echo'<h4>Không tìm thấy sản phẩm nào</h4>'
         ?>
 
-      </div>
       <!-- /.row -->
 
     </div>
