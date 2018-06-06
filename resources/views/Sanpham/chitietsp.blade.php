@@ -1,9 +1,9 @@
 @extends('Sanpham._layoutsanpham')
 @section('link')
 @parent
-<link rel="stylesheet" href="css/Sanpham/chitietspzoom.css">
-<link rel="stylesheet" href="css/Sanpham/cloud-zoom.css">
-<link rel="stylesheet" href="css/Sanpham/chitietsp.css">
+<link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/chitietspzoom.css">
+<link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/cloud-zoom.css">
+<link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/chitietsp.css">
 @stop
 @section('sub_content')
 
@@ -21,56 +21,56 @@
     <div class="col-6" id="hinhanh">
       <div class="gallery-sample">
         <div class="cloud-zoom-wrap">
-          <a href="image/sanpham/test/3-Z.jpg" class="cloud-zoom" id="cloudZoom">
-            <img src="image/sanpham/test/3-Z.jpg" title="The Title" class="img-responsive">
+          <?php
+          if(isset($results))
+          {
+            ?>
+            <a  href="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" class="cloud-zoom" id="cloudZoom">
+            <img src="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" title="The Title" class="img-responsive">
+            <!-- 450-324 -->
           </a>
-          <ul class="recent_list">
-            <li class="photo_container">
-              <a href="image/sanpham/test/3-Z.jpg" rel="gallerySwitchOnMouseOver: true, popupWin:'image/sanpham/test/3-Z.jpg', useZoom: 'cloudZoom', smallImage: 'image/sanpham/test/3-Z.jpg'" class="cloud-zoom-gallery">
-                <img itemprop="image" src="image/sanpham/test/3-M.jpg" class="img-responsive">
-              </a>
-            </li>
-            <li class="photo_container">
-              <a href="image/sanpham/test/4-Z.jpg" rel="gallerySwitchOnMouseOver: true, popupWin:'image/sanpham/test/4-Z.jpg', useZoom: 'cloudZoom', smallImage: 'image/sanpham/test/4-Z.jpg'" class="cloud-zoom-gallery">
-                <img itemprop="image" src="image/sanpham/test/4-M.jpg" class="img-responsive">
-              </a>
-            </li>
-            <li class="photo_container">
-              <a href="image/sanpham/test/5-Z.jpg" rel="gallerySwitchOnMouseOver: true, popupWin:'image/sanpham/test/5-Z.jpg', useZoom: 'cloudZoom', smallImage: 'image/sanpham/test/5-Z.jpg'" class="cloud-zoom-gallery">
-                <img itemprop="image" src="image/sanpham/test/5-M.jpg" class="img-responsive">
-              </a>
-            </li>
-          </ul>
+          <?php
+            if(isset($results_all))
+            {
+              ?>
+              <ul class="recent_list">
+                <?php
+              foreach($results_all as $row)
+              {
+              ?>
+              
+                  <li class="photo_container">
+                  <a href="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" rel="gallerySwitchOnMouseOver: true, popupWin:'{{ url('/') }}/image/sanpham/<?php echo $row->url?>', useZoom: 'cloudZoom', smallImage: '{{ url('/') }}/image/sanpham/<?php echo $row->url?>'" class="cloud-zoom-gallery">
+                 <img style="width: 200px;height: 150px;" itemprop="image" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" class="img-responsive">
+                  </a>
+                  </li>
+          
+           <?php
+            }
+            ?>
+            </ul>
+            <?php
+          }
+        }
+          ?>
+          
         </div>
       </div>
-      <div>
-        <ul class="nav nav-tabs" id="chitiet">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Active</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Active</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Active</a>
-          </li>
-          <li class="nav-item ">
-            <a href="#" class="nav-link">Active</a>
-          </li>
-        </ul>
-      </div>
+      
     </div>
     <div class="col-6" id="thongtinsp">
       <div class="row">
-        <h2>Tên sản phẩm</h2>
+        <h2><?php echo $results[0]->tenloai?></h2>
+        <p style="font-size: 20px"><?php echo $results[0]->mota?></p>
       </div>
       <div class="row">
-        <h3 style="color: coral;">Giá: </h3>
+        <p style="color: coral;font-size: 20px">Giá: </p>
       </div>
       <div class="row">
-        
-          <div class="QuantityPicker display-inline-block l-margin-right"><select id="quantity" name="quantity" class="QuantityPicker-select font-semibold"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select><span aria-hidden="false" tabindex="" class="fas fa-chevron-down" alt="Icon for down-arrow"></span></div>
-        <button id="btn-themvaogio">Thêm vào giỏ hàng</button>
+        <p style="color: coral;font-size: 20px">Tiết kiệm: </p>
+      </div>
+      <div class="row">
+        <button class="btn btn-outline-danger btn-lg" style="margin-left: 50px"><i class="fas fa-cart-arrow-down">   Thêm vào giỏ hàng</i></button>
       </div>
 
     </div>
@@ -79,8 +79,8 @@
 
 
 
-<script src="js/jquery.js"></script> 
-<script type="text/javascript" src="js/sanpham/cloud-zoom.js"></script> 
+<script src="{{ url('/') }}./js/jquery.js"></script> 
+<script type="text/javascript" src="{{ url('/') }}./js/sanpham/cloud-zoom.js"></script> 
 @stop
 
 

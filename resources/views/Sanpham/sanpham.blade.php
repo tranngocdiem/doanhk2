@@ -52,7 +52,9 @@
             ?>
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
+            <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}">
+              <img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt="">
+            </a>
 
             <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
             <div class="card-body">
@@ -85,7 +87,7 @@
             ?>
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
+            <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
 
             <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
             <div class="card-body">

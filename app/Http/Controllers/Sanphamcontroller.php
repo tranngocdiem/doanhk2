@@ -8,6 +8,7 @@ use App\sanpham as sanpham;
 use App\mausanpham as mausanpham;
 use App\chude_loaisanpham as chude_loaisanpham;
 use App\hinhanh as hinhanh;
+use Cookies;
 
 
 class Sanphamcontroller extends Controller
@@ -17,6 +18,7 @@ class Sanphamcontroller extends Controller
       {
       		$results = DB::table('loaisanpham')
       		->join('hinhanh','loaisanpham.maloai','=','hinhanh.maloai')
+      		->where('hinhanh.isDeleted','=',0)
       		->orderBy('loaisanpham.maloai','desc')->take(9)->get();
       		return view('Sanpham.sanpham',['newProduct'=>$results]);
 
@@ -38,6 +40,22 @@ class Sanphamcontroller extends Controller
                  
                 
      }
+     public function Getthongtinsanpham($maloai)
+     {
+     	     $results = DB::table('loaisanpham')
+      		->join('hinhanh','loaisanpham.maloai','=','hinhanh.maloai')
+      		->where('loaisanpham.maloai',$maloai)
+      		->where('hinhanh.isDeleted',0)->get();
+      		
+      		$results_all = DB::table('loaisanpham')
+      		->join('hinhanh','loaisanpham.maloai','=','hinhanh.maloai')
+      		->where('loaisanpham.maloai',$maloai)->get();
+      		return view('Sanpham.chitietsp',['results'=>$results,'results_all'=>$results_all]);
+      		
+     }
+
+
+     
 
 
      
