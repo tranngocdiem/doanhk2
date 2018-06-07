@@ -16,7 +16,7 @@ class CreateChuongtrinhkhuyenmaisTable extends Migration
         Schema::create('chuongtrinhkhuyenmai', function (Blueprint $table) {
             $table->increments('makm');
             $table->string('tenkm');
-            $table->datetime('ngaybatdau');
+            $table->datetime('ngaybatdau')->nullable();
             $table->datetime('ngayketthuc')->nullable();
             $table->integer('discount');
             $table->integer('isDeleted')->default('0');

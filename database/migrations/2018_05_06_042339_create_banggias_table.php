@@ -15,11 +15,10 @@ class CreateBanggiasTable extends Migration
     {
         Schema::create('banggia', function (Blueprint $table) {
             $table->increments('magia');
-            $table->float('gia');
-            $table->integer('trangthai');
+            $table->double('gia');
             $table->integer('maloai')->unsigned();
             $table->integer('makm')->unsigned();
-            $table->foreign('maloai')->references('masp')->on('loaisanpham')->onDelete('cascade');
+            $table->foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
             $table->foreign('makm')->references('makm')->on('chuongtrinhkhuyenmai')->onDelete('cascade');
             $table->integer('isDeleted')->default('0');
             $table->timestamps();

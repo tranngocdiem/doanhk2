@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/chitietspzoom.css">
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/cloud-zoom.css">
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/chitietsp.css">
+
 @stop
 @section('sub_content')
 
@@ -11,9 +12,8 @@
   <div class="row">
     <div class="col-6">
       <ol class="breadcrumb" style="margin-bottom: 5px;">
-        <li><a href="#">Home ></a></li>
-        <li><a href="#">Library ></a></li>
-        <li class="active">Data</li>
+        <li><a href="{!! url('/sanpham') !!}">Sản phẩm ></a></li>
+        <li><a href="{{ URL::previous() }}"><?php echo $sanpham[0]->tensp?></a></li>
       </ol>
     </div>
   </div>
@@ -61,21 +61,108 @@
     <div class="col-6" id="thongtinsp">
       <div class="row">
         <h2><?php echo $results[0]->tenloai?></h2>
-        <p style="font-size: 20px"><?php echo $results[0]->mota?></p>
       </div>
+      <br>
       <div class="row">
-        <p style="color: coral;font-size: 20px">Giá: </p>
+        <span style="display: inline-block; min-width: 80px; font-weight: bold; font-size: 20px">Mô tả: </span>
+        <span style="font-size: 20px" ><?php echo $results[0]->mota?></span> </p>
       </div>
+      <br>
       <div class="row">
-        <p style="color: coral;font-size: 20px">Tiết kiệm: </p>
+            <?php
+              
+              $price = DB::table('banggia')
+              ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','banggia.makm')
+              ->where('banggia.maloai','=', $results[0]->maloai)
+              ->get();
+            ?>
+            <span style="display: inline-block; min-width: 80px; font-weight: bold; font-size: 20px">Giá:</span>
+            <span style="font-weight: bold; font-size: 20px"><?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?> VNĐ</span>
+            <span style="font-size: 15px;text-decoration: line-through; color:  #a2a2a2;"><?php echo $price[0]->gia ?> VNĐ</span>
+            <span style="font-weight: bold; color: #FF3B26;">-<?php echo $price[1]->discount; ?>%</span>
       </div>
+      <br>
+      <br>
+      <br>
       <div class="row">
-        <button class="btn btn-outline-danger btn-lg" style="margin-left: 50px"><i class="fas fa-cart-arrow-down">   Thêm vào giỏ hàng</i></button>
+        <button class="btn btn-outline-danger btn-lg" style="margin-left: 20px"><i class="fas fa-cart-arrow-down">   Thêm vào giỏ hàng</i></button>
       </div>
 
     </div>
   </div>
 </div>
+<br>
+<!-- các sản phẩm liên quan -->
+<div style="margin-left: 50px; font-size: 30px">BẠN CÓ THỂ QUAN TÂM</div>
+<div class="container">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row">
+        <?php  for($i = 0; $i<4; $i++)
+        { 
+          $price_product = DB::table('banggia')
+              ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','banggia.makm')
+              ->where('banggia.maloai','=', $relatedproduct[$i]->maloai)
+              ->get();
+
+        ?>
+        <div class="col-3">
+          <div style=" padding:1px; border:1px solid #021a40;">
+          <a href="{!!url('sanpham/chitietsanpham',[$relatedproduct[$i]->maloai])!!}">
+          <img style="width: 500px; height: 200px;" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
+          </a>
+          <div class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
+          </div>
+          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[1]->discount / 100); ?> VNĐ</span>
+          <span class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
+          <span class="discount-invole">-<?php echo $price_product[1]->discount; ?>%</span>
+        </div>
+        
+      </div>
+        <?php }?>
+      </div>
+
+    </div>
+    <div class="carousel-item">
+      <div class="row">
+        <?php  for($i = 4; $i<8; $i++)
+        { 
+          $price_product = DB::table('banggia')
+              ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','banggia.makm')
+              ->where('banggia.maloai','=', $relatedproduct[$i]->maloai)
+              ->get();
+        ?>
+        <div class="col-3">
+          <div style=" padding:1px; border:1px solid #021a40;">
+          <a href="{!!url('sanpham/chitietsanpham',[$relatedproduct[$i]->maloai])!!}">
+          <img style="width: 500px; height: 200px;" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
+          </a>
+          <div class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
+          </div>
+          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[1]->discount / 100); ?> VNĐ</span>
+          <span class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
+          <span class="discount-invole">-<?php echo $price_product[1]->discount; ?>%</span>
+        </div>
+        </div>
+        <?php }?>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<br>
+<br>
+    
+
 
 
 

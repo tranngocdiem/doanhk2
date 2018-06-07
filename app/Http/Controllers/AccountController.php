@@ -97,4 +97,6 @@ class AccountController extends Controller
         session()->forget(['username','id']);
         return redirect('/');
     }
+
+    
 }

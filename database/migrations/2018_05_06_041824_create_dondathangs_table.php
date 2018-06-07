@@ -17,6 +17,8 @@ class CreateDondathangsTable extends Migration
             $table->increments('maddh');
             $table->datetime('ngaydat');
             $table->datetime('ngaygiao');
+            $table->string('nguoinhan');
+            $table->integer('sdt')->unsigned();
             $table->string('diachigiao');
             $table->integer('trangthai');
             $table->integer('matk')->unsigned();

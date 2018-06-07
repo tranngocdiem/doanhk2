@@ -50,6 +50,12 @@
           foreach($newProduct as $row)
           {
             ?>
+            <?php
+              $banggia = DB::table('banggia')
+               ->join('chuongtrinhkhuyenmai','banggia.makm','=','chuongtrinhkhuyenmai.makm')
+               ->where('banggia.maloai','=',$row->maloai)
+               ->get();
+            ?>
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
             <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}">
@@ -61,7 +67,10 @@
             <h4 class="card-title">
             <?php echo $row->tenloai ?>
             </h4>
-            <h5>$24.99</h5>
+            <div>
+              <span style="font-weight: bold; color: red; font-size: 20px"><?php echo $banggia[0]->gia?> VND</span>
+              <span style="color: #FF3B26; font-size: 15px">-<?php echo $banggia[1]->discount; ?>%</span>
+            </div>
             <p class="card-text"><?php echo $row->mota ?>.</p>
             </div>
 
@@ -84,6 +93,10 @@
             <?php
           foreach($results as $row)
           {
+            $banggia = DB::table('banggia')
+               ->join('chuongtrinhkhuyenmai','banggia.makm','=','chuongtrinhkhuyenmai.makm')
+               ->where('banggia.maloai','=',$row->maloai)
+               ->get();
             ?>
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
@@ -94,7 +107,10 @@
             <h4 class="card-title">
             <?php echo $row->tenloai ?>
             </h4>
-            <h5>$24.99</h5>
+            <div>
+              <span style="font-weight: bold; color: red; font-size: 20px"><?php echo $banggia[0]->gia?> VND</span>
+              <span style="color: #FF3B26;">   -<?php echo $banggia[1]->discount; ?>%</span>
+            </div>
             <p class="card-text"><?php echo $row->mota ?>.</p>
             </div>
 

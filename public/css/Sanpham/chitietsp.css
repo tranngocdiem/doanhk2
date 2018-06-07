@@ -1,27 +1,27 @@
 .breadcrumb{
-	background: none;
+    background: none;
 }
 #hinhanh{
-	border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     border-top: 1px solid #ddd;
 }
 #thongtinsp{
-	border-top: 1px solid #ddd;
-	text-indent: 1.5em;
-	padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+    text-indent: 1.5em;
+    padding-top: 1.5em;
 }
 #chitiet{
-	border: 1px solid #ddd!important;
+    border: 1px solid #ddd!important;
 
 }
 #btn-themvaogio{
-	background-color: #0065ff;  
-	color: #fff;
-	padding: 0 40px;
-	-webkit-font-smoothing: antialiased;
+    background-color: #0065ff;  
+    color: #fff;
+    padding: 0 40px;
+    -webkit-font-smoothing: antialiased;
     height: 40px;
-	border-radius: 20px;
-	line-height: 1;
+    border-radius: 20px;
+    line-height: 1;
     text-align: center;
     vertical-align: middle;
     font-weight: 700;
@@ -33,7 +33,7 @@
 }
 #btn-themvaogio:hover
 {
-	background-color: #7fb2ff;
+    background-color: #7fb2ff;
 }
 .QuantityPicker-select {
     min-width: 71px;
@@ -49,7 +49,7 @@
     -webkit-appearance: none;
     float:left; 
     font-weight: 700!important;
-	
+    
 }
 
 .QuantityPicker {
@@ -61,7 +61,7 @@
     pointer-events: none;
     font-size: 14px;
     font-size: 1rem;
-	color: #A4A4A4;
+    color: #A4A4A4;
 }
 option {
     font-weight: normal;
@@ -70,3 +70,21 @@ option {
     min-height: 1.2em;
     padding: 0px 2px 1px;
 }
+
+span.price-invole{
+    font-weight: bold;
+}
+span.priceOld-invole{
+    font-size: 12px;
+    text-decoration: line-through;
+    color:  #a2a2a2;
+}
+span.discount-invole{
+    font-weight: bold;
+    color: #FF3B26;
+}
+
+
+
+
+
