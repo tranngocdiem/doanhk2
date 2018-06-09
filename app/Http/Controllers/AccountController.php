@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\taikhoan as taikhoan;
 use App\thongtincanhan as thongtincanhan;
@@ -96,6 +96,16 @@ class AccountController extends Controller
     {
         session()->forget(['username','id']);
         return redirect('/');
+    }
+
+    public function Getinformationacc()
+    {
+        $id = session('id');
+        $acc = DB::table('thongtincanhan')
+               ->join('taikhoan', 'taikhoan.mattcn','thongtincanhan.mattcn')
+               ->where('taikhoan.matk','=',$id)
+               ->get();
+        return view('Taikhoan.informationAccount',['acc'=>$acc]);
     }
 
     

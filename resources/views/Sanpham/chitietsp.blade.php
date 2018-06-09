@@ -1,4 +1,7 @@
 @extends('Sanpham._layoutsanpham')
+@section('title') 
+Chi tiết sản phẩm
+@stop
 @section('link')
 @parent
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/chitietspzoom.css">

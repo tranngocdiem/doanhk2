@@ -84,7 +84,7 @@
             @if (Session::get('username') !== null)
             <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
             <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                <a href="#" data-toggle="modal"  style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
+                <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
                 <a href="#" data-toggle="modal"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
                 <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
             </div>
@@ -118,6 +118,8 @@
   </div>-->
   @section('content')
   @show
+  @section('footer')
+<div>
   <footer id="contact">
     <div class="container">
       <div class="row">
@@ -144,6 +146,8 @@
     </div>
   </div>
 </footer>
+</div>
+@show
 <!--file js của từng trang-->
 @section('js')
 <script type="text/javascript">

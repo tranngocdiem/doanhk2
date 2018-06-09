@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('Home.home');
 });
-Route::get('/ctsp', function () {
-    return view('Sanpham.chitietsp');
+Route::get('/ad', function () {
+    return view('Admin._layoutadmin');
+});
+Route::get('/tttk', function () {
+    return view('Taikhoan.informationAccount');
 });
 
 Route::get('/giohang', function () {
@@ -27,6 +30,7 @@ Route::group(['prefix'=>'account'],function(){
 	Route::any('/register','AccountController@Register');
     Route::any('/login','AccountController@Login');
     Route::any('/logout','AccountController@Logout');
+    Route::any('/info','AccountController@Getinformationacc');
 	
 });
 
