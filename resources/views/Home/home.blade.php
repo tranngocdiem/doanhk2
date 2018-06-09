@@ -29,7 +29,9 @@ Trang chủ
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Phòng khách</p>
-                    <button type="button" class="btn btn-info">Xem chi tiết</button>
+                    <a href="{{ url('/') }}/sanpham/">
+                    <button  type="button" class="btn btn-info">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
@@ -41,7 +43,9 @@ Trang chủ
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Phòng ăn</p>
+                    <a href="{{ url('/') }}/sanpham/">
                     <button type="button" class="btn btn-info"">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
@@ -53,7 +57,9 @@ Trang chủ
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Phòng ngủ</p>
+                    <a href="{{ url('/') }}/sanpham/">
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
@@ -61,12 +67,14 @@ Trang chủ
 
           <div class="col-md-6">
             <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src="image/phongkhach.jpg" alt="Card image cap" style="height: 300px;">
+              <img class="card-img-top" src="image/phonglamviec.jpg" alt="Card image cap" style="height: 300px;">
               <div class="card-body">
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Phòng làm việc</p>
+                    <a href="{{ url('/') }}/sanpham/">
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
@@ -78,7 +86,9 @@ Trang chủ
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Bếp</p>
+                    <a href="{{ url('/') }}/sanpham/">
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
@@ -90,7 +100,9 @@ Trang chủ
                 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="card-text">Hàng trang trí</p>
+                    <a href="{{ url('/') }}/sanpham/">
                     <button type="button" class="btn btn-info">Xem chi tiết</button>
+                    </a>
                 </div>
               </div>
             </div>
