@@ -18,6 +18,7 @@ class CreateChitietdonhangsTable extends Migration
             $table-> integer ('maddh')->unsigned();
             $table-> integer ('maloai')->unsigned();
             $table->integer('soluong')->unsigned();
+            $table->double('gia');
             $table-> foreign('maddh')->references('maddh')-> on('dondathang')->onDelete('cascade');
             $table -> foreign('maloai')->references('maloai')->on('loaisanpham')->onDelete('cascade');
             $table-> primary(['maddh', 'maloai']);

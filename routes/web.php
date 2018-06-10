@@ -14,8 +14,15 @@
 Route::get('/', function () {
     return view('Home.home');
 });
-Route::get('/ad', function () {
-    return view('Admin._layoutadmin');
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::any('/','Quanlysanphamcontroller@Index');
+    Route::any('/qlsp',function () {
+    return view('Admin.quanlysanpham');
+});
+
+  /*  Route::any('/qlsp',)*/
+
 });
 Route::get('/tttk', function () {
     return view('Taikhoan.informationAccount');

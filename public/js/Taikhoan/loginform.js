@@ -20,7 +20,7 @@ function Login($username,$password)
 	if($data == '2')
 		{
 			/*redirect("{!! url('/ad') !!}");*/
-			window.location = url + "/ad"
+			window.location = url + "/admin"
 		}
 		
 

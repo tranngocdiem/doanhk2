@@ -1,5 +1,10 @@
 @extends('Admin._layoutadmin')
 @section('content')
+<style type="text/css">
+    #ttsp{
+        float: left;
+    }
+</style>
 <div class="row">
         <br>
         <div class="col-lg-12">
@@ -15,40 +20,43 @@
                         </div>
                     </div>
                 </div>
+
                 
                 <div id="collapseOne" class="panel-collapse collapse">
                    
                     <h4 style="color: #4b9249; padding-left: 30px;">Thêm sản phẩm</h4>
                     
-                    <form action="Changeproduct.php" method="POST" >
+                    <form method="POST" >
                         <div class="panel-body">
 
-                            <div class="form-group col-lg-4">
+                            <div id="ttsp" class="form-group col-lg-4">
                                 <input class="form-control" placeholder="Tên sản phẩm" name="name"
                                 required data-validation-required-message="Please enter your email address.">
                             </div>
-                            <div class="form-group col-lg-4" style="display: table">
-                                <input class="form-control" placeholder="Giá" name="price"
-                                required data-validation-required-message="Please enter your email address."><span class="input-group-addon">.000</span>
+                            <div  class="form-group col-lg-5" style="display: table">
+                                <input style="width: 80%; float: left;" class="form-control" placeholder="Giá : VNĐ" name="price"
+                                required data-validation-required-message="Please enter your email address.">
                             </div>
-                            <div class="form-group col-lg-4">
+                            <div id="ttsp" class="form-group col-lg-4" style="display: table">
+                                <input class="form-control" placeholder="Tên khuyến mãi" name="saleoff"
+                                required data-validation-required-message="Please enter your email address.">
+                            </div>
+                            <div  class="form-group col-lg-4" style="display: table">
+                                <input class="form-control" placeholder="Khuyến mãi: %" name="saleoff"
+                                required data-validation-required-message="Please enter your email address.">
+                            </div>
+                            <div id="ttsp" class="form-group col-lg-4">
                                 <select class="form-control" name="category">
                                     <option value="">Chủ đề</option>
                                     <option value="1">Phòng khách</option>
                                     <option value="2">Phòng ăn</option>
                                     <option value="3">Phòng ngủ</option>
                                     <option value="4">Phòng làm việc</option>
-                                    <optionv value = "5">Phòng bếp</option>
-
+                                    <option value="5">Phòng bếp</option>       
                                 </select>
-                            </div>
-                            <div class="form-group col-lg-4" style="display: table">
-                                <input class="form-control" placeholder="Khuyến mãi" name="saleoff"
-                                required data-validation-required-message="Please enter your email address.">
-                                <span class="input-group-addon">%</span>
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <input class="form-control" placeholder="link ảnh" name="imagiUrl"
+                           </div>
+                            <div id="ttsp" class="form-group col-lg-4">
+                                <input class="form-control" placeholder="Link ảnh" name="imagiUrl"
                                 required data-validation-required-message="Please enter your email address.">
                             </div>
                             <div class="form-group col-lg-4">
@@ -57,9 +65,11 @@
                                 style="width: 100%" name="btn_submit" value="Xác nhận"  >
 
                             </div>
-
                         </div>
+
+                     
                     </form>
+
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse">
                     <h4 style="color: #4b9249; padding-left: 30px;">Xóa sản phẩm</h4>

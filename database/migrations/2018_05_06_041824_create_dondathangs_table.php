@@ -20,10 +20,9 @@ class CreateDondathangsTable extends Migration
             $table->string('nguoinhan');
             $table->integer('sdt')->unsigned();
             $table->string('diachigiao');
-            $table->integer('trangthai');
+            $table->integer('trangthai')->default('0');
             $table->integer('matk')->unsigned();
             $table->foreign('matk')->references('matk')->on('taikhoan')->onDelete('cascade');
-            $table->integer('isDeleted')->default('0');
             $table->timestamps();
         });
     }
