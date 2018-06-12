@@ -8,7 +8,7 @@ class sanpham extends Model
 {
     public $timestamps = true;
     protected $table = 'sanpham';
-    protected $fillable = ['masp','tensp','trangthai','isDeleted','mamau'];
+    protected $fillable = ['masp','tensp','isDeleted','mamau'];
     
     public function loaisanpham(){
     	return $this->hasMany('App\loaisanpham');

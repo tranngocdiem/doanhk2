@@ -107,6 +107,7 @@ Chi tiết sản phẩm
           $price_product = DB::table('banggia')
               ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','banggia.makm')
               ->where('banggia.maloai','=', $relatedproduct[$i]->maloai)
+              ->where('banggia.isDeleted',0)
               ->get();
 
         ?>
@@ -117,9 +118,9 @@ Chi tiết sản phẩm
           </a>
           <div class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
           </div>
-          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[1]->discount / 100); ?> VNĐ</span>
+          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[0]->discount / 100); ?> VNĐ</span>
           <span class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
-          <span class="discount-invole">-<?php echo $price_product[1]->discount; ?>%</span>
+          <span class="discount-invole">-<?php echo $price_product[0]->discount; ?>%</span>
         </div>
         
       </div>

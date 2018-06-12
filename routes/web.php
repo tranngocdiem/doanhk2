@@ -17,9 +17,12 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'admin'],function(){
     Route::any('/','Quanlysanphamcontroller@Index');
-    Route::any('/qlsp',function () {
-    return view('Admin.quanlysanpham');
-});
+    Route::any('/qlsp','Quanlysanphamcontroller@Gettatcathongtinsanpham');
+    Route::any('/themsp','Quanlysanphamcontroller@Themsanpham');
+    Route::any('/themkm','Quanlysanphamcontroller@Themkhuyenmai');
+    Route::any('/themcd','Quanlysanphamcontroller@Themchude');
+    Route::any('/themthongtinloai','Quanlysanphamcontroller@Themthongtinloaisanpham');
+
 
   /*  Route::any('/qlsp',)*/
 
@@ -45,6 +48,7 @@ Route::group(['prefix' => 'sanpham'], function(){
     Route::any('/','Sanphamcontroller@Index');
     Route::any('/getloaisp/{macd}/{masp}', 'Sanphamcontroller@Getsanphamtheoloai');
     Route::any('/chitietsanpham/{maloai}','Sanphamcontroller@Getthongtinsanpham');
+    Route::any('/themvaogiohang','Cartcontroller@Themvaogiohang');
 }
 
 );

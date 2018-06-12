@@ -54,6 +54,7 @@
               $banggia = DB::table('banggia')
                ->join('chuongtrinhkhuyenmai','banggia.makm','=','chuongtrinhkhuyenmai.makm')
                ->where('banggia.maloai','=',$row->maloai)
+               ->where('banggia.isDeleted',0)
                ->get();
             ?>
             <div class="col-lg-4 col-md-6 mb-4">
@@ -61,15 +62,20 @@
             <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}">
               <img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt="">
             </a>
-
-            <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
+            
+            <div id='addcart'>
+              
+              <a href="#" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+              
+            </div>
+            
             <div class="card-body">
             <h4 class="card-title">
             <?php echo $row->tenloai ?>
             </h4>
             <div>
               <span style="font-weight: bold; color: red; font-size: 20px"><?php echo $banggia[0]->gia?> VND</span>
-              <span style="color: #FF3B26; font-size: 15px">-<?php echo $banggia[1]->discount; ?>%</span>
+              <span style="color: #FF3B26; font-size: 15px">-<?php echo $banggia[0]->discount; ?>%</span>
             </div>
             <p class="card-text"><?php echo $row->mota ?>.</p>
             </div>
@@ -96,20 +102,21 @@
             $banggia = DB::table('banggia')
                ->join('chuongtrinhkhuyenmai','banggia.makm','=','chuongtrinhkhuyenmai.makm')
                ->where('banggia.maloai','=',$row->maloai)
+               ->where('banggia.isDeleted',0)
                ->get();
             ?>
             <div class="col-lg-4 col-md-6 mb-4">
             <div id="anhsp" class="card h-100">
             <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
 
-            <?php  echo "<div id='addcart'><button style='width:90%' value='".$row->maloai." ' id='themvaogio'><i style='padding: 0px 20px;' class='fas fa-shopping-cart'></i>Thêm vào giỏ hàng</button></div>"?>
+            <a href="#" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
             <div class="card-body">
             <h4 class="card-title">
             <?php echo $row->tenloai ?>
             </h4>
             <div>
               <span style="font-weight: bold; color: red; font-size: 20px"><?php echo $banggia[0]->gia?> VND</span>
-              <span style="color: #FF3B26;">   -<?php echo $banggia[1]->discount; ?>%</span>
+              <span style="color: #FF3B26;">   -<?php echo $banggia[0]->discount; ?>%</span>
             </div>
             <p class="card-text"><?php echo $row->mota ?>.</p>
             </div>

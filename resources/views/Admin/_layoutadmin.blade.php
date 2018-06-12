@@ -7,16 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@section('title')Trang quản lý@show</title>
+  @section('link')
   <!-- Bootstrap core CSS-->
   <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.min.css">
   <!-- Custom fonts for this template-->
   <link rel="stylesheet" href="{{ url('/') }}/web-fonts-with-css/css/font-awesome.min.css">
   <!-- Custom styles for this template-->
   <link href="{{ url('/') }}/css/admin/sb-admin.css" rel="stylesheet">
+  @show
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <script type="text/javascript">
+    var url="{!! url('') !!}";
+  </script>
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Trang quản lý</a>
@@ -44,7 +50,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-               <a class="nav-link" href=" ">
+               <a class="nav-link" href="{!! url('/admin/qlsp') !!}">
                 <span class="nav-link-text">Quản lý sản phẩm</span>
                </a>
            </li>
@@ -203,6 +209,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+    @section('js')
     <!-- Bootstrap core JavaScript-->
     <script src="{{ url('/') }}/js/jquery.min.js"></script>
     <script src="{{ url('/') }}/js/bootstrap.bundle.min.js"></script>
@@ -212,6 +219,7 @@
     <script src="{{ url('/') }}/js/admin/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <!-- Toggle between fixed and static navbar-->
+    @show
   </div>
 </body>
 
