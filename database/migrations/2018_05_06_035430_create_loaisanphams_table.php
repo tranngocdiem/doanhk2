@@ -16,7 +16,6 @@ class CreateLoaisanphamsTable extends Migration
         Schema::create('loaisanpham', function (Blueprint $table) {
             $table->increments('maloai');
             $table->string('tenloai');
-            $table->unsignedInteger('soluongton');
             $table->text('mota');
             $table->integer('masp')->unsigned();
             $table->foreign('masp')->references('masp')->on('sanpham')->onDelete('cascade');

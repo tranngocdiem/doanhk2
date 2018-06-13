@@ -8,7 +8,7 @@ class loaisanpham extends Model
 {
     protected $table = 'loaisanpham';
     public $timestamp = true;
-    protected $fillable = ['maloai','tenloai','soluongton','mota','masp','isDeleted'];
+    protected $fillable = ['maloai','tenloai','mota','masp','isDeleted'];
     
     public function chude(){
         return $this->belongsToMany('App\chude','sanpham_chude','maloai','macd')->using('App\sanpham_chude');

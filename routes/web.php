@@ -22,6 +22,20 @@ Route::group(['prefix'=>'admin'],function(){
     Route::any('/themkm','Quanlysanphamcontroller@Themkhuyenmai');
     Route::any('/themcd','Quanlysanphamcontroller@Themchude');
     Route::any('/themthongtinloai','Quanlysanphamcontroller@Themthongtinloaisanpham');
+    Route::get('/qlsp/ajax',function(){
+        $loaisanpham = DB::table('loaisanpham')
+                                     ->join('sanpham','sanpham.masp','=','loaisanpham.masp')
+                                     ->join('chude_loaisanpham','chude_loaisanpham.maloai','=','loaisanpham.maloai')
+                                     ->join('chude','chude.macd','=','chude_loaisanpham.macd')
+                                     ->join('hinhanh','hinhanh.maloai','=','loaisanpham.maloai')
+                                     ->join('banggia','banggia.maloai','=','loaisanpham.maloai')
+                                     ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','=','banggia.makm')
+                                     ->where('hinhanh.isDeleted',0)
+                                     ->where('banggia.isDeleted',0)
+                                     ->orderBy('loaisanpham.maloai','asc')
+                                     ->paginate(10);
+        return View::make('Admin.phantrang')->with('loaisanpham',$loaisanpham)->render();
+    });
 
 
   /*  Route::any('/qlsp',)*/

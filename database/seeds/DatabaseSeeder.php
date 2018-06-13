@@ -80,66 +80,59 @@ class chude extends Seeder
         ]);
 
        DB::table("loaisanpham")->insert([
-            array("tenloai" =>"Sofa tonic" , "soluongton"=>"20", "mota"=>"Sofa tonic với thiết kế tinh tế, chất gỗ.","masp"=>"1" ),
-            array("tenloai" =>"Sofa blue góc trái" , "soluongton"=>"20", "mota"=>"Sofa với thiết kế tinh tế, chất liệu da","masp"=>"1" ),
-            array("tenloai" =>"Sofa chino góc phải" , "soluongton"=>"20", "mota"=>"Bàn console
+            array("tenloai" =>"Sofa tonic","mota"=>"Sofa tonic với thiết kế tinh tế, chất gỗ.","masp"=>"1" ),
+            array("tenloai" =>"Sofa blue góc trái" , "mota"=>"Sofa với thiết kế tinh tế, chất liệu da","masp"=>"1" ),
+            array("tenloai" =>"Sofa chino góc phải" , "mota"=>"Bàn console
              Pop với thiết kế tinh tế","masp"=>"1" ),
-            array("tenloai" =>"Sofa góc phải" , "soluongton"=>"20","mota" =>"Hàng nhập khẩu","masp"=>"1" ),
-            array("tenloai" =>"Sofa Cico góc trái màu vàng" , "soluongton"=>"20","mota" =>"Khung gỗ bọc vải cao cấp","masp"=>"1" ),
-            array("tenloai" =>"Sofa góc Royal" , "soluongton"=>"20","mota"=> "Khung gỗ xà cừ - Nệm chống cháy bọc vải cao cấp","masp"=>"1" ),
-            array("tenloai" =>"Sofa góc Rumba" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải cao cấp - Chân gỗ sồi","masp"=>"1" ),
-            array("tenloai" =>"Sofa Ramos góc trái" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải - chân inox","masp"=>"1" ),
-            array("tenloai" =>"Sofa Vegas góc trái" , "soluongton"=>"20", "mota"=>"Sản phẩm cao cấp","masp"=>"1" ),
-            array("tenloai" =>"Ghế thư giãn Lazboy Cardinal da màu " , "soluongton"=>"20", "mota"=>"Khung gỗ, thép, bọc da.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn Lazboy Bennett Febble" , "soluongton"=>"20", "mota"=>"Khung gỗ cao su bọc da bò tự nhiên 100%.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn Lazboy Canyon red" , "soluongton"=>"20", "mota"=>"Thương hiệu Mỹ - Lazboy Bảo hành 10 năm.Khung gỗ cao su bọc da bò 100%.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn Hero Leat" , "soluongton"=>"20", "mota"=>"Chân sắt, lông cừu.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn lông cừu" , "soluongton"=>"20", "mota"=>"Chân sắt, lông cừu.","masp"=>"2" ),
-            array("tenloai" =>"Ghế TG Lazboy Rialto 3C Mocca" , "soluongton"=>"20", "mota"=>"Khung gỗ cao su bọc da bò 100%.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn Lula" , "soluongton"=>"20", "mota"=>"Khung gỗ xà cừ (Mahogany)- Vải cao cấp.","masp"=>"2" ),
-            array("tenloai" =>"Ghế Rocking Ali" , "soluongton"=>"20", "mota"=>"chân gỗ, khung sắt, bọc vải.","masp"=>"2" ),
-            array("tenloai" =>"Ghế thư giãn da ngựa vằn" , "soluongton"=>"20", "mota"=>"Chân sắt, da ngựa vằn.","masp"=>"2" 
+            array("tenloai" =>"Sofa góc phải" ,"mota" =>"Hàng nhập khẩu","masp"=>"1" ),
+            array("tenloai" =>"Sofa Cico góc trái màu vàng" ,"mota" =>"Khung gỗ bọc vải cao cấp","masp"=>"1" ),
+            array("tenloai" =>"Sofa góc Royal" ,"mota"=> "Khung gỗ xà cừ - Nệm chống cháy bọc vải cao cấp","masp"=>"1" ),
+            array("tenloai" =>"Sofa góc Rumba" , "mota"=>"Khung gỗ bọc vải cao cấp - Chân gỗ sồi","masp"=>"1" ),
+            array("tenloai" =>"Sofa Ramos góc trái" , "mota"=>"Khung gỗ bọc vải - chân inox","masp"=>"1" ),
+            array("tenloai" =>"Sofa Vegas góc trái" , "mota"=>"Sản phẩm cao cấp","masp"=>"1" ),
+            array("tenloai" =>"Ghế thư giãn Lazboy Cardinal da màu " , "mota"=>"Khung gỗ, thép, bọc da.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn Lazboy Bennett Febble" , "mota"=>"Khung gỗ cao su bọc da bò tự nhiên 100%.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn Lazboy Canyon red" , "mota"=>"Thương hiệu Mỹ - Lazboy Bảo hành 10 năm.Khung gỗ cao su bọc da bò 100%.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn Hero Leat" , "mota"=>"Chân sắt, lông cừu.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn lông cừu" , "mota"=>"Chân sắt, lông cừu.","masp"=>"2" ),
+            array("tenloai" =>"Ghế TG Lazboy Rialto 3C Mocca" , "mota"=>"Khung gỗ cao su bọc da bò 100%.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn Lula" , "mota"=>"Khung gỗ xà cừ (Mahogany)- Vải cao cấp.","masp"=>"2" ),
+            array("tenloai" =>"Ghế Rocking Ali" , "mota"=>"chân gỗ, khung sắt, bọc vải.","masp"=>"2" ),
+            array("tenloai" =>"Ghế thư giãn da ngựa vằn" , "mota"=>"Chân sắt, da ngựa vằn.","masp"=>"2" 
             ),
-            array("tenloai" =>"Armchair vải Forty" , "soluongton"=>"20", "mota"=>"Khung gỗ bạch dương- Vải cao cấp- Tay gỗ tần bì- Chân hợp kim sơn tĩnh điện.","masp"=>"3" 
+            array("tenloai" =>"Armchair vải Forty" , "mota"=>"Khung gỗ bạch dương- Vải cao cấp- Tay gỗ tần bì- Chân hợp kim sơn tĩnh điện.","masp"=>"3" 
             ),
-            array("tenloai" =>"Ghế armchair Juke" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải cao cấp.","masp"=>"3" 
+            array("tenloai" =>"Ghế armchair Juke" , "mota"=>"Khung gỗ bọc vải cao cấp.","masp"=>"3" 
             ),
-            array("tenloai" =>"Armchair Aero Diego" , "soluongton"=>"20", "mota"=>"Khung gỗ - Bọc vải.","masp"=>"3" 
+            array("tenloai" =>"Armchair Aero Diego" , "mota"=>"Khung gỗ - Bọc vải.","masp"=>"3" 
             ),
-            array("tenloai" =>"Armchair Club berg" , "soluongton"=>"20", "mota"=>"Gỗ sồi- Vải cao cấp" ,"masp"=>"3" 
+            array("tenloai" =>"Armchair Club berg" , "mota"=>"Gỗ sồi- Vải cao cấp" ,"masp"=>"3" 
             ),
-            array("tenloai" =>"Armchair Axel" , "soluongton"=>"20", "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
+            array("tenloai" =>"Armchair Axel" , "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
             ),
-             array("tenloai" =>"Ghế da Lazy mix" , "soluongton"=>"20", "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
+             array("tenloai" =>"Ghế da Lazy mix" , "mota"=>"Gỗ bạch dương- Vải linenp","masp"=>"3" 
             ),
-             array("tenloai" =>"Armchair 132 vải" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+             array("tenloai" =>"Armchair 132 vải" , "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
             ),
-             array("tenloai" =>"Ghế Armchair Oak" , "soluongton"=>"20", "mota"=>"Gỗ bọc vải","masp"=>"3"  
+             array("tenloai" =>"Ghế Armchair Oak" , "mota"=>"Gỗ bọc vải","masp"=>"3"  
             ),
-             array("tenloai" =>"Armchair bolero" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc vải","masp"=>"3"  
+             array("tenloai" =>"Armchair bolero" , "mota"=>"Khung gỗ bọc vải","masp"=>"3"  
             ),
-             array("tenloai" =>"Armchair Xbang Grey" , "soluongton"=>"20", "mota"=>"Khung kim loại bọc vải","masp"=>"3"  
+             array("tenloai" =>"Armchair Xbang Grey" , "mota"=>"Khung kim loại bọc vải","masp"=>"3"  
             ),
-              array("tenloai" =>"Sofa Urban 1C" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da+chân kim loại","masp"=>"3"  
+              array("tenloai" =>"Sofa Urban 1C" , "mota"=>"Khung gỗ bọc da+chân kim loại","masp"=>"3"  
             ),
-              array("tenloai" =>"Ghế Adwin màu đen" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+              array("tenloai" =>"Ghế Adwin màu đen" , "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
             ),
-              array("tenloai" =>"Ghế Adwin màu trắng đen" , "soluongton"=>"20", "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
+              array("tenloai" =>"Ghế Adwin màu trắng đen" , "mota"=>"Khung kim loại nhồi nệm bọc vải","masp"=>"3"  
             ),
-              array("tenloai" =>"Armchair Sally màu xanh" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da","masp"=>"3"  
+              array("tenloai" =>"Armchair Sally màu xanh" , "mota"=>"Khung gỗ bọc da","masp"=>"3"  
             ),
-              array("tenloai" =>"Ghế Rocking Ali" , "soluongton"=>"20", "mota"=>"Khung gỗ bọc da","masp"=>"3"  
+              array("tenloai" =>"Ghế Rocking Ali" , "mota"=>"Khung gỗ bọc da","masp"=>"3"  
             ),
-              array("tenloai" =>"Armchair Barbier màu cognac" , "soluongton"=>"20", "mota"=>"Khung sắt bọc da công nghiệp","masp"=>"3"  
+              array("tenloai" =>"Armchair Barbier màu cognac" , "mota"=>"Khung sắt bọc da công nghiệp","masp"=>"3"  
             ),
 
-
-
-
-
-
-
-     
       ]);
 
       DB::table("hinhanh")->insert([

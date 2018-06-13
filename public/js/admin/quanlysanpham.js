@@ -105,7 +105,7 @@ function Themchude($tencd)
 	});
 }
 
-function Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota)
+function Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota,$urlanh)
 {
 	if($masp==0 || $macd==0 || $makm==0 || $tenloai=="")
 	{
@@ -121,6 +121,7 @@ function Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota)
 					'makm':$makm,
 					'mota':$mota,
 					'gia':$gia,
+					'url': $urlanh,
 				};
 		$.ajax({
 			type: 'post',
@@ -135,14 +136,13 @@ function Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota)
 		}
 		else
 			return false;	
+		alert($data);
 		})
 		.fail(function() {
 			return false;
 		});
 		}
 }
-
-
 
 $('#btnthemsanpham').on('click',function(){
 	$tensp = $("#tensanpham").val();
@@ -175,13 +175,44 @@ $('#btn_submit').on('click',function(){
 	$makm = $('#listkhuyenmai').val();
 	$macd = $('#listchude').val();
 	$mota = $('#txtmota').val();
-	if(Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota)== '-1')
+	$urlanh = $('#urlanh').val();
+	$results = Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota,$urlanh);
+	if($results== '-1')
 	{
 		$('#btn_submit').after('<label class = "errrinsert" style="color: red">Vui lòng nhập đầy đủ thông tin</label>');	
 
 	}
-	else
-		alert('Thêm thành công');
+	else alert('Thêm thành công');
+	//clear các input
+	document.getElementById('txttenloai').value = '';
+	document.getElementById('txttenloai').value = '';
+	document.getElementById('listsanpham').value = '';
+	document.getElementById('txtgia').value = '';
+	document.getElementById('listkhuyenmai').value = '0';
+	document.getElementById('listchude').value = '0';
+	document.getElementById('txtmota').value ='';
+    document.getElementById('urlanh').value = '';
 
+
+		
+
+});
+function getloaisanpham(page)
+{
+	$.ajax({
+		url: url + '/admin/qlsp/ajax?page='+page
+	})
+	.done(function(data)
+	{
+		$('.content').html(data);
+	})
+	;
+}
+
+
+$(document).on('click','.pagination a',function(e){
+	e.preventDefault();
+	var page  = $(this).attr('href').split('page=')[1];
+	getloaisanpham(page);
 });
 

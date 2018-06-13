@@ -2,7 +2,6 @@
 @section('link')
 @parent
 <link href="{{ url('/') }}/css/admin/quanlysanpham.css" rel="stylesheet">
-<meta name="csrf-token" content="{{ csrf_token() }}">
 @stop
 @section('content')
 <div class="row">
@@ -26,7 +25,8 @@
                    
                     <h4 style="color: #4b9249; padding-left: 20px;">Thêm sản phẩm</h4>
                     
-                    <form method="POST" >
+                    <!-- <form method="POST" > -->
+                        <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                         <div class="panel-body">
                             <!--  thêm loại sản phẩm-->
                             <div id="ttsp" class="form-group col-lg-4">
@@ -62,7 +62,8 @@
                                          <span class="close">&times;</span>
                                          <br>
                                          <br>
-                                        <form method="post" id="themspform">
+                                        <!-- <form method="post" id="themspform">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                                              <div>
                                              
                                              <input style="width: 100%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Nhập tên sản phẩm" name="tensp" id="tensanpham">
@@ -79,7 +80,7 @@
                                              </select>
                                              </div>
                                              <button style="width: 100%;" type="button" class="btn btn-primary btn-block btn-large" id="btnthemsanpham">Thêm</button>
-                                             </form>
+                                             <!-- </form> -->
                                     </div>
                                 </div> 
                             </div>
@@ -108,7 +109,8 @@
                                          <span class="close">&times;</span>
                                          <br>
                                          <br>
-                                        <form method="post" id="themkmform">
+                                        <!-- <form method="post" id="themkmform"> -->
+                                            <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                                              <div>
                                              <input style="width: 100%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Nhập tên khuyến mãi" name="tensp" id="tenkhuyenmai">
                                              <input style="width: 100%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Giảm giá: %" name="tensp" id="discount">
@@ -116,7 +118,7 @@
                                              <input type="date" style="width: 100%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Ngày kết thúc" name="tensp" id="ngayketthuc">
                                              </div>
                                              <button  style="width: 100%;" type="button" class="btn btn-primary btn-block btn-large" id="btnthemkm">Thêm</button>
-                                             </form>
+                                            <!--  </form> -->
                                     </div>
                                 </div>
                                 </div>
@@ -143,12 +145,13 @@
                                          <span class="close">&times;</span>
                                          <br>
                                          <br>
-                                        <form method="post" id="themcdform">
+                                        <!-- <form method="post" id="themcdform">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                                              <div>
                                              <input style="width: 100%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Nhập tên chủ đề" name="tencd" id="tenchude">
                                              </div>
                                              <button style="width: 100%;" type="button" class="btn btn-primary btn-block btn-large" id="btnthemcd">Thêm</button>
-                                             </form>
+                                             <!-- </form> -->
                                     </div>
             
                                 </div>
@@ -156,6 +159,8 @@
                         </div>
                         <div  class="form-group col-lg-9">
                         <input style="width: 60%; height: 50px; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Mô tả" name="mota" id="txtmota">
+                        <input style="width: 60%; margin-left: 0px; margin-bottom: 20px" class="form-control" placeholder="Link ảnh" name="urlanh" id="urlanh">
+
                         </div>
 
                             <!-- xác nhận -->
@@ -169,12 +174,13 @@
                         </div>
 
                      
-                    </form>
+                    <!-- </form> -->
 
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse">
                     <h4 style="color: #4b9249; padding-left: 30px;">Xóa sản phẩm</h4>
-                    <form action="Changeproduct.php" method="POST" >
+                    <!-- <form action="Changeproduct.php" method="POST" > -->
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="panel-body">
                             <div class="form-group col-lg-4">
                                 <input class="form-control" placeholder="Mã sản phẩm">
@@ -188,33 +194,47 @@
                             </div>
 
                         </div>
-                    </form>
+                    <!-- </form> -->
                 </div>
-                <?php 
-                
-                ?>
-            
             
                 <!-- /.panel-heading -->
                 <div style="margin-top: 20px" class="panel-body">
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>Mã sản phẩm</th>
+                                <th>Mã loại sản phẩm</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Giá(s)</th>
+                                <th>Giá</th>
                                 <th>Ảnh</th>
-                                <th>Loại sản phẩm</th>
-                                <th>Khuyến mãi</th>
+                                <th>Thuộc loại</th>
+                                <th>Thuộc chủ đề</th>
+                                <th>Chức năng</th>
                             </tr>
                         </thead>
-                        <tbody>
-                           
+                        <tbody class="content">
+                            <?php
+                            foreach ($loaisanpham as $row) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row->maloai ?></td>
+                                    <td><?php echo $row->tenloai?></td>
+                                    <td><?php echo $row->gia-$row->gia*$row->discount?></td>
+                                    <td><img style="width: 30px; height:30px" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" ></td>
+                                    <td><?php echo $row->tensp ?></td>
+                                    <td><?php echo $row->tencd ?></td>
+                                    <td><button class="btn-primary">Sửa</button></td>
+
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                            
+
 
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->
-
+                    {{$loaisanpham->links()}}
                 </div>
                 <!-- /.panel-body -->
             </div>

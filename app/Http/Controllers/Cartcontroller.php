@@ -34,15 +34,17 @@ class Cartcontroller extends Controller
 			        	DB::table('chitietdonhang')
 			        	->where('chitietdonhang.maloai',$info['maloai'])
 			     		->where('chitietdonhang.maddh',$result[0]->maddh)->increment('chitietdonhang.soluong', 1);
-			     		return '1';
 			        }
 			        else
 			        {
 			        	DB::table('chitietdonhang')->insert(['maddh' => $result[0]->maddh, 'maloai' => $info['maloai'],'soluong'=>1, 'gia'=>$info['gia']);
-			        	return '1';
 
 			        }
+			        /*đếm có bao nhiêu số lượng sản phẩm trong giỏ hàng*/
+			        
+
 			     }
+			     /*Nếu không có đơn hàng nào thì tạo đơn hàng mới và thêm loại sản phẩm vào đơn hàng đó*/
 			     else
 			     {
 			     	$dateNow = new DateTime(date('Y-m-d'));
