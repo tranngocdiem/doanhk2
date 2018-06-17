@@ -41,13 +41,10 @@ Route::group(['prefix'=>'admin'],function(){
   /*  Route::any('/qlsp',)*/
 
 });
-Route::get('/tttk', function () {
-    return view('Taikhoan.informationAccount');
+Route::get('/dathang', function () {
+    return view('Sanpham.dathang');
 });
 
-Route::get('/giohang', function () {
-    return view('Sanpham.giohang');
-});
 
 Route::group(['prefix'=>'account'],function(){
 	Route::any('/checkusername','AccountController@Checkusername');
@@ -55,7 +52,11 @@ Route::group(['prefix'=>'account'],function(){
     Route::any('/login','AccountController@Login');
     Route::any('/logout','AccountController@Logout');
     Route::any('/info','AccountController@Getinformationacc');
-	
+	Route::any('/demgiohang','Cartcontroller@Demsoluonggiohang');
+    Route::any('/thongtingiohang','Cartcontroller@Thongtingiohang');
+    Route::any('/themsoluong','Cartcontroller@Themsoluongmotsanphamvaogio');
+    Route::any('/giamsoluong','Cartcontroller@Giamsoluongmotsanphamvaogio');
+    Route::any('/xoasp','Cartcontroller@Xoamotsp');
 });
 
 Route::group(['prefix' => 'sanpham'], function(){

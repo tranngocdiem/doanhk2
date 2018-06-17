@@ -34,7 +34,7 @@ class Sanphamcontroller extends Controller
 						   ->where('masp','=',$masp)
 						   ->where('chude_loaisanpham.macd','=',$macd)
 						   ->where('hinhanh.isDeleted','=',0)
-						   ->select('loaisanpham.*','hinhanh.url')->distinct()->paginate(6);
+						   ->select('loaisanpham.*','hinhanh.url')->distinct()->paginate(9);
 				
                  return view('Sanpham.sanpham',['results'=>$results]);
                  

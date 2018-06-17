@@ -15,11 +15,11 @@ class CreateDondathangsTable extends Migration
     {
         Schema::create('dondathang', function (Blueprint $table) {
             $table->increments('maddh');
-            $table->datetime('ngaydat');
-            $table->datetime('ngaygiao');
-            $table->string('nguoinhan');
-            $table->integer('sdt')->unsigned();
-            $table->string('diachigiao');
+            $table->datetime('ngaydat')->nullable();
+            $table->datetime('ngaygiao')->nullable();
+            $table->string('nguoinhan')->nullable();
+            $table->integer('sdt')->unsigned()->nullable();
+            $table->string('diachigiao')->nullable();
             $table->integer('trangthai')->default('0');
             $table->integer('matk')->unsigned();
             $table->foreign('matk')->references('matk')->on('taikhoan')->onDelete('cascade');

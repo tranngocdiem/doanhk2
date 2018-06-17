@@ -2,7 +2,6 @@
 @section('link')
 @parent
 <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/sanpham1.css">
-<link rel="stylesheet" href="viewsanpham.js">
 @stop
 @section('sub_content')
 <div class="container">
@@ -65,7 +64,7 @@
             
             <div id='addcart'>
               
-              <a href="#" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+              <a href="javascript:void(0);" class="themvaogiohang" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" class="fas fa-cart-arrow-down"></i>Thêm vào giỏ hàng</a>
               
             </div>
             
@@ -109,7 +108,7 @@
             <div id="anhsp" class="card h-100">
             <a href="{!!url('sanpham/chitietsanpham',[$row->maloai])!!}"><img class="card-img-top" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" alt=""></a>
 
-            <a href="#" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+            <a href="javascript:void(0);" class="themvaogiohang" style="width:90%" data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>" data-maloai="<?php echo $row->maloai ?>" id="themvaogio"><i style="padding: 0px 20px;" ></i>Thêm vào giỏ hàng</a>
             <div class="card-body">
             <h4 class="card-title">
             <?php echo $row->tenloai ?>

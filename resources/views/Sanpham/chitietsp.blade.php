@@ -29,7 +29,7 @@ Chi tiết sản phẩm
           {
             ?>
             <a  href="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" class="cloud-zoom" id="cloudZoom">
-            <img src="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" title="The Title" class="img-responsive">
+            <img id="hinhanhsp" src="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" title="The Title" class="img-responsive">
             <!-- 450-324 -->
           </a>
           <?php
@@ -84,11 +84,8 @@ Chi tiết sản phẩm
             <span style="font-size: 15px;text-decoration: line-through; color:  #a2a2a2;"><?php echo $price[0]->gia ?> VNĐ</span>
             <span style="font-weight: bold; color: #FF3B26;">-<?php echo $price[1]->discount; ?>%</span>
       </div>
-      <br>
-      <br>
-      <br>
-      <div class="row">
-        <button class="btn btn-outline-danger btn-lg" style="margin-left: 20px"><i class="fas fa-cart-arrow-down">   Thêm vào giỏ hàng</i></button>
+      <div class="row" style="margin-top: 80px">
+        <button id="btnthemvaogio" class="btn btn-outline-danger btn-lg" style="margin-left: 20px" data-maloai = "<?php echo $results[0]->maloai; ?>" data-gia = "<?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?>"><i class="fas fa-cart-arrow-down">    Thêm vào giỏ hàng</i></button>
       </div>
 
     </div>

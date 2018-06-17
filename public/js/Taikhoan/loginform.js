@@ -1,5 +1,6 @@
 function Login($username,$password)
 {
+
 	var _token = $('meta[name="csrf-token"]').attr('content');
 	$listparam ={ 
 					'username': $username,
@@ -15,6 +16,18 @@ function Login($username,$password)
 	if($data!=='0' && $data !== '1' && $data !== '2'){
 		$('.close').click();
 		$('#modallayout').html($data);
+		document.getElementById("cart1").href = "account/thongtingiohang";
+		$.ajax({
+			type: 'post',
+			url: url + '/account/demgiohang',
+			cache: false,
+			data:{'_token': _token, 'username':$username},
+
+		})
+		.done(function($count){
+			document.getElementById("soluong").innerHTML = $count;
+		});
+
 		
 	}
 	if($data == '2')

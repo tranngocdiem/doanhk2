@@ -73,6 +73,5 @@ Sản phẩm
 @stop
 @section('js')
 @parent
-<!-- <script type="text/javascript" src="{!! url('/js/sanpham/viewsanpham.js') !!}"></script> -->
 @stop
 	

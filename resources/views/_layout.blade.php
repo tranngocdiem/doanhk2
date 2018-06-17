@@ -79,7 +79,20 @@
         </div>
         <div>
           <ul class="cart-icon">
-            <li><a href="" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a></li>
+            
+              @if (Session::get('username') !== null)
+              <?php $count = DB::table('chitietdonhang')
+                             ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
+                             ->where('dondathang.matk',Session::get('id'))
+                             ->where('dondathang.trangthai',0)
+                             ->sum('chitietdonhang.soluong'); ?>
+              <li><a id="cart1" href="{!! url('/account/thongtingiohang') !!}" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a>
+              <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger"><?php echo $count ?></span>
+              @else
+              <li><a id="cart1" href="javascript:void()" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a>
+              <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
+              @endif
+              </li>
             <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
             @if (Session::get('username') !== null)
             <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
@@ -231,6 +244,7 @@
 </script>
 <script type="text/javascript" src="{!! url('/js/Taikhoan/registerform.js') !!}"></script>
 <script type="text/javascript" src="{!! url('/js/Taikhoan/loginform.js') !!}"></script>
+<script type="text/javascript" src="{!! url('/js/sanpham/cart.js') !!}"></script>
 
 @show
 
