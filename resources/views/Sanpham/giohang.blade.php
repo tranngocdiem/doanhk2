@@ -38,7 +38,7 @@
                 <td  style="vertical-align: middle;">
                   <div class="media">
                     <a class="mr-3 d-none d-md-block"><img style="width: 300px;height:200px" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" class="img-fluid" alt="product"></a>
-                    <div style="margin:auto">
+                    <div style="padding: 20px;">
                       <a  class="h5"><?php echo $row->tenloai ?></a>
                       <div class="small"><?php echo $row->mota ?></div>
                       <div class="mb-1">
