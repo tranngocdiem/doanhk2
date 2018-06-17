@@ -134,12 +134,19 @@ $('.fa-shopping-cart').on('click',function(){
 		.fail(function() {
 			return false;
 		});
+		//thay đổi thành tiền
+		var thanhtienold = $("#thanhtien").attr("data-thanhtien");
+        var thanhtiennew = parseInt(thanhtienold) - parseInt($(this).closest('tr').find('.tongtien').attr('data-tong'));
+        $("#thanhtien").text(thanhtiennew) ;
+        $("#thanhtien").attr("data-thanhtien",thanhtiennew);
+
 
     });
     $('.btn-up').click(function () {
 
       if ($(this).parent('div').prev("input").first().val() < 100) {
         $(this).parent('div').prev("input").first().val(+$(this).parent('div').prev("input").first().val() + 1);
+        $(this).parent('div').prev("input").first().attr("data-soluong",parseInt($(this).parent('div').prev("input").first().attr("data-soluong")) + 1);
         //thay đổi tổng tiền sản phẩm
         var element = $(this).closest("tr").find(".tongtien");
         var tong = parseInt($(element).attr('data-tong')) + parseInt($(this).closest('.quantity').attr('data-gia'));
@@ -176,7 +183,7 @@ $('.fa-shopping-cart').on('click',function(){
       if ($(this).parent('div').next("input").first().val() > 1) {
 
           $(this).parent('div').next("input").first().val(+$(this).parent('div').next("input").first().val() - 1);
-
+          $(this).parent('div').next("input").first().attr("data-soluong",parseInt($(this).parent('div').next("input").first().attr("data-soluong")) - 1);
           var element = $(this).closest("tr").find(".tongtien");
         var tong = parseInt($(element).attr('data-tong')) - parseInt($(this).closest('.quantity').attr('data-gia'));
         $(element).text(tong);

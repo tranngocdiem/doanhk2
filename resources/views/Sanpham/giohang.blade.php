@@ -54,7 +54,7 @@
                 <td style="vertical-align: middle;" class="text-center">
                   <div data-gia="<?php echo $banggia[0]->gia - ($banggia[0]->gia * $banggia[0]->discount / 100); ?>"  style="width: 120px" class="input-group input-group-sm input-group-qty d-inline-flex mb-2 quantity">
                     <div class="input-group-prepend"><button data-maddh="<?php echo $row->maddh?>" data-maloai="<?php echo $row->maloai?>" class="btn btn-light btn-down" type="button"><i id="down" class="fas fa-chevron-down"></i></button></div>
-                    <input  type="text" class="form-control text-center border-light" aria-label="Quantity" value="<?php echo $row->soluong ?>" min="1">
+                    <input data-soluong="<?php echo $row->soluong?>" type="text" class="form-control text-center border-light" aria-label="Quantity" value="<?php echo $row->soluong ?>" min="1">
                     <div class="input-group-append"><button data-maddh="<?php echo $row->maddh?>" data-maloai="<?php echo $row->maloai?>" class="btn btn-light btn-up" type="button"><i id="up" class="fas fa-chevron-up"></i></button></div>
                   </div>
                   <div class="d-block d-sm-none">
