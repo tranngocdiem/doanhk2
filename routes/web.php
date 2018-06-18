@@ -41,9 +41,7 @@ Route::group(['prefix'=>'admin'],function(){
   /*  Route::any('/qlsp',)*/
 
 });
-Route::get('/dathang', function () {
-    return view('Sanpham.dathang');
-});
+
 
 
 Route::group(['prefix'=>'account'],function(){
@@ -57,6 +55,9 @@ Route::group(['prefix'=>'account'],function(){
     Route::any('/themsoluong','Cartcontroller@Themsoluongmotsanphamvaogio');
     Route::any('/giamsoluong','Cartcontroller@Giamsoluongmotsanphamvaogio');
     Route::any('/xoasp','Cartcontroller@Xoamotsp');
+    Route::any('/dathang', function () {
+    return view('Sanpham.dathang');
+});
 });
 
 Route::group(['prefix' => 'sanpham'], function(){

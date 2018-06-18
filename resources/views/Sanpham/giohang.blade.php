@@ -89,7 +89,7 @@
             <tr>
               <td class="d-none d-sm-table-cell"></td>
               <td class="d-none d-sm-table-cell"></td>
-              <td><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
+              <td><a href="{!!url('account/dathang')!!}" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
               <td class="d-none d-sm-table-cell"></td>
             </tr>
             </tbody>
