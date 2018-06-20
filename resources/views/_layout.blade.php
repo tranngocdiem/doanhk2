@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ url('/') }}/css/Home/home.css">
   <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ url('/') }}/web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/dathang.css">
   @show
   <script src="{{ url('/') }}/js/jquery-3.3.1.min.js"></script>
   <script src="{{ url('/') }}/js/popper.min.js"></script>
@@ -98,7 +99,7 @@
             <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
             <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
                 <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
-                <a href="#" data-toggle="modal"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
+                <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
                 <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
             </div>
             </li>

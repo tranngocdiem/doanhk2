@@ -232,5 +232,21 @@ class Cartcontroller extends Controller
 		return '0';
 	}
 
+	function Thongtindonhang()
+	{
+		if(session('id')!=null)
+			{
+				$id = session('id');
+			    //trả về tất cả thông tin đơn đặt hàng của tài khoản
+			    $dondathang = DB::table('dondathang')
+						  ->where('dondathang.matk',$id)
+						  ->orderBy('dondathang.maddh','desc')
+						  ->get();
+				return view('Taikhoan.donhangcuatoi',['dondathang'=>$dondathang]);
+
+			}
+			else return '0';
+	}
+
 
 }

@@ -91,7 +91,6 @@
 }
 
 .responstable th {
-    display: none;
     border: 1px solid #FFF;
     background-color: #167F92;
     color: #FFF;
@@ -99,6 +98,6 @@
 }
 
 .responstable th, .responstable td {
-    text-align: left;
+    text-align: center;
     margin: .5em 1em;
 }

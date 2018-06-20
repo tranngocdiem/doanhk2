@@ -60,10 +60,7 @@ Route::group(['prefix'=>'account'],function(){
 
 });
     Route::any('/dathang/xacnhan','Cartcontroller@Xacnhandonhang');
-    Route::any('/donhangcuatoi', function () {
-    return view('Taikhoan.thongtindonhang');
-
-});
+    Route::any('/donhangcuatoi','Cartcontroller@Thongtindonhang');
 });
 
 Route::group(['prefix' => 'sanpham'], function(){

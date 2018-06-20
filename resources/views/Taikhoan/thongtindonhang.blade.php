@@ -5,7 +5,7 @@
 
 ?>
 <h3 style=" margin-left: 10px; margin-top: 22px; margin-bottom: 20px;">THÔNG TIN ĐẶT HÀNG</h3>
-<table class="responstable table-bordered table-hover">
+<table class="responstable table table-bordered table-hover">
   <thead>
     <tr>
       <th scope="col">STT</th>

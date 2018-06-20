@@ -1,9 +1,5 @@
 
 @extends('Sanpham._layoutsanpham')
-@section('link')
-@parent
-<link rel="stylesheet" href="{{ url('/') }}./css/Sanpham/dathang.css">
-@stop
 @section('title') 
 Thông tin đặt hàng
 @stop
