@@ -57,6 +57,12 @@ Route::group(['prefix'=>'account'],function(){
     Route::any('/xoasp','Cartcontroller@Xoamotsp');
     Route::any('/dathang', function () {
     return view('Sanpham.dathang');
+
+});
+    Route::any('/dathang/xacnhan','Cartcontroller@Xacnhandonhang');
+    Route::any('/donhangcuatoi', function () {
+    return view('Taikhoan.thongtindonhang');
+
 });
 });
 

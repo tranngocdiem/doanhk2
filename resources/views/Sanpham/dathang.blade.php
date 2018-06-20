@@ -9,6 +9,7 @@ Thông tin đặt hàng
 @stop
 @section('sub_content')
     <!-- paymen progress -->
+  <div class = "content">
 	<div class="container">
 		<div class="shipping-header">
 			<div class="row row-style-1">
@@ -44,19 +45,19 @@ Thông tin đặt hàng
 	<form style="margin-left:400px " id="dathangfrm">
              <div class="form-group">
                 <label style="font-weight: bold;">Họ tên người nhận</label>
-                <input class="form-control" id=name" type="name" placeholder="Nhập tên" name="name" value=""> 
+                <input class="form-control" id="txtname" type="name" placeholder="Nhập tên" name="name" value=""> 
               </div>
               <div class="form-group">
                 <label style="font-weight: bold;" >Địa chỉ nhận hàng:</label>
-                <input  class="form-control" id="address" type="name"  placeholder="Nhập địa chỉ" name="address" value="">
+                <input  class="form-control" id="txtdiachigiao" type="name"  placeholder="Nhập địa chỉ" name="address" value="">
               </div>
               <div class="form-group">
                 <label style="font-weight: bold;">Số điện thoại</label>
-                <input  class="form-control" id="number" type="number" placeholder="Nhập số điện thoại" name="telephonenumber" value="">
+                <input  class="form-control" id="txtnumber" type="number" placeholder="Nhập số điện thoại" name="telephonenumber" value="">
               </div>
               <div class="form-group">
                 <label style="font-weight: bold;">Ngày giao dự kiến</label>
-                <input  class="form-control" id="number" type="number" placeholder="Ngày giao" name="telephonenumber" value="">
+                <input  class="form-control" id="txtngaygiao" type="date" placeholder="Ngày giao" name="telephonenumber" value="">
               </div>
               <button style="float: right;" id="btnupdate" type="button" class="btn btn-primary">Đặt mua</button>
         </form>
@@ -91,4 +92,8 @@ Thông tin đặt hàng
   </div>
 </footer>
 </div>
+@stop
+@section('js')
+@parent
+<script type="text/javascript" src="{!! url('/js/Sanpham/dathang.js') !!}"></script>
 @stop

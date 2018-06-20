@@ -1,7 +1,6 @@
 @extends('Sanpham._layoutsanpham')
 @section('link')
 @parent
-<link rel="stylesheet" href="css/Sanpham/giohang.css">
 @stop
 @section('sub_content')
 <div class="container-fluid">

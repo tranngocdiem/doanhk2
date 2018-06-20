@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use \Illuminate\Notifications\Messages\MailMessage;
 use App\chitietdonhang as chitietdonhang;
+use DateTime;
 
 class Cartcontroller extends Controller
 {
@@ -199,4 +200,37 @@ class Cartcontroller extends Controller
 		}
 		else return '-1';
 	}
+
+	function Xacnhandonhang()
+	{
+		$Param = array_merge($_POST,$_GET);
+		if(isset($Param['thongtindathang']))
+		{
+			$thongtin = $Param['thongtindathang'];
+			if(session('id')!=null)
+			{
+				$id = session('id');
+				$iddondathang = DB::table('dondathang')
+								->where('dondathang.matk',$id)
+								->where('dondathang.trangthai',0)
+								->select('maddh')->get();
+				 $dateNow = new DateTime(date('Y-m-d'));
+			    DB::table('dondathang')
+			    	->where('dondathang.maddh',$iddondathang[0]->maddh)
+			    	->update(['ngaydat'=>$dateNow,'ngaygiao'=>$thongtin['ngaygiao'],'nguoinhan'=>$thongtin['nguoinhan'],'sdt'=>$thongtin['sdt'],'diachigiao'=>$thongtin['diachigiao'],'trangthai'=>1]);
+			    //trả về tất cả thông tin đơn đặt hàng của tài khoản
+			    $dondathang = DB::table('dondathang')
+						  ->where('dondathang.matk',$id)
+						  ->orderBy('dondathang.maddh','desc')
+						  ->get();
+				return view('Taikhoan.thongtindonhang',['dondathang'=>$dondathang]);
+
+			}
+			else return '0';
+			
+		}
+		return '0';
+	}
+
+
 }
