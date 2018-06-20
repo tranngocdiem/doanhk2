@@ -26,12 +26,14 @@ Sản phẩm
        					 $sqlQuery="SELECT DISTINCT mausanpham.* FROM chude_loaisanpham join loaisanpham on chude_loaisanpham.maloai = loaisanpham.maloai join sanpham on sanpham.masp= loaisanpham.masp join mausanpham on mausanpham.mamau = sanpham.mamau WHERE chude_loaisanpham.macd =$value->macd AND mausanpham.isDeleted = 0";
         				$mausanpham = DB::SELECT($sqlQuery);
         				if ($mausanpham) {
-
+                  ?>
+                  <nav id="menu-phu-cap1" class="nav-phong">
+                    <?php
         				//output results from database
          				 foreach($mausanpham as $row)
          				 {
             				?> 
-            			<nav id="menu-phu-cap1" class="nav-phong">
+            			
 							<li class="menuc1"><a class="nav-link" href="#"><?php echo $row->tenmau ?></a>
 							<nav id="menu-phu-cap2" class="nav">
 							<?php
@@ -53,11 +55,12 @@ Sản phẩm
           					?>
           				</nav>
           			</li>
-          		</nav>
+                
+          		
               <?php
         }
         ?>
-        
+       </nav> 
     </li>
     <?php
 	}
