@@ -60,7 +60,7 @@ Thông tin đặt hàng
 </div>
 @stop
 @section('footer')
-<div style="padding-top: 400px">
+<div id = "footer" style="padding-top: 450px">
   <footer id="contact">
     <div class="container">
       <div class="row">

@@ -18,6 +18,7 @@ class Sanphamcontroller extends Controller
       {
       		$results = DB::table('loaisanpham')
       		->join('hinhanh','loaisanpham.maloai','=','hinhanh.maloai')
+          ->where('loaisanpham.isDeleted','=',0)
       		->where('hinhanh.isDeleted','=',0)
       		->orderBy('loaisanpham.maloai','desc')->take(9)->get();
       		return view('Sanpham.sanpham',['newProduct'=>$results]);
@@ -34,9 +35,15 @@ class Sanphamcontroller extends Controller
 						   ->where('masp','=',$masp)
 						   ->where('chude_loaisanpham.macd','=',$macd)
 						   ->where('hinhanh.isDeleted','=',0)
+               ->where('loaisanpham.isDeleted','=',0)
 						   ->select('loaisanpham.*','hinhanh.url')->distinct()->paginate(9);
-				
-                 return view('Sanpham.sanpham',['results'=>$results]);
+				if(count($results)> 0)
+        {
+          return view('Sanpham.sanpham',['results'=>$results]);
+        }
+        else
+          return view('Sanpham.sanpham');
+                 
                  
                 
      }

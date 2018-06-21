@@ -144,6 +144,34 @@ function Themthongtinsanpham($tenloai,$gia,$masp,$makm,$macd,$mota,$urlanh)
 		}
 }
 
+function Xoaloaisanpham($maloai)
+{
+	var _token = $('meta[name="csrf-token"]').attr('content');
+	$.ajax({
+			type: 'post',
+			url: url + '/admin/xoaloaisanpham',
+			cache: false,
+			data: {'_token': _token,'maloai':$maloai},
+		})
+		.done(function($data) {
+
+		if($data=='1'){
+			alert('Xóa thành công.');
+			$('#masp_del').val()="";
+		}
+		else if($data=='-1')
+		{
+			alert('Mã này không tồn tại.');
+			$('#masp_del').val()="";
+		}
+		else alert('Thất bại.');
+		
+		})
+		.fail(function() {
+			return false;
+		});
+}
+
 $('#btnthemsanpham').on('click',function(){
 	$tensp = $("#tensanpham").val();
 	$mamau = $("#mausanpham").val();
@@ -196,6 +224,11 @@ $('#btn_submit').on('click',function(){
 
 		
 
+});
+
+$('#btn_submitDel').on('click',function(){
+	$maloai = $('#masp_del').val();
+	Xoaloaisanpham($maloai);
 });
 function getloaisanpham(page)
 {

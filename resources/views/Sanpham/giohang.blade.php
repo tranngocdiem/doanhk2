@@ -1,4 +1,7 @@
 @extends('Sanpham._layoutsanpham')
+@section('title')
+Giỏ hàng
+@stop
 @section('link')
 @parent
 @stop
@@ -75,7 +78,7 @@
               
               </tr>
               <tr>
-              <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i>Tiếp tục mua hàng</a></td>
+              <td><a href="{!! url('/sanpham') !!}" class="btn btn-warning"><i class="fa fa-angle-left"></i>Tiếp tục mua hàng</a></td>
               <td class="d-none d-sm-table-cell"></td>
               <td style="text-align: center;" class="hidden-xs"><strong>Thành tiền :</strong>
               <div class="d-block d-sm-none">

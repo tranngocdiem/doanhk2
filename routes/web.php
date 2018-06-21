@@ -36,6 +36,8 @@ Route::group(['prefix'=>'admin'],function(){
                                      ->paginate(10);
         return View::make('Admin.phantrang')->with('loaisanpham',$loaisanpham)->render();
     });
+    Route::any('/xoaloaisanpham','Quanlysanphamcontroller@Xoaloaisanpham');
+
 
 
   /*  Route::any('/qlsp',)*/

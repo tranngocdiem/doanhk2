@@ -2,6 +2,7 @@
 @section('link')
 @parent
 <link href="{{ url('/') }}/css/admin/quanlysanpham.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 @stop
 @section('content')
 <div class="row">
@@ -183,13 +184,13 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="panel-body">
                             <div class="form-group col-lg-4">
-                                <input class="form-control" placeholder="Mã sản phẩm">
+                                <input id ="masp_del" class="form-control" placeholder="Mã sản phẩm">
                             </div>
 
                             <div class="form-group col-lg-4">
 
                                 <input type="submit" class=" btn btn-outline btn-success"
-                                style="width: 100%" name="btn_submitDel" value="Xác nhận"  >
+                                style="width: 100%" id="btn_submitDel" value="Xác nhận"  >
 
                             </div>
 
@@ -198,8 +199,10 @@
                 </div>
             
                 <!-- /.panel-heading -->
+
+                <input type="text" id="myInput"  placeholder="Tìm kiếm..." title="Type in a name" style="float: right; margin-top: 20px; margin-bottom: 10px; width: 400px; ">
                 <div style="margin-top: 20px" class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="myTable">
                         <thead>
                             <tr>
                                 <th>Mã loại sản phẩm</th>
@@ -310,4 +313,15 @@
                 
             </script>
  <script type="text/javascript" src="{!! url('/js/Admin/quanlysanpham.js') !!}"></script>
+ <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".content tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</script>
 @stop

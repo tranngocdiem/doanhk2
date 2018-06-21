@@ -136,6 +136,28 @@ class Quanlysanphamcontroller extends Controller
         else return '0';
     }
 
+    public function Xoaloaisanpham()
+    {
+        if(isset($_POST['maloai']))
+        {
+            $maloai = $_POST['maloai'];
+            $check = DB::table('loaisanpham')->where('loaisanpham.maloai',$maloai)->get();
+            if(count($check) == 0)
+                return '-1';
+            else
+            {
+                 DB::table('loaisanpham')
+                ->where('loaisanpham.maloai',$maloai)
+                ->update(['isDeleted'=>1]);  
+                return '1';   
+            }
+           
+            
+
+        }
+        else return '0';
+    }
+
 }
 
 
