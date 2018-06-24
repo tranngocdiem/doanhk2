@@ -9,6 +9,9 @@ use App\mausanpham as mausanpham;
 use App\chude_loaisanpham as chude_loaisanpham;
 use App\hinhanh as hinhanh;
 use Cookies;
+use Illuminate\Http\Request;
+use Input;
+
 
 
 class Sanphamcontroller extends Controller
@@ -72,15 +75,27 @@ class Sanphamcontroller extends Controller
       		return view('Sanpham.chitietsp',['results'=>$results,'results_all'=>$results_all,'sanpham'=>$sanpham,'relatedproduct'=>$relatedproduct]);
 		
      }
-
-
-     
-
-
-     
-
-
-            
+    
+    public static function getListsanpham(){
+      
+      
+      $results = DB::table('loaisanpham')
+        ->join('hinhanh','loaisanpham.maloai','=','hinhanh.maloai')
+        ->join('banggia','loaisanpham.maloai','=','banggia.maloai')
+        ->join('chuongtrinhkhuyenmai','chuongtrinhkhuyenmai.makm','=','banggia.makm')
+        ->where('banggia.isDeleted',0)
+        ->where('hinhanh.isDeleted',0)
+        ->where('loaisanpham.isDeleted',0)
+        ->distinct()
+        ->get();
+        
+      $datajson=array();
+      foreach ($results as $key => $value) {
+        $datajson[]=['tenloai'=>$value->tenloai,'url'=> $value->url, 'gia'=>$value->gia-($value->gia* $value->discount/100), 'maloai'=>$value->maloai];
+      }
+      return response()->json($datajson);
+    }
+          
 }
 	
 
