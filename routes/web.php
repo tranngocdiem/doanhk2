@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('Home.home');
 });
 
+
+Route::get('/getListsanpham',array('as'=>'getListsanpham','uses'=>'Sanphamcontroller@getListsanpham'));
+
 Route::group(['prefix'=>'admin'],function(){
     Route::any('/','Quanlysanphamcontroller@Index');
     Route::any('/qlsp','Quanlysanphamcontroller@Gettatcathongtinsanpham');
@@ -72,6 +75,7 @@ Route::any('/tkdt','Thongkecontroller@Thongkedoanhthutheothang');
 
 
 Route::group(['prefix'=>'account'],function(){
+
 	Route::any('/checkusername','AccountController@Checkusername');
 	Route::any('/register','AccountController@Register');
     Route::any('/login','AccountController@Login');

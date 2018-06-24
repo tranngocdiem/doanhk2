@@ -25,106 +25,100 @@
   <script type="text/javascript">
     var url="{!! url('') !!}";
   </script>
- <!-- header!-->
- <header>
-  <div>
-    <div class="hide-content-1" aria-hidden="true">
-      <nav class="sidebar">
+  <!-- header!-->
+  <header>
+    <div>
+      <div class="hide-content-1" aria-hidden="true">
+        <nav class="sidebar">
 
-        <div class="menu">
-          <a href="{!! url('/') !!}">
-            <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 100%;height: 140px;" alt="" id="logo"/>
-          </a>
+          <div class="menu">
+            <a href="{!! url('/') !!}">
+              <img class="logo" src="{{ url('/') }}./image/logo1.png" style="width: 100%;height: 140px;" alt="" id="logo"/>
+            </a>
 
-          <ul>
-            <li><a href="{!! url('/') !!}">Trang chủ</a></li>
-            <li><a href="">Dịch vụ</a></li>
-            <li><a href="{!! url('/sanpham') !!}">Sản phẩm</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-            <li><a href="">Tin tức</a></li>
-            <li><a href="">Trợ giúp</a></li>
-          </ul>
-          <ul class="social-icon" >
-            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="row1" style="background-color: rgba(0,11,12,0.8);">
-      <div class="">
+            <ul>
+              <li><a href="{!! url('/') !!}">Trang chủ</a></li>
+              <li><a href="">Dịch vụ</a></li>
+              <li><a href="{!! url('/sanpham') !!}">Sản phẩm</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+              <li><a href="">Tin tức</a></li>
+              <li><a href="">Trợ giúp</a></li>
+            </ul>
+            <ul class="social-icon" >
+              <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href=""><i class="fab fa-twitter"></i></a></li>
+              <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+              <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+              <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="row1" style="background-color: rgba(0,11,12,0.8);">
+        <div class="">
 
-        <div class="menu-icon">
-          <span class="fa fa-bars fa-2x"></span>
-        </div>
-
-
-        <div class="backgrSearch">
-          <form class="mainForm">
-
-            <button class="btn-select">
-              <select>
-                <option>All</option>
-              </select>
-            </button>
-
-            <input type ="text" name = "search" placeholder = "Search">
-            <button class="btn-search"><i class="fas fa-search"></i></button>
-
-          </form>
+          <div class="menu-icon">
+            <span class="fa fa-bars fa-2x"></span>
+          </div>
 
 
-        </div>
-        <div>
-          <ul class="cart-icon">
+          <div class="backgrSearch">
+            <form class="mainForm">
+              <input id="timkiem" type ="text" name = "search" placeholder = "Search">
+              <span class="btn-search"><i class="fas fa-search"></i></span>
+              <ul style="display: none;" class="list-sanpham" id="ketquatimkiem">
+              </ul>
+            </form>
             
+
+          </div>
+          <div>
+            <ul class="cart-icon">
+
               @if (Session::get('username') !== null)
               <?php $count = DB::table('chitietdonhang')
-                             ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
-                             ->where('dondathang.matk',Session::get('id'))
-                             ->where('dondathang.trangthai',0)
-                             ->sum('chitietdonhang.soluong'); ?>
+              ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
+              ->where('dondathang.matk',Session::get('id'))
+              ->where('dondathang.trangthai',0)
+              ->sum('chitietdonhang.soluong'); ?>
               <li><a id="cart1" href="{!! url('/account/thongtingiohang') !!}" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a>
-              <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger"><?php echo $count ?></span>
-              @else
-              <li><a id="cart1" href="javascript:void()" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a>
-              <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
-              @endif
-              </li>
-            <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
-            @if (Session::get('username') !== null)
-            <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
-            <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
-                <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
-                <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
+                <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger"><?php echo $count ?></span>
+                @else
+                <li><a id="cart1" href="javascript:void()" class="fas fa-shopping-cart"><i>Giỏ hàng</i></a>
+                  <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
+                  @endif
+                </li>
+                <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
+                @if (Session::get('username') !== null)
+                <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
+                  <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
+                    <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
+                    <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
+                    <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
+                  </div>
+                </li>
+                @else
+                <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
+                  <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
+                    <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
+                    <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
+                  </div>
+                </li>
+                @endif
+              </ul>
             </div>
-            </li>
-            @else
-             <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
-              <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
-                <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
-              </div>
-            </li>
-            @endif
-          </ul>
+          </div>
+
         </div>
       </div>
 
-    </div>
-  </div>
 
+    </header>
+    <!--Hiển thị modal đăng nhập-->
+    @include('Taikhoan.loginform')
+    @include ('Taikhoan.registerform')
 
-</header>
-<!--Hiển thị modal đăng nhập-->
-@include('Taikhoan.loginform')
-@include ('Taikhoan.registerform')
-
-<!-- end header!-->
+    <!-- end header!-->
   <!--<div class = "content">
    
   
@@ -133,33 +127,33 @@
   @section('content')
   @show
   @section('footer')
-<div>
-  <footer id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Liên hệ</h2>
-          <hr class="my-4">
-          <p class="mb-5">Địa chỉ: DTQfurniture, khu phố 6, phường Linh Trung, quận Thủ Đức, TPHCM</p>
-          <p class="mb-5">Giờ mở cửa: 8:00 AM - 20:00 PM</p>
+  <div>
+    <footer id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Liên hệ</h2>
+            <hr class="my-4">
+            <p class="mb-5">Địa chỉ: DTQfurniture, khu phố 6, phường Linh Trung, quận Thủ Đức, TPHCM</p>
+            <p class="mb-5">Giờ mở cửa: 8:00 AM - 20:00 PM</p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone"></i>
-          <p>123-456-6789</p>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-phone"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+           <!-- <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "></i>-->
+           <p>
+            <i class="fas fa-envelope"></i>
+            <br>
+            <a href="mailto:your-email@your-domain.com">dtqfurniture@gmail.com</a>
+          </p>
         </div>
-        <div class="col-lg-4 mr-auto text-center">
-         <!-- <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; "></i>-->
-         <p>
-          <i class="fas fa-envelope"></i>
-          <br>
-          <a href="mailto:your-email@your-domain.com">dtqfurniture@gmail.com</a>
-        </p>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </div>
 @show
 <!--file js của từng trang-->
@@ -167,7 +161,8 @@
 <script type="text/javascript">
 
       // Menu-toggle button
-
+      
+      
 
       $(document).ready(function(){
         $(".menu-icon").click( function(){
@@ -190,11 +185,46 @@
           $("a").removeClass("active1");
         });
         
+
+
+        $('#timkiem').keyup(function(){
+          $('#ketquatimkiem').css('display','block');
+          $('#ketquatimkiem').html('');
+
+          
+          var searchField = $('#timkiem').val();
+          var expression = new RegExp(searchField, "i");
+          $.getJSON("{{ url('/getListsanpham') }}", function(data) {
+             $('#ketquatimkiem').find('li').remove('li');
+           $.each(data, function(key, value){
+            if (value.tenloai.search(expression) != -1)
+            {
+
+             $('#ketquatimkiem').append('<a style="text-decoration:none;" href="{{ url("/") }}/sanpham/chitietsanpham/'+value.maloai+'"><li class="list-group-item link-class"><img style="width: 60px; height:30px;" src="{{ url("/") }}/image/sanpham/'+value.url+'"/><span style="padding: 0 20px;font-size: 20px;text-decoration: none;">'+value.tenloai+'</span><span style="padding:7px;" class="badge badge-success">'+value.gia+'</span></li></a>');
+           }
+         });   
+         });
+        });
+        var isblur = true;
+        $(document).on('mouseover','#ketquatimkiem',function(){
+            isblur=false;
+        });
+        $(document).on('mouseout','#ketquatimkiem',function(){
+            isblur=true;
+        });
+        
+        $("#timkiem").blur(function(){
+          if(isblur)
+            $(this).next().next().css('display','none');
+       
+        });
+
+        
         
       });
 
       // Scrolling Effect
-
+      
       $(window).on("scroll", function() {
         if($(window).scrollTop()) {
           $(".row1").addClass("black");
