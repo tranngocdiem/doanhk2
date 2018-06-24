@@ -37,13 +37,38 @@ Route::group(['prefix'=>'admin'],function(){
         return View::make('Admin.phantrang')->with('loaisanpham',$loaisanpham)->render();
     });
     Route::any('/xoaloaisanpham','Quanlysanphamcontroller@Xoaloaisanpham');
+    Route::any('/qlddh','Quanlydonhangcontroller@Thongtindondathang');
+    Route::get('/qlddh/ajax',function(){
+        $dondathang = DB::table('dondathang')
+                      ->join('taikhoan', 'taikhoan.matk','=', 'dondathang.matk')
+                      ->join('thongtincanhan','thongtincanhan.mattcn','=','taikhoan.mattcn')
+                      ->orderBy('dondathang.ngaydat','desc')
+                      ->paginate(10);
+        return View::make('Admin.phantrang')->with('dondathang',$dondathang)->render();
+    });
+     Route::any('/qlddh/thaydoi','Quanlydonhangcontroller@Thaydoitrangthaidonhang');
+     Route::any('/quanlytaikhoan','Quanlytaikhoancontroller@Thongtintaikhoan');
+     Route::get('/quanlytaikhoan/ajax',function(){
+        $taikhoan = DB::table('taikhoan')
+                    ->join('thongtincanhan','thongtincanhan.mattcn','taikhoan.mattcn')
+                    ->paginate(10);
+        return View::make('Admin.phantrang')->with('taikhoan',$taikhoan)->render();
+    });
+     Route::any('/themtaikhoan','Quanlytaikhoancontroller@Register');
+
+     Route::any('/thongkedoanhthu','Thongkecontroller@Thongkedoanhthutheothang');
+     Route::any('/thongkedonhang','Thongkecontroller@Thongketinhtrangdonhang');
+     Route::any('/tkdt', function () {
+    return view('Admin.thongkedoanhthu');   
+    });
+     Route::any('/tkdh', function () {
+    return view('Admin.thongkedondathang');
+    });
 
 
-
-  /*  Route::any('/qlsp',)*/
 
 });
-
+Route::any('/tkdt','Thongkecontroller@Thongkedoanhthutheothang');
 
 
 Route::group(['prefix'=>'account'],function(){

@@ -7,22 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@section('title')Trang quản lý@show</title>
-  @section('link')
+  <title>SB Admin - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS-->
+  
   <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.min.css">
   <!-- Custom fonts for this template-->
   <link rel="stylesheet" href="{{ url('/') }}/web-fonts-with-css/css/font-awesome.min.css">
   <!-- Custom styles for this template-->
-  <link href="{{ url('/') }}/css/admin/sb-admin.css" rel="stylesheet">
-  @show
+ <link href="{{ url('/') }}/css/admin/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <script type="text/javascript">
-    var url="{!! url('') !!}";
-  </script>
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Trang quản lý</a>
@@ -38,7 +33,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="{!! url('/admin') !!}">
+          <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Thống kê</span>
           </a>
@@ -122,10 +117,8 @@
     </div>
   </nav>
   <div class="content-wrapper">
-    <!-- Nội dung trang chính -->
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-     @section('content')
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
@@ -135,7 +128,7 @@
               </div>
               <div class="mr-5">Thống kê doanh thu</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="{!! url('/admin/tkdt') !!}">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Xem chi tiết</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -168,7 +161,7 @@
               </div>
               <div class="mr-5">Thống kê đơn đặt hàng</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="{!! url('/admin/tkdh')!!}">
+            <a class="card-footer text-white clearfix small z-1" href="#">
               <span class="float-left">Xem chi tiết</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -178,11 +171,39 @@
         </div>
        
       </div>
-      @section('chart')
-      
-      @show
-    </div>
-     @show
+      <!-- Area Chart Example-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-area-chart"></i> Area Chart Example</div>
+        <div class="card-body">
+          <canvas id="myAreaChart" width="100%" height="30"></canvas>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- Example Bar Chart Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+            <div class="card-body">
+              <canvas id="myBarChart" width="100" height="50"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <!-- Example Pie Chart Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
+            <div class="card-body">
+              <canvas id="myPieChart" width="100%" height="100"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -197,21 +218,35 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-    @section('js')
+    <!-- Logout Modal-->
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
     <!-- Bootstrap core JavaScript-->
     <script src="{{ url('/') }}/js/jquery.min.js"></script>
     <script src="{{ url('/') }}/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ url('/') }}/js/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{{ url('/') }}/js/admin/Chart.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ url('/') }}/js/admin/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <!-- Toggle between fixed and static navbar-->
-    <!-- google chart -->
-    
-    
-  
-    @show
+    <script src="{{ url('/') }}/js/admin/sb-admin-charts.js"></script>
   </div>
 </body>
 

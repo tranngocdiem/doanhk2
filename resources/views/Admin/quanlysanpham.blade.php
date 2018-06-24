@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" >
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div style="font-weight: bold; font-size: 20px;" class="col-lg-8">
                             Danh sách sản phẩm
                         </div>   
                         <div class="col-lg-4" style="text-align: right">
@@ -311,7 +311,7 @@
 
              });
                 
-            </script>
+</script>
  <script type="text/javascript" src="{!! url('/js/Admin/quanlysanpham.js') !!}"></script>
  <script>
 $(document).ready(function(){
