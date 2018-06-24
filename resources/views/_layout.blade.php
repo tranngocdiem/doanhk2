@@ -190,13 +190,16 @@
         $('#timkiem').keyup(function(){
           $('#ketquatimkiem').css('display','block');
           $('#ketquatimkiem').html('');
+
           
           var searchField = $('#timkiem').val();
           var expression = new RegExp(searchField, "i");
           $.getJSON("{{ url('/getListsanpham') }}", function(data) {
+             $('#ketquatimkiem').find('li').remove('li');
            $.each(data, function(key, value){
             if (value.tenloai.search(expression) != -1)
             {
+
              $('#ketquatimkiem').append('<a style="text-decoration:none;" href="{{ url("/") }}/sanpham/chitietsanpham/'+value.maloai+'"><li class="list-group-item link-class"><img style="width: 60px; height:30px;" src="{{ url("/") }}/image/sanpham/'+value.url+'"/><span style="padding: 0 20px;font-size: 20px;text-decoration: none;">'+value.tenloai+'</span><span style="padding:7px;" class="badge badge-success">'+value.gia+'</span></li></a>');
            }
          });   
