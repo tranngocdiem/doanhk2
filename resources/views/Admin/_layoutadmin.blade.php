@@ -152,7 +152,7 @@
               </div>
               <div class="mr-5">Thống kê sản phẩm</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="{!! url('/admin/tksp') !!}">
               <span class="float-left">Xem chi tiết</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

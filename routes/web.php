@@ -61,13 +61,32 @@ Route::group(['prefix'=>'admin'],function(){
 
      Route::any('/thongkedoanhthu','Thongkecontroller@Thongkedoanhthutheothang');
      Route::any('/thongkedonhang','Thongkecontroller@Thongketinhtrangdonhang');
+     Route::any('/thongkesanpham','Thongkecontroller@Thongkesoluongsanpham');
      Route::any('/tkdt', function () {
     return view('Admin.thongkedoanhthu');   
     });
      Route::any('/tkdh', function () {
     return view('Admin.thongkedondathang');
     });
-
+     Route::any('/tksp','Thongkecontroller@Indexthongkesp');
+     Route::get('/tksp/ajax',function(){
+        $mamau = $_GET['mamau'];
+        $datefrom = $_GET['datefrom'];
+        $dateto = $_GET['dateto'];
+        $loaisanpham = DB::table('loaisanpham')
+                           ->select('loaisanpham.maloai', DB::raw('SUM(chitietdonhang.soluong) as tong'))
+                           ->join('sanpham','sanpham.masp','=','loaisanpham.masp')
+                           ->join('mausanpham','mausanpham.mamau','=','sanpham.mamau')
+                           ->join('chitietdonhang','chitietdonhang.maloai','loaisanpham.maloai')
+                           ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
+                           ->where('mausanpham.mamau',$mamau)
+                           ->whereRaw('MONTH(dondathang.ngaydat) >= MONTH(?)',$datefrom)
+                           ->whereRaw('MONTH(dondathang.ngaydat) <= MONTH(?)',$dateto)
+                           ->groupBy('loaisanpham.maloai')
+                           ->orderByRaw('SUM(chitietdonhang.soluong) desc')
+                           ->paginate(20);
+        return View::make('Admin.phantrangthongke')->with('loaisanpham',$loaisanpham)->render();
+    });
 
 
 });
@@ -99,6 +118,7 @@ Route::group(['prefix' => 'sanpham'], function(){
     Route::any('/getloaisp/{macd}/{masp}', 'Sanphamcontroller@Getsanphamtheoloai');
     Route::any('/chitietsanpham/{maloai}','Sanphamcontroller@Getthongtinsanpham');
     Route::any('/themvaogiohang','Cartcontroller@Themvaogiohang');
+    Route::any('/sanphambanchay','Sanphamcontroller@Getsanphambanchay');
 }
 
 );

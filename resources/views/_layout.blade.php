@@ -88,7 +88,7 @@
                   <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
                   @endif
                 </li>
-                <li><a href="" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
+                <li><a href="{!! url('/sanpham/sanphambanchay') !!}" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
                 @if (Session::get('username') !== null)
                 <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
                   <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">

@@ -153,7 +153,7 @@
                     
 
                 // When the user clicks the button, open the modal 
-                $(".myBtn").click( function() {
+                $(document).on('click',".myBtn", function() {
                     
                     $('.modal').addClass("active");
                     $('#madondathang').val($(this).val())

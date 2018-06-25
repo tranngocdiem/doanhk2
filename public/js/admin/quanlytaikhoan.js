@@ -132,7 +132,13 @@ function CheckInvalidUsername($username,$result)
   				if($re==true)
   				{
   					alert("Đăng kí thành công.");
-  					$('.close').click();
+  					$('#txtname_re').text()="";
+  					$('#txtaddress_re').text()= "";
+  					$('#txtnumber_re').text() ="";
+  					$('#txtusername_re').text() = "";
+  					$('#txtpassword_re').text() = "";
+  					$('#txtconfirmpwd_re').text() ="";
+
   				}
   				else 
   					alert("Vui lòng nhập đầy đủ thông tin");

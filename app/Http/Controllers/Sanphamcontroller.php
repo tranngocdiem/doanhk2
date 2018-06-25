@@ -95,6 +95,14 @@ class Sanphamcontroller extends Controller
       }
       return response()->json($datajson);
     }
+
+    public function Getsanphambanchay()
+    {
+      $sql = "SELECT loaisanpham.maloai, COUNT(chitietdonhang.soluong) FROM loaisanpham join chitietdonhang on loaisanpham.maloai = chitietdonhang.maloai GROUP BY loaisanpham.maloai ORDER BY COUNT(chitietdonhang.soluong) DESC LIMIT 15";
+      $Bestseller = DB::SELECT(DB::raw($sql));
+      return view('Sanpham.sanphambanchay',['Bestseller'=>$Bestseller]);
+                    
+    }
           
 }
 	

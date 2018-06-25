@@ -211,7 +211,7 @@
                                 <th>Ảnh</th>
                                 <th>Thuộc loại</th>
                                 <th>Thuộc chủ đề</th>
-                                <th>Chức năng</th>
+                               
                             </tr>
                         </thead>
                         <tbody class="content">
@@ -225,7 +225,7 @@
                                     <td><img style="width: 30px; height:30px" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" ></td>
                                     <td><?php echo $row->tensp ?></td>
                                     <td><?php echo $row->tencd ?></td>
-                                    <td><button class="btn-primary">Sửa</button></td>
+                                    
 
                                 </tr>
                                 <?php

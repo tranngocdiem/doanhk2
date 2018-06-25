@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Datetime;
 
 class Thongkecontroller extends Controller
 {
@@ -44,4 +45,43 @@ class Thongkecontroller extends Controller
     		
     	}
 	}
+
+    public function Indexthongkesp()
+    {
+        $sanpham = DB::table('mausanpham')->where('mausanpham.isDeleted',0)->get();
+        return view('Admin.thongkesanpham',['sanpham'=>$sanpham]);
+    }
+
+    public function Thongkesoluongsanpham()
+    {
+        $Param = array_merge($_POST,$_GET);
+        if(isset($Param['info']))
+        {
+            $info = $Param['info'];
+            $mamau = $info['mamau'];
+            $datefrom = $info['datefrom'];
+            $dateto = $info['dateto'];
+            /*$sqlquery = 'SELECT  l.maloai , SUM(c.soluong) as tong
+                        from mausanpham m join sanpham s on m.mamau = s.mamau join loaisanpham l on l.masp = s.masp join chitietdonhang c on c.maloai = l.maloai join dondathang d on d.maddh = c.maddh
+                        WHERE m.mamau = '.$mamau.' and MONTH(d.ngaydat) >= MONTH("'.$datefrom.'") and MONTH(d.ngaydat) <= MONTH("'.$dateto.'")
+                        GROUP BY  l.maloai order by SUM(c.soluong) desc';
+            $loaisanpham = DB::SELECT(DB::raw($sqlquery));*/
+            $loaisanpham = DB::table('loaisanpham')
+                           ->select('loaisanpham.maloai', DB::raw('SUM(chitietdonhang.soluong) as tong'))
+                           ->join('sanpham','sanpham.masp','=','loaisanpham.masp')
+                           ->join('mausanpham','mausanpham.mamau','=','sanpham.mamau')
+                           ->join('chitietdonhang','chitietdonhang.maloai','loaisanpham.maloai')
+                           ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
+                           ->where('mausanpham.mamau',$mamau)
+                           ->whereRaw('MONTH(dondathang.ngaydat) >= MONTH(?)',$datefrom)
+                           ->whereRaw('MONTH(dondathang.ngaydat) <= MONTH(?)',$dateto)
+                           ->groupBy('loaisanpham.maloai')
+                           ->orderByRaw('SUM(chitietdonhang.soluong) desc')
+                           ->paginate(20);
+
+
+            return view('Admin.thongkesanpham_table',['loaisanpham'=>$loaisanpham]);
+        }
+        
+    }
 }

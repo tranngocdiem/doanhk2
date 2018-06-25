@@ -9,7 +9,7 @@
                                     <td><img style="width: 30px; height:30px" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" ></td>
                                     <td><?php echo $row->tensp ?></td>
                                     <td><?php echo $row->tencd ?></td>
-                                    <td><button class="btn-primary">Sửa</button></td>
+                                   
 
                                 </tr>
                                 <?php
@@ -53,7 +53,7 @@
                                               else if($row->trangthai=='2')
                                               echo 'Đã giao';?>
                                               <span><br>
-                                                <a style="margin-left:10px " class="btn-primary" value="<?php echo $row->maddh ?>"> Thay đổi</a></span>
+                                                <button style="margin-left:10px " class="btn-primary myBtn" value="<?php echo $row->maddh ?>"> Thay đổi</button></span>
                                     <!-- <select>
                                         <option value="-1">Đã hủy</option>
                                         <option value="0">Đang trong giỏ hàng</option>
