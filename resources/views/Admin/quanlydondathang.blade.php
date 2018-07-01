@@ -16,7 +16,7 @@
                         </div>   
                     </div>
                 </div>
-            
+          
                 <!-- /.panel-heading -->
 
                 <input type="text" id="myInput"  placeholder="Tìm kiếm..." title="Type in a name" style="float: right; margin-top: 20px; margin-bottom: 10px; width: 400px; height: 40px; ">

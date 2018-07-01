@@ -8,15 +8,15 @@ Thông tin tài khoản
 <form id="informationaccount">
              <div class="form-group">
                 <label >Họ và tên</label>
-                <input style="font-weight: bold;" class="form-control" id=name" type="name" placeholder="Nhập tên" name="name" value="<?php echo $acc[0]->hoten?>"> 
+                <input style="font-weight: bold;" class="form-control" id="name" type="name" placeholder="Nhập tên"  value="<?php echo $acc[0]->hoten?>"> 
               </div>
               <div class="form-group">
                 <label >Địa chỉ</label>
-                <input style="font-weight: bold;" class="form-control" id="address" type="name"  placeholder="Nhập địa chỉ" name="address" value="<?php echo $acc[0]->diachi?>">
+                <input style="font-weight: bold;" class="form-control" id="address" type="name"  placeholder="Nhập địa chỉ" value="<?php echo $acc[0]->diachi?>">
               </div>
               <div class="form-group">
                 <label ">Số điện thoại</label>
-                <input style="font-weight: bold;" class="form-control" id="number" type="number" placeholder="Nhập số điện thoại" name="telephonenumber" value="<?php echo $acc[0]->sdt?>">
+                <input style="font-weight: bold;" class="form-control" id="number" type="number" placeholder="Nhập số điện thoại"  value="<?php echo $acc[0]->sdt?>">
               </div>
               <div class="form-group">
                 <label >Tên đăng nhập</label>
@@ -45,7 +45,7 @@ Thông tin tài khoản
 <br>
 @stop
 @section('footer')
-<div style="padding-top: 700px">
+<div style="padding-top: 800px">
   <footer id="contact">
     <div class="container">
       <div class="row">

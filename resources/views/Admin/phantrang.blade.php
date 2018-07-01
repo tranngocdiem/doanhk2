@@ -53,7 +53,7 @@
                                               else if($row->trangthai=='2')
                                               echo 'Đã giao';?></label>
                                               <span><br>
-                                                <button style="margin-left:10px " class="btn-primary myBtn" value="<?php echo $row->maddh ?>"> Thay đổi</button></span>
+                                                <button  class="btn-primary myBtn" value="<?php echo $row->maddh ?>"> Thay đổi</button></span>
                                     <!-- <select>
                                         <option value="-1">Đã hủy</option>
                                         <option value="0">Đang trong giỏ hàng</option>
