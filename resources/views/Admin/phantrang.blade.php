@@ -44,14 +44,14 @@
                                                  ->sum('gia');
                                     ?>
                                     <td><?php echo $tongtien  ?> </td>
-                                    <td><?php if($row->trangthai == '-1')
+                                    <td><label class="tinhtrang"><?php if($row->trangthai == '-1')
                                               echo 'Đã hủy';
                                               else if($row->trangthai=='0')
                                               echo 'Đang trong giỏ hàng';
                                               else if($row->trangthai=='1')
                                               echo 'Đã đặt hàng';
                                               else if($row->trangthai=='2')
-                                              echo 'Đã giao';?>
+                                              echo 'Đã giao';?></label>
                                               <span><br>
                                                 <button style="margin-left:10px " class="btn-primary myBtn" value="<?php echo $row->maddh ?>"> Thay đổi</button></span>
                                     <!-- <select>

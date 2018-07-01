@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" >
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div style="font-weight: bold; font-size: 20px;" class="col-lg-8">
                             Quản lý tài khoản
                         </div>   
                         <div class="col-lg-4" style="text-align: right">
