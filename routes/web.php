@@ -99,6 +99,8 @@ Route::group(['prefix'=>'account'],function(){
 	Route::any('/register','AccountController@Register');
     Route::any('/login','AccountController@Login');
     Route::any('/logout','AccountController@Logout');
+    Route::any('/checkpassold','AccountController@Checkpasswordold');
+    Route::any('/checkuniqueusername','AccountController@Getusername');
     Route::any('/info','AccountController@Getinformationacc');
 	Route::any('/demgiohang','Cartcontroller@Demsoluonggiohang');
     Route::any('/thongtingiohang','Cartcontroller@Thongtingiohang');

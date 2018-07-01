@@ -108,5 +108,77 @@ class AccountController extends Controller
         return view('Taikhoan.informationAccount',['acc'=>$acc]);
     }
 
+    public function Updatetaikhoan()
+    {
+         $id = session('id');
+         $Param = array_merge($_POST,$_GET);
+         if(isset($Param['info']))
+         {
+            $info = $Param['info'];
+            if(isset($info['matkhau']))
+            {
+                /*update mật khẩu mới*/
+               /* DB::table('taikhoan')
+                    ->where('taikhoan.matk','=',$id)
+                    ->update(['taikhoan.matkhau'=>$info['matkhau']]);*/
+                /*Update các thông tin còn lại*/
+                DB::table('taikhoan')
+                    ->where('taikhoan.matk',$id)
+                    ->update(['tentk'=>$info['tentk'],'taikhoan.matkhau'=>md5($info['matkhau'])]);
+                $thongtintaikhoan = DB::table('taikhoan')
+                                  ->where('taikhoan.matk',$id)
+                                  ->get();
+                DB::table('thongtincanhan')
+                    ->where('thongtincanhan.mattcn', $thongtincanhan[0]->mattcn)
+                    ->update(['hoten'=>$info['hoten'],'sdt'=> $info['sdt'], 'diachi' => $info['diachi']]);
+                return '1';
+            }
+
+            else
+            {
+                DB::table('taikhoan')
+                    ->where('taikhoan.matk',$id)
+                    ->update(['tentk'=>$info['tentk'],'taikhoan.matkhau'=>md5($info['matkhau'])]);
+                $thongtintaikhoan = DB::table('taikhoan')
+                                  ->where('taikhoan.matk',$id)
+                                  ->get();
+                DB::table('thongtincanhan')
+                    ->where('thongtincanhan.mattcn', $thongtincanhan[0]->mattcn)
+                    ->update(['hoten'=>$info['hoten'],'sdt'=> $info['sdt'], 'diachi' => $info['diachi']]);
+                return '1';
+            }
+         }
+         return '0';
+    }
+
+    public function Checkpasswordold()
+    {
+        if(isset($_POST['passwordold']))
+        {
+            $id = session('id');
+            $passwordold = $_POST['passwordold'];
+            $user = DB::table('taikhoan')
+                    ->where('taikhoan.matk',$id)
+                    ->where('taikhoan.matkhau',md5($passwordold))
+                    ->get();
+            if(count($user) > 0)
+                return '1';
+            else return '0';
+        }
+        return '0';
+        
+
+    }
+
+    public function Getusername()
+    {
+        $id = session('id');
+        $user = DB::table('taikhoan')
+                ->where('taikhoan.matk',$id)
+                ->get();
+        if(count($user)> 0) return $user[0]->tentk;
+        else return '0';
+    }
+
     
 }

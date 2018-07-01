@@ -1,4 +1,4 @@
-//Kiểm tra các trường của form không trống
+
 
  function CheckInvalidUsername($username,$result)
    {

@@ -20,7 +20,7 @@ Thông tin tài khoản
               </div>
               <div class="form-group">
                 <label >Tên đăng nhập</label>
-                <input style="font-weight: bold;" class="form-control" id="username" type="name"  placeholder="Nhập tên đăng nhập"name ="username" value="<?php echo $acc[0]->tentk?>">
+                <input style="font-weight: bold;" class="form-control" id="username" type="name"  placeholder="Nhập tên đăng nhập" value="<?php echo $acc[0]->tentk?>">
               </div>
               <input type="button" value="Cập nhật mật khẩu" onclick="myFunction()" class="btn btn-primary"></button>
 
@@ -86,4 +86,5 @@ function myFunction() {
     }
 }
 </script>
+<script type="text/javascript" src="{!! url('/js/Taikhoan/informationacc.js') !!}"></script>
 @show
