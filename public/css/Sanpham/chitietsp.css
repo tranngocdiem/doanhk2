@@ -17,10 +17,10 @@
 #btn-themvaogio{
     background-color: #0065ff;  
     color: #fff;
-    padding: 0 40px;
+    padding: 0 2.5em;
     -webkit-font-smoothing: antialiased;
-    height: 40px;
-    border-radius: 20px;
+    height: 2.5em;
+    border-radius: 1.25em;
     line-height: 1;
     text-align: center;
     vertical-align: middle;
@@ -36,13 +36,13 @@
     background-color: #7fb2ff;
 }
 .QuantityPicker-select {
-    min-width: 71px;
-    height: 46px;
+    min-width: 4.4375em;
+    height: 2.875em;
     
-    border-bottom: 2px solid #9d9fa2;
+    border-bottom: 0.125em solid #9d9fa2;
     border-radius: 0;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     text-align-last: center;
     background: none;
     outline: none;
@@ -56,10 +56,10 @@
     position: relative;
 }
 .QuantityPicker .fa-chevron-down {
-    margin-left: -80px!important;
-    padding: 10px 20px;
+    margin-left: -5em!important;
+    padding: 0.625em 1.25em;
     pointer-events: none;
-    font-size: 14px;
+    font-size: 0.875em;
     font-size: 1rem;
     color: #A4A4A4;
 }
@@ -68,14 +68,14 @@ option {
     display: block;
     white-space: pre;
     min-height: 1.2em;
-    padding: 0px 2px 1px;
+    padding: 0 0.125em 0.0625em;
 }
 
 span.price-invole{
     font-weight: bold;
 }
 span.priceOld-invole{
-    font-size: 12px;
+    font-size: 0.75em;
     text-decoration: line-through;
     color:  #a2a2a2;
 }
@@ -93,4 +93,9 @@ span.discount-invole{
 }
 
 
-
+.splienquan {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 30%;
+    
+}

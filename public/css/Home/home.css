@@ -36,8 +36,7 @@ header {
 }
 
 .menu ul{
-	
-	padding:40px 0px;
+
 	margin: 0;
 }
 .menu li {
@@ -59,7 +58,11 @@ header {
 	background: #fc2827;	
 }
 
-
+.logo{
+	-ms-flex: 35%; /* IE10 */
+    flex: 35%;
+    max-width: 35%;
+}
 .menu.showing{
 	background-color: rgba(0,11,12,0.8);
 	left: 0px;
@@ -135,7 +138,7 @@ header {
 	text-decoration: none;
 	font-size: 24px;
 	color: #fff;
-	
+	margin-right: 0;
 }
 
 .cart-icon li i 
@@ -213,7 +216,15 @@ input[type=text]{
 	opacity: 0.4;
 	position:absolute;
 } 
+@media (max-height: 500px){
+	.logo{display: none;}
 
+}
+@media (max-width: 1140px){
+	.cart-icon li i{
+		display: none;
+	}
+}
 @media screen and (max-width:768px){
 	.btn-select{
 		display: none;
@@ -422,6 +433,7 @@ footer p {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    right: 0px;
 }
 
 .dropdown-content a {

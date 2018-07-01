@@ -29,14 +29,14 @@ Chi tiết sản phẩm
           {
             ?>
             <a  href="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" class="cloud-zoom" id="cloudZoom">
-            <img id="hinhanhsp" src="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" title="The Title" class="img-responsive">
+            <img id="hinhanhsp" src="{{ url('/') }}/image/sanpham/<?php echo $results[0]->url?>" title="The Title" >
             <!-- 450-324 -->
           </a>
           <?php
             if(isset($results_all))
             {
               ?>
-              <ul class="recent_list">
+              <ul class="recent_list cd-tabs">
                 <?php
               foreach($results_all as $row)
               {
@@ -44,7 +44,7 @@ Chi tiết sản phẩm
               
                   <li class="photo_container">
                   <a href="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" rel="gallerySwitchOnMouseOver: true, popupWin:'{{ url('/') }}/image/sanpham/<?php echo $row->url?>', useZoom: 'cloudZoom', smallImage: '{{ url('/') }}/image/sanpham/<?php echo $row->url?>'" class="cloud-zoom-gallery">
-                 <img style="width: 200px;height: 150px;" itemprop="image" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" class="img-responsive">
+                 <img style="width: 100%" itemprop="image" src="{{ url('/') }}/image/sanpham/<?php echo $row->url?>" class="img-responsive">
                   </a>
                   </li>
           
@@ -63,12 +63,12 @@ Chi tiết sản phẩm
     </div>
     <div class="col-6" id="thongtinsp">
       <div class="row">
-        <h2><?php echo $results[0]->tenloai?></h2>
+        <h3 style="font-size:3vw;"><?php echo $results[0]->tenloai?></h3>
       </div>
       <br>
       <div class="row">
-        <span style="display: inline-block; min-width: 80px; font-weight: bold; font-size: 20px">Mô tả: </span>
-        <span style="font-size: 20px" ><?php echo $results[0]->mota?></span> </p>
+        <span style="display: inline-block; font-weight: bold; font-size: 2vw">Mô tả: </span>
+        <span style="font-size: 2vw" ><?php echo $results[0]->mota?></span> </p>
       </div>
       <br>
       <div class="row">
@@ -79,13 +79,13 @@ Chi tiết sản phẩm
               ->where('banggia.maloai','=', $results[0]->maloai)
               ->get();
             ?>
-            <span style="display: inline-block; min-width: 80px; font-weight: bold; font-size: 20px">Giá:</span>
-            <span style="font-weight: bold; font-size: 20px"><?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?> VNĐ</span>
-            <span style="font-size: 15px;text-decoration: line-through; color:  #a2a2a2;"><?php echo $price[0]->gia ?> VNĐ</span>
-            <span style="font-weight: bold; color: #FF3B26;">-<?php echo $price[1]->discount; ?>%</span>
+            <span style="display: inline-block; font-weight: bold; font-size: 2vw">Giá:</span>
+            <span style="font-weight: bold; font-size: 2vw"><?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?> VNĐ</span>
+            <span style="font-size: 1vw;text-decoration: line-through; color:  #a2a2a2;"><?php echo $price[0]->gia ?> VNĐ</span>
+            <span style="font-weight: bold;font-size: 2vw; color: #FF3B26;">-<?php echo $price[1]->discount; ?>%</span>
       </div>
-      <div class="row" style="margin-top: 80px">
-        <button id="btnthemvaogio" class="btn btn-outline-danger btn-lg" style="margin-left: 20px" data-maloai = "<?php echo $results[0]->maloai; ?>" data-gia = "<?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?>"><i class="fas fa-cart-arrow-down">    Thêm vào giỏ hàng</i></button>
+      <div class="row" style="margin-top: 50px">
+        <button id="btnthemvaogio" class="btn btn-outline-danger btn-lg" style="margin-left: 20px;font-size: 2vw;" data-maloai = "<?php echo $results[0]->maloai; ?>" data-gia = "<?php echo $price[0]->gia - ($price[0]->gia * $price[1]->discount / 100); ?>"><i class="fas fa-cart-arrow-down">    Thêm vào giỏ hàng</i></button>
       </div>
 
     </div>
@@ -93,7 +93,7 @@ Chi tiết sản phẩm
 </div>
 <br>
 <!-- các sản phẩm liên quan -->
-<div style="margin-left: 50px; font-size: 30px">BẠN CÓ THỂ QUAN TÂM</div>
+<div style="margin-left: 50px; font-size: 3vw">BẠN CÓ THỂ QUAN TÂM</div>
 <div class="container">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -108,16 +108,16 @@ Chi tiết sản phẩm
               ->get();
 
         ?>
-        <div class="col-3">
+        <div class="col-3 splienquan">
           <div style=" padding:1px; border:1px solid #021a40;">
           <a href="{!!url('sanpham/chitietsanpham',[$relatedproduct[$i]->maloai])!!}">
-          <img style="width: 500px; height: 200px;" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
+          <img style="width:100%" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
           </a>
-          <div class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
+          <div style="font-size: 2vw" class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
           </div>
-          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[0]->discount / 100); ?> VNĐ</span>
-          <span class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
-          <span class="discount-invole">-<?php echo $price_product[0]->discount; ?>%</span>
+          <span style="font-size: 2vw" class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[0]->discount / 100); ?> VNĐ</span>
+          <span style="font-size: 1.5vw"class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
+          <span style="font-size: 2vw" class="discount-invole">-<?php echo $price_product[0]->discount; ?>%</span>
         </div>
         
       </div>
@@ -134,16 +134,16 @@ Chi tiết sản phẩm
               ->where('banggia.maloai','=', $relatedproduct[$i]->maloai)
               ->get();
         ?>
-        <div class="col-3">
+        <div class="col-3 splienquan">
           <div style=" padding:1px; border:1px solid #021a40;">
           <a href="{!!url('sanpham/chitietsanpham',[$relatedproduct[$i]->maloai])!!}">
-          <img style="width: 500px; height: 200px;" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
+          <img style="width: 100%" class="d-block w-100" src="{{ url('/') }}/image/sanpham/<?php echo $relatedproduct[$i]->url?>" alt="anh4">
           </a>
-          <div class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
+          <div style="font-size: 2vw" class="title-invole"><?php echo substr($relatedproduct[$i]->tenloai,0,22).' ...' ?>
           </div>
-          <span class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[1]->discount / 100); ?> VNĐ</span>
-          <span class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
-          <span class="discount-invole">-<?php echo $price_product[1]->discount; ?>%</span>
+          <span style="font-size: 2vw"class="price-invole"><?php echo $price_product[0]->gia - ($price_product[0]->gia * $price_product[1]->discount / 100); ?> VNĐ</span>
+          <span style="font-size: 1.5vw"class="priceOld-invole"><?php echo $price_product[0]->gia ?> VNĐ</span>
+          <span style="font-size: 2vw"class="discount-invole">-<?php echo $price_product[1]->discount; ?>%</span>
         </div>
         </div>
         <?php }?>

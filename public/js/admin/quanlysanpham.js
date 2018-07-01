@@ -232,20 +232,31 @@ $('#btn_submitDel').on('click',function(){
 });
 function getloaisanpham(page)
 {
+	
 	$.ajax({
 		url: url + '/admin/qlsp/ajax?page='+page
 	})
 	.done(function(data)
 	{
 		$('.content').html(data);
+		location.hash = page;
 	})
 	;
 }
-
+ $(window).on('hashchange', function() {
+        if (window.location.hash) {
+            var page = window.location.hash.replace('#', '');
+            if (page == Number.NaN || page <= 0) {
+                return false;
+            } else {
+                getloaisanpham(page);
+            }
+        }
+    });
 
 $(document).on('click','.pagination a',function(e){
-	e.preventDefault();
-	var page  = $(this).attr('href').split('page=')[1];
-	getloaisanpham(page);
+	getloaisanpham($(this).attr('href').split('page=')[1]);
+            e.preventDefault();
+
 });
 
