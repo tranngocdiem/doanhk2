@@ -69,8 +69,34 @@ header {
 	
 	
 }
+.cart-icon2{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	display: flex;
+	width: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.cart-icon2 li
+{
+		display: none;
 
-
+	width: 33%;
+    text-align: center;
+    padding: 10px 10px;
+    list-style: none;
+}
+.cart-icon2 li:hover
+	{
+		background: none;
+	}
+.cart-icon2 a:hover
+	{
+		background: none;
+		color: #fc2827;
+	}
 .social-icon
 {
 	margin: 0;
@@ -216,14 +242,17 @@ input[type=text]{
 	opacity: 0.4;
 	position:absolute;
 } 
-@media (max-height: 500px){
+@media (max-height: 568px){
 	.logo{display: none;}
 
 }
 @media (max-width: 1140px){
 	.cart-icon li i{
 		display: none;
+	}.cart-icon li {
+		margin-top:10px;
 	}
+
 }
 @media screen and (max-width:768px){
 	.btn-select{
@@ -275,16 +304,8 @@ input[type=text]{
 	display: none;
 }
 
-@media (max-width: 367px) {
-	.cart-icon{
-		display: none;
 
-	}
-
-	
-	.row1 {height:auto;} 
-}
-@media (max-width: 576px)
+@media (max-width: 568px)
 {
 	.cart-icon .icon3{
 		display: none;
@@ -300,6 +321,17 @@ input[type=text]{
 		margin-right: -35px;
 
 	}
+	.cart-icon{
+		display: none;
+
+	}
+	.cart-icon2 li{
+		display: block;
+
+	}
+
+	
+	.row1 {height:auto;} 
 	
 	
 	.contain .btn{
