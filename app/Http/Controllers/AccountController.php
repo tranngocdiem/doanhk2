@@ -129,7 +129,7 @@ class AccountController extends Controller
                                   ->where('taikhoan.matk',$id)
                                   ->get();
                 DB::table('thongtincanhan')
-                    ->where('thongtincanhan.mattcn', $thongtincanhan[0]->mattcn)
+                    ->where('thongtincanhan.mattcn', $thongtintaikhoan[0]->mattcn)
                     ->update(['hoten'=>$info['hoten'],'sdt'=> $info['sdt'], 'diachi' => $info['diachi']]);
                 return '1';
             }
@@ -138,12 +138,12 @@ class AccountController extends Controller
             {
                 DB::table('taikhoan')
                     ->where('taikhoan.matk',$id)
-                    ->update(['tentk'=>$info['tentk'],'taikhoan.matkhau'=>md5($info['matkhau'])]);
+                    ->update(['tentk'=>$info['tentk']]);
                 $thongtintaikhoan = DB::table('taikhoan')
                                   ->where('taikhoan.matk',$id)
                                   ->get();
                 DB::table('thongtincanhan')
-                    ->where('thongtincanhan.mattcn', $thongtincanhan[0]->mattcn)
+                    ->where('thongtincanhan.mattcn', $thongtintaikhoan[0]->mattcn)
                     ->update(['hoten'=>$info['hoten'],'sdt'=> $info['sdt'], 'diachi' => $info['diachi']]);
                 return '1';
             }

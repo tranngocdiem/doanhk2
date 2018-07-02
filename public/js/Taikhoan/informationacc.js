@@ -50,7 +50,7 @@ function CheckInvalidUsername($username,$result)
 
  function Updatetaikhoan($hoten, $diachi, $sdt, $tentk , $matkhau)
  {
- 		if(typeof($matkhau) == undefined )
+ 		if($matkhau == "" )
  		{
  			$listparam = {
  							'hoten' : $hoten,
@@ -71,9 +71,9 @@ function CheckInvalidUsername($username,$result)
  		var _token = $('meta[name="csrf-token"]').attr('content');
  		$.ajax({
 			type: 'POST',
-			url: url + '/account/checkpassold',
+			url: url + '/account/updateinfo',
 			cache: false,
-			data: {'_token': _token,'passwordold':$passwordold}
+			data: {'_token': _token,'info':$listparam}
 			})
 			.done(function($re){
 				if($re== '1')
@@ -88,7 +88,8 @@ function CheckInvalidUsername($username,$result)
 
  }
 
-  $('#passwordold').focusout(function(){
+ $(document).ready(function(){
+ 		 $('#passwordold').focusout(function(){
   	       $('#passwordold ~ .errpass').remove();
   	       //kiểm tra có để trống hay không?
   	       if($(this).val()=='')
@@ -127,21 +128,55 @@ function CheckInvalidUsername($username,$result)
 				{
 					if($('#username').val()!=$re)
 					{
-						CheckInvalidUsername($(this).val(),function($result){
-							if($result){
+						CheckInvalidUsername($(this.target).val(),function($result){
+							if($result==false){
 								$('#username').after('<label class = "errusername" style="color: red">Tên đăng nhập đã tồn tại</label>');
+								document.getElementById('username').value = '';
 							}
 						});
 					}
 					
 				}
 
-			});
-
-  	       //kiểm tra tên đăng nhập đã tồn tại chưa
-  	       
-  	       
-  	       
+			}); 	       
   });
+
+   $('#password_re').focusout(function(){
+  			$('#password_re ~ .errconfirm').remove();
+			var password = $("#passwordnew").val();
+    		var confirmpwd = $("#password_re").val();
+  		if(password!=confirmpwd)
+			{
+				//alert("test");
+				$('#password_re').after('<label class = "errconfirm" style="color: red">Mật khẩu phải trùng nhau</label>');
+				document.getElementById('passwordnew').value = '';
+				document.getElementById('passwordnew').focus();
+				document.getElementById('password_re').value = '';
+
+				return false;
+			}
+  });
+
+   $('#btnupdate').on('click', function(){
+   		$hoten = $('#name').val();
+   		$diachi = $('#address').val();
+   		$sdt = $('#number').val();
+   		$tentk = $('#username').val();
+   		if($('#passwordold').val()!="" && $('#passwordold').val()!="")
+   		{
+   			$matkhau = $('#password_re').val();
+   		}
+   		else $matkhau = "";
+   		if($hoten == "" || $diachi == "" || $sdt == "" || $tentk == "")
+   		{
+   			alert('Vui lòng nhập đầy đủ thông tin');
+   		}	
+   		else Updatetaikhoan($hoten,$diachi,$sdt,$tentk,$matkhau);
+   		
+   		
+   });
+ });
+
+ 
 
 

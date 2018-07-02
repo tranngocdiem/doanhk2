@@ -100,6 +100,7 @@ Route::group(['prefix'=>'account'],function(){
     Route::any('/login','AccountController@Login');
     Route::any('/logout','AccountController@Logout');
     Route::any('/checkpassold','AccountController@Checkpasswordold');
+    Route::any('/updateinfo','AccountController@Updatetaikhoan');
     Route::any('/checkuniqueusername','AccountController@Getusername');
     Route::any('/info','AccountController@Getinformationacc');
 	Route::any('/demgiohang','Cartcontroller@Demsoluonggiohang');

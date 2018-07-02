@@ -82,7 +82,7 @@ Giỏ hàng
               <td class="d-none d-sm-table-cell"></td>
               <td style="text-align: center;" class="hidden-xs"><strong>Thành tiền :</strong>
               <div class="d-block d-sm-none">
-                    <div class="text-theme">$1.99</div>
+                    <div class="text-theme"><strong><?php echo $tongtien?></strong><span style="font-weight: bold; color: red;">  VNĐ</span></div>
               </div>
               </td>
               <td class="d-none d-sm-table-cell"><strong id="thanhtien" data-thanhtien = "<?php echo $tongtien?>"><?php echo $tongtien?></strong><span style="font-weight: bold; color: red;">  VNĐ</span></td>
