@@ -44,39 +44,7 @@
               <li><a href="">Tin tức</a></li>
               <li><a href="">Trợ giúp</a></li>
             </ul>
-            <ul class="cart-icon2">
-
-              @if (Session::get('username') !== null)
-              <?php $count = DB::table('chitietdonhang')
-              ->join('dondathang','dondathang.maddh','chitietdonhang.maddh')
-              ->where('dondathang.matk',Session::get('id'))
-              ->where('dondathang.trangthai',0)
-              ->sum('chitietdonhang.soluong'); ?>
-              <li><a id="cart1" href="{!! url('/account/thongtingiohang') !!}" class="fas fa-shopping-cart"></a>
-                <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger"><?php echo $count ?></span>
-                @else
-                <li><a id="cart1" href="javascript:void()" class="fas fa-shopping-cart"></a>
-                  <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
-                  @endif
-                </li>
-                <li><a href="{!! url('/sanpham/sanphambanchay') !!}" class="fas fa-heart"></a></li>
-                @if (Session::get('username') !== null)
-                <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ></a>
-                  <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                    <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
-                    <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
-                    <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
-                  </div>
-                </li>
-                @else
-                <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ></a>
-                  <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                    <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
-                    <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
-                  </div>
-                </li>
-                @endif
-              </ul>
+            
             <ul class="social-icon" >
               <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
               <li><a href=""><i class="fab fa-twitter"></i></a></li>
@@ -121,20 +89,20 @@
                   <span id="soluong" style="position: fixed;" class="badge badge-pill badge-danger">0</span>
                   @endif
                 </li>
-                <li><a href="{!! url('/sanpham/sanphambanchay') !!}" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
+                <li class="icon2"><a href="{!! url('/sanpham/sanphambanchay') !!}" class="fas fa-heart"><i>Sản phẩm bán chạy</i></a></li>
                 @if (Session::get('username') !== null)
                 <li class="dropdown" id="modallayout"><a href="#" class="fas fa-user" ><i>Tài khoản</i></a>
                   <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                    <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Thông tin tài khoản</a>
-                    <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:18px ;">Đơn hàng của tôi</a>
-                    <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:18px ;">Đăng xuất</a>
+                    <a href="{!! url('/account/info') !!}" style="font-family: Helvetica Neue; font-size:15px ;">Thông tin tài khoản</a>
+                    <a href="{!!url('/account/donhangcuatoi')!!}"  style="font-family: Helvetica Neue; font-size:15px;">Đơn hàng của tôi</a>
+                    <a href="{!! url('/account/logout') !!}" style="font-family: Helvetica Neue; font-size:15px ;">Đăng xuất</a>
                   </div>
                 </li>
                 @else
                 <li class="dropdown" id="modallayout"><a href="#" class="fas fa-sign-in-alt" ><i>Tài khoản</i></a>
                   <div style="background-color: rgba(0,11,12,0.8);" class="dropdown-content">
-                    <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:18px ;">Đăng nhập</a>
-                    <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:18px ;"> Đăng kí</a>
+                    <a href="#" data-toggle="modal" data-target="#myModal" style="font-family: Helvetica Neue; font-size:15px ;">Đăng nhập</a>
+                    <a href="#" data-toggle="modal" data-target="#modalregister"style="font-family: Helvetica Neue; font-size:15px ;"> Đăng kí</a>
                   </div>
                 </li>
                 @endif

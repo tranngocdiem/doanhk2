@@ -3,49 +3,54 @@
 Thông tin tài khoản
 @stop
 @section('content')
-<div style="padding-top: 100px; margin-left: 300px">
-<h4 style="margin-left: 80px">THÔNG TIN TÀI KHOẢN</h4>
-<form id="informationaccount">
-             <div class="form-group">
-                <label >Họ và tên</label>
-                <input style="font-weight: bold;" class="form-control" id="name" type="name" placeholder="Nhập tên"  value="<?php echo $acc[0]->hoten?>"> 
-              </div>
-              <div class="form-group">
-                <label >Địa chỉ</label>
-                <input style="font-weight: bold;" class="form-control" id="address" type="name"  placeholder="Nhập địa chỉ" value="<?php echo $acc[0]->diachi?>">
-              </div>
-              <div class="form-group">
-                <label ">Số điện thoại</label>
-                <input style="font-weight: bold;" class="form-control" id="number" type="number" placeholder="Nhập số điện thoại"  value="<?php echo $acc[0]->sdt?>">
-              </div>
-              <div class="form-group">
-                <label >Tên đăng nhập</label>
-                <input style="font-weight: bold;" class="form-control" id="username" type="name"  placeholder="Nhập tên đăng nhập" value="<?php echo $acc[0]->tentk?>">
-              </div>
-              <input type="button" value="Cập nhật mật khẩu" onclick="myFunction()" class="btn btn-primary"></button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
+    <div class="col-12 col-md-10 col-xl-9 py-md-4 pl-md-8 bd-content"> 
+      <h4 style="margin-top: 100px">THÔNG TIN TÀI KHOẢN</h4>
+      <form id="informationaccount">
+       <div class="form-group">
+        <label >Họ và tên</label>
+        <input style="font-weight: bold;" class="form-control" id="name" type="name" placeholder="Nhập tên"  value="<?php echo $acc[0]->hoten?>"> 
+      </div>
+      <div class="form-group">
+        <label >Địa chỉ</label>
+        <input style="font-weight: bold;" class="form-control" id="address" type="name"  placeholder="Nhập địa chỉ" value="<?php echo $acc[0]->diachi?>">
+      </div>
+      <div class="form-group">
+        <label ">Số điện thoại</label>
+        <input style="font-weight: bold;" class="form-control" id="number" type="number" placeholder="Nhập số điện thoại"  value="<?php echo $acc[0]->sdt?>">
+      </div>
+      <div class="form-group">
+        <label >Tên đăng nhập</label>
+        <input style="font-weight: bold;" class="form-control" id="username" type="name"  placeholder="Nhập tên đăng nhập" value="<?php echo $acc[0]->tentk?>">
+      </div>
+      <input type="button" value="Cập nhật mật khẩu" onclick="myFunction()" class="btn btn-primary"></button>
 
-              <div style="display: none;" id="myDIV">
-              	<br>
-              <div class="form-group">
-                <label >Mật khẩu cũ</label>
-                <input style="font-weight: bold;" class="form-control" id="passwordold" type="password" placeholder="Nhập mật khẩu" name="password" >
-              </div> 
-               <div class="form-group">
-                 <label >Mật khẩu mới</label>
-               	 <input style="font-weight: bold;" class="form-control" id="passwordnew" type="password" placeholder="Nhập mật khẩu" name="password" >
-               </div> 
-               <div class="form-group">
-                <label >Nhập lại mật khẩu</label>
-                <input style="font-weight: bold;" class="form-control" id="password_re" type="password" placeholder="Nhập mật khẩu" name="password" >
-               </div> 
-              </div>
-                <button id="btnupdate" type="button" class="btn btn-primary">Cập nhật</button>
-        </form>
+      <div style="display: none;" id="myDIV">
+       <br>
+       <div class="form-group">
+        <label >Mật khẩu cũ</label>
+        <input style="font-weight: bold;" class="form-control" id="passwordold" type="password" placeholder="Nhập mật khẩu" name="password" >
+      </div> 
+      <div class="form-group">
+       <label >Mật khẩu mới</label>
+       <input style="font-weight: bold;" class="form-control" id="passwordnew" type="password" placeholder="Nhập mật khẩu" name="password" >
+     </div> 
+     <div class="form-group">
+      <label >Nhập lại mật khẩu</label>
+      <input style="font-weight: bold;" class="form-control" id="password_re" type="password" placeholder="Nhập mật khẩu" name="password" >
+    </div> 
+  </div>
+  <button id="btnupdate" type="button" class="btn btn-primary">Cập nhật</button>
+</form>
 </div>
+</div></div>
+<div class="col-12 col-md-3 col-xl-2 bd-sidebar"></div>
 <br>
 @stop
 @section('footer')
-<div style="padding-top: 800px">
+
   <footer id="contact">
     <div class="container">
       <div class="row">
@@ -72,19 +77,19 @@ Thông tin tài khoản
     </div>
   </div>
 </footer>
-</div>
+
 @stop
 @section('js')
 @parent
 <script>
-function myFunction() {
+  function myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
-        x.style.display = "block";
+      x.style.display = "block";
     } else {
-        x.style.display = "none";
+      x.style.display = "none";
     }
-}
+  }
 </script>
 <script type="text/javascript" src="{!! url('/js/Taikhoan/informationacc.js') !!}"></script>
 @show

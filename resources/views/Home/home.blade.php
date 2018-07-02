@@ -5,10 +5,11 @@ Trang chủ
 
 @section('content')
     <div style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/background.jpg);
-  background-size:cover;height: 100vh;">
+  background-size:cover;  background-position: center;
+    background-repeat: no-repeat;height: 100vh;">
     <div class="contain">
       <nav class="row2">
-        <div class="">
+        <div class="tieudetrangchu">
           <h1 class="m-b-20"><strong> WELCOME TO DTQ FURNITURE</strong></h1>
           <p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#album-list">BỘ SƯU TẬP</a>
